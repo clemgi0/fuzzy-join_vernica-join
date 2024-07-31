@@ -1,0 +1,170 @@
+diff -c -r fuzzyjoin-0.0.2//fuzzyjoin-core/src/main/java/edu/uci/ics/fuzzyjoin/FuzzyJoinMemory.java fuzzyjoin-0.0.3//fuzzyjoin-core/src/main/java/edu/uci/ics/fuzzyjoin/FuzzyJoinMemory.java
+*** fuzzyjoin-0.0.2//fuzzyjoin-core/src/main/java/edu/uci/ics/fuzzyjoin/FuzzyJoinMemory.java	2011-03-13 05:40:38.000000000 +0100
+--- fuzzyjoin-0.0.3//fuzzyjoin-core/src/main/java/edu/uci/ics/fuzzyjoin/FuzzyJoinMemory.java	2011-11-09 19:12:50.000000000 +0100
+***************
+*** 24,29 ****
+--- 24,30 ----
+  import java.io.FileNotFoundException;
+  import java.io.IOException;
+  import java.util.ArrayList;
++ import java.util.Arrays;
+  import java.util.Collection;
+  import java.util.Date;
+  import java.util.HashMap;
+***************
+*** 120,126 ****
+  
+      private final InvertedListsLengthList invertedLists;
+      private final SimilarityFiltersJaccard similarityFilters;
+! 
+      private final ArrayList<int[]> records;
+  
+      public FuzzyJoinMemory(float similarityThreshold) {
+--- 121,128 ----
+  
+      private final InvertedListsLengthList invertedLists;
+      private final SimilarityFiltersJaccard similarityFilters;
+!     private int commonPrefixToken= Integer.MIN_VALUE;
+!     
+      private final ArrayList<int[]> records;
+  
+      public FuzzyJoinMemory(float similarityThreshold) {
+***************
+*** 128,133 ****
+--- 130,140 ----
+          similarityFilters = new SimilarityFiltersJaccard(similarityThreshold);
+          records = new ArrayList<int[]>();
+      }
++     
++     public void setCommonPrefixToken(int commonPrefixToken)
++     {
++     	this.commonPrefixToken= commonPrefixToken;
++     }
+  
+      public void add(final int[] tokens) {
+          final int index = records.size();
+***************
+*** 277,282 ****
+--- 284,312 ----
+                  // length filter
+                  invertedList.setMinLength(lengthLowerBound);
+                  for (int[] element : invertedList) {
++                 	
++                 	//check for backward compatibility (commonPrefixToken might not be set) 
++                 	if(commonPrefixToken!=Integer.MIN_VALUE)
++                 	{
++ 	                	//avoids duplicate comparisons of same record pair in different reduce calls
++ 	                	int smallestCommonPrefixToken= Integer.MIN_VALUE;
++ 	                	for(int i=0, j=3; i<prefixLength && j<element.length; )	/* element.length-3 = y.prefixLength*/
++ 	            		{
++ 	                		if(tokens[i]==element[j])
++ 	                		{
++ 	                			smallestCommonPrefixToken= tokens[i];
++ 	                			break;
++ 	                		}
++ 	                		else if(tokens[i]<element[j])
++ 	                			i++;
++ 	                		else
++ 	                        	j++;
++ 	                    }
++ 	                	
++ 	                	if(smallestCommonPrefixToken!=commonPrefixToken)
++ 	                		continue;
++                 	}
++                 	                	
+                      final int indexProbe = element[0];
+                      final int indexTokenProbe = element[1];
+                      final int lengthProbe = element[2];
+***************
+*** 308,315 ****
+              // add to index
+              //
+              if (indexToken < indexPrefixLength) {
+!                 invertedLists.index(token, new int[] { index, indexToken,
+!                         length });
+              }
+          }
+          //
+--- 338,345 ----
+              // add to index
+              //
+              if (indexToken < indexPrefixLength) {
+!                
+!             	invertedLists.index(token, concatArrays(new int[] { index, indexToken, length }, tokens, prefixLength));
+              }
+          }
+          //
+***************
+*** 337,340 ****
+--- 367,377 ----
+          }
+          return results;
+      }
++     
++     private int[] concatArrays(int[] first, int[] second, int elementsFromSecond)
++     {
++     	int[] result= Arrays.copyOf(first, first.length + elementsFromSecond);
++     	System.arraycopy(second, 0, result, first.length, elementsFromSecond);
++     	return result;
++     }
+  }
+Only in fuzzyjoin-0.0.3//fuzzyjoin-hadoop/lib: fuzzyjoin-core-0.0.2-SNAPSHOT.jar
+diff -c -r fuzzyjoin-0.0.2//fuzzyjoin-hadoop/src/main/java/edu/uci/ics/fuzzyjoin/hadoop/ridpairs/ppjoin/ReduceSelfJoin.java fuzzyjoin-0.0.3//fuzzyjoin-hadoop/src/main/java/edu/uci/ics/fuzzyjoin/hadoop/ridpairs/ppjoin/ReduceSelfJoin.java
+*** fuzzyjoin-0.0.2//fuzzyjoin-hadoop/src/main/java/edu/uci/ics/fuzzyjoin/hadoop/ridpairs/ppjoin/ReduceSelfJoin.java	2011-03-13 05:40:38.000000000 +0100
+--- fuzzyjoin-0.0.3//fuzzyjoin-hadoop/src/main/java/edu/uci/ics/fuzzyjoin/hadoop/ridpairs/ppjoin/ReduceSelfJoin.java	2011-11-09 18:53:16.000000000 +0100
+***************
+*** 36,41 ****
+--- 36,43 ----
+  import edu.uci.ics.fuzzyjoin.FuzzyJoinMemory;
+  import edu.uci.ics.fuzzyjoin.ResultSelfJoin;
+  import edu.uci.ics.fuzzyjoin.hadoop.ridpairs.ValueSelfJoin;
++ import edu.uci.ics.fuzzyjoin.hadoop.IntPairWritable;
++ 
+  
+  /**
+   * @author rares
+***************
+*** 49,55 ****
+   *         VALUE2: unused
+   */
+  public class ReduceSelfJoin extends MapReduceBase implements
+!         Reducer<Object, ValueSelfJoin, Text, NullWritable> {
+  
+      private float similarityThreshold;
+      private final Text outputKey = new Text();
+--- 51,57 ----
+   *         VALUE2: unused
+   */
+  public class ReduceSelfJoin extends MapReduceBase implements
+!         Reducer<IntPairWritable, ValueSelfJoin, Text, NullWritable> {
+  
+      private float similarityThreshold;
+      private final Text outputKey = new Text();
+***************
+*** 62,73 ****
+                  FuzzyJoinConfig.SIMILARITY_THRESHOLD_VALUE);
+      }
+  
+!     public void reduce(Object unused, Iterator<ValueSelfJoin> inputValues,
+              OutputCollector<Text, NullWritable> output, Reporter reporter)
+              throws IOException {
+          HashMap<Integer, Integer> rids = new HashMap<Integer, Integer>();
+          FuzzyJoinMemory fuzzyJoinMemory = new FuzzyJoinMemory(
+                  similarityThreshold);
+          int crtRecordId = 0;
+  
+          while (inputValues.hasNext()) {
+--- 64,76 ----
+                  FuzzyJoinConfig.SIMILARITY_THRESHOLD_VALUE);
+      }
+  
+!     public void reduce(IntPairWritable key, Iterator<ValueSelfJoin> inputValues,
+              OutputCollector<Text, NullWritable> output, Reporter reporter)
+              throws IOException {
+          HashMap<Integer, Integer> rids = new HashMap<Integer, Integer>();
+          FuzzyJoinMemory fuzzyJoinMemory = new FuzzyJoinMemory(
+                  similarityThreshold);
++ 		fuzzyJoinMemory.setCommonPrefixToken(key.getFirst());
+          int crtRecordId = 0;
+  
+          while (inputValues.hasNext()) {

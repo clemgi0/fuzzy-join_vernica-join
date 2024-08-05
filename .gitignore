@@ -1,2 +1,5 @@
 # Rejet des archives .jar
 *.jar
+
+# Rejet des fichiers .class
+*.class

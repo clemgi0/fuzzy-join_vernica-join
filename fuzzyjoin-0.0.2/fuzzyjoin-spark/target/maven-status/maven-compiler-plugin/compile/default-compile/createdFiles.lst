@@ -1,0 +1,4 @@
+edu/uci/ics/fuzzyjoin/spark/tokens/TokensBasic.class
+edu/uci/ics/fuzzyjoin/spark/recordpairs/RecordPairsBasic.class
+edu/uci/ics/fuzzyjoin/spark/ridpairs/RIDPairsPPJoin.class
+edu/uci/ics/fuzzyjoin/spark/Main.class

@@ -29,7 +29,5 @@
     <module>fuzzyjoin-core</module>
     <module>fuzzyjoin-hadoop</module>
     <module>fuzzyjoin-spark</module>
-    <module>fuzzyjoin-hyracks</module>
-    <module>fuzzyjoin-hyracks-app</module>
   </modules>
 </project>

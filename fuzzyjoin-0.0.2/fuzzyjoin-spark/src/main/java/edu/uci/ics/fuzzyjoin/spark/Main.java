@@ -2,9 +2,9 @@ package edu.uci.ics.fuzzyjoin.spark;
 
 import java.io.IOException;
 
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.sql.SparkSession;
 
 import edu.uci.ics.fuzzyjoin.FuzzyJoinConfig;
 import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
@@ -42,24 +42,31 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         if (args.length < 1) {
-            System.err.println("Usage: JavaWordCount <file>");
+            System.err.println("Usage: Main <file>");
             System.exit(1);
         }
 
-        System.out.println("Hello, World!");
+        System.out.println();
+        System.out.println("-------------------- Starting of the app --------------------");
+        System.out.println();
 
-        SparkSession spark = SparkSession.builder()
-                .appName("FuzzyJoinSpark")
-                .master("yarn")
-                .getOrCreate();
+        SparkConf conf = new SparkConf().setAppName("FuzzyJoinSpark");
 
-        JavaSparkContext sc = new JavaSparkContext(spark.sparkContext());
+        System.out.println();
+        System.out.println("-------------------- Creating Java Spark Context --------------------");
+        System.out.println();
 
-        JavaRDD<String> records = spark.read().textFile(args[0]).javaRDD();
+        JavaSparkContext sc = new JavaSparkContext(conf);
 
-        //
-        // ****************************** Print infos ******************************
-        //
+        System.out.println();
+        System.out.println("-------------------- Read files from HDFS --------------------");
+        System.out.println();
+
+        JavaRDD<String> records = sc.textFile(args[0]);
+
+        System.out.println();
+        System.out.println("-------------------- Print infos --------------------");
+        System.out.println();
 
         String ret = "Main" + sc.appName() + "\n"
                 + "  Input Path:  {";
@@ -86,13 +93,20 @@ public class Main {
         ret += "}";
         System.out.println(ret);
 
-        //
-        // ****************************** Phase 1: Tokens ******************************
-        //
+        System.out.println();
+        System.out.println("-------------------- Start Stage 1 : TokensBasic --------------------");
+        System.out.println();
 
         TokensBasic.main(records, sc);
 
+        System.out.println();
+        System.out.println("-------------------- Close Java Spark Context and Spark Session --------------------");
+        System.out.println();
+
         sc.close();
-        spark.stop();
+
+        System.out.println();
+        System.out.println("-------------------- Ending of the app --------------------");
+        System.out.println();
     }
 }

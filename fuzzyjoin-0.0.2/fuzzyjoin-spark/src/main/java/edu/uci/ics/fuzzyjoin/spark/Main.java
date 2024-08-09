@@ -14,7 +14,7 @@ public class Main {
     public static final String VERSION_PROPERTY = NAMESPACE + ".version";
     // tokens package
     public static final String TOKENS_PACKAGE_PROPERTY = NAMESPACE + ".tokens.package";
-    public static final String TOKENS_PACKAGE_VALUE = "Scalar";
+    public static final String TOKENS_PACKAGE_VALUE = "Array";
     // tokens length stats
     public static final String TOKENS_LENGTHSTATS_PROPERTY = NAMESPACE + ".tokens.lengthstats";
     public static final boolean TOKENS_LENGTHSTATS_VALUE = false;

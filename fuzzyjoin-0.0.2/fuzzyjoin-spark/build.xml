@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="fuzzyjoin-spark" default="jar" basedir=".">
-  <property name="version" value="0.0.2"/>
+  <property name="version" value="0.0.1"/>
   <property name="src.dir" value="src/main/java" />
   <property name="lib.dir" value="lib" />
   <property name="resources.lib.dir" value="src/main/resources/lib" />

@@ -1,43 +1,44 @@
 package edu.uci.ics.fuzzyjoin.spark.tokens;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 
-import org.apache.hadoop.io.IntWritable;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
-import edu.uci.ics.fuzzyjoin.FuzzyJoinConfig;
-import edu.uci.ics.fuzzyjoin.FuzzyJoinUtil;
-import edu.uci.ics.fuzzyjoin.tokenizer.Tokenizer;
-import edu.uci.ics.fuzzyjoin.tokenizer.TokenizerFactory;
+import edu.uci.ics.fuzzyjoin.spark.Main;
+import edu.uci.ics.fuzzyjoin.spark.tokens.Array.ArrayMap;
+import edu.uci.ics.fuzzyjoin.spark.tokens.Scalar.ScalarMap;
 import scala.Tuple2;
 
 public class TokensBasic {
     public static void main(JavaRDD<String> records, JavaSparkContext sc) throws IOException {
 
         System.out.println();
-        System.out.println("-------------------- Phase 1 : Map --------------------");
-        System.out.println();
+        System.out.println("-------------------- Phase 1 : Map : ");
 
-        Tokenizer tokenizer = TokenizerFactory.getTokenizer(FuzzyJoinConfig.TOKENIZER_VALUE,
-                FuzzyJoinConfig.WORD_SEPARATOR_REGEX,
-                FuzzyJoinConfig.TOKEN_SEPARATOR);
-        int[] dataColumns = FuzzyJoinUtil.getDataColumns(FuzzyJoinConfig.RECORD_DATA_VALUE);
+        JavaPairRDD<String, Integer> tokensOne;
+        JavaPairRDD<String, Integer> tokensCount;
 
-        JavaPairRDD<String, Integer> tokens = records.flatMapToPair(r -> {
-            List<String> t = tokenizer
-                    .tokenize(FuzzyJoinUtil.getData(r.toString().split(FuzzyJoinConfig.RECORD_SEPARATOR_REGEX),
-                            dataColumns, FuzzyJoinConfig.TOKEN_SEPARATOR));
-            return t.stream().map(token -> new Tuple2<>(token, 1)).iterator();
-        });
+        if (Main.TOKENS_PACKAGE_VALUE.equals("Array")) {
+            System.out.println("Array --------------------");
+            System.out.println();
 
-        showPairRDD(tokens);
+            tokensOne = records.flatMapToPair(new ArrayMap());
+            tokensCount = tokensOne.reduceByKey(new ArrayReduceAggegate());
+        } else {
+            System.out.println("Scalar --------------------");
+            System.out.println();
+
+            tokensOne = new ScalarMap().map(records);
+        }
+
+        showPairRDD(tokensOne);
 
     }
 
+    @SuppressWarnings("unused")
     private static void showRDD(JavaRDD<String> rdd) {
         List<String> results = rdd.collect();
         results.forEach(r -> System.out.println("Id : " + r));

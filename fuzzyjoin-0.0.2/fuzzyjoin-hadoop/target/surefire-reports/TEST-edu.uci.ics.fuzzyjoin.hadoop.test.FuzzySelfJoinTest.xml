@@ -1,0 +1,7768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="10.211" tests="8" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/test-classes:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/classes:/home/clemgi/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2/hadoop-core-0.20.2.jar:/home/clemgi/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/clemgi/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/clemgi/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/clemgi/.m2/repository/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.jar:/home/clemgi/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar:/home/clemgi/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty/6.1.14/jetty-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty-util/6.1.14/jetty-util-6.1.14.jar:/home/clemgi/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar:/home/clemgi/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/home/clemgi/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/clemgi/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/home/clemgi/.m2/repository/net/java/dev/jets3t/jets3t/0.7.1/jets3t-0.7.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/home/clemgi/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar:/home/clemgi/.m2/repository/junit/junit/4.5/junit-4.5.jar:/home/clemgi/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar:/home/clemgi/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/clemgi/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/home/clemgi/.m2/repository/edu/uci/ics/fuzzyjoin/fuzzyjoin-core/0.0.2/fuzzyjoin-core-0.0.2.jar:/home/clemgi/.m2/repository/edu/uci/ics/fuzzyjoin/fuzzyjoin-core/0.0.2/fuzzyjoin-core-0.0.2-tests.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire/surefirebooter-20240809052834059_3.jar /home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire 2024-08-09T05-28-33_877-jvmRun1 surefire-20240809052834059_1tmp surefire_0-20240809052834059_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/test-classes:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/classes:/home/clemgi/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2/hadoop-core-0.20.2.jar:/home/clemgi/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/clemgi/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/clemgi/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/clemgi/.m2/repository/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.jar:/home/clemgi/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar:/home/clemgi/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty/6.1.14/jetty-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty-util/6.1.14/jetty-util-6.1.14.jar:/home/clemgi/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar:/home/clemgi/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/home/clemgi/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/clemgi/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/home/clemgi/.m2/repository/net/java/dev/jets3t/jets3t/0.7.1/jets3t-0.7.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/home/clemgi/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar:/home/clemgi/.m2/repository/junit/junit/4.5/junit-4.5.jar:/home/clemgi/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar:/home/clemgi/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/clemgi/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/home/clemgi/.m2/repository/edu/uci/ics/fuzzyjoin/fuzzyjoin-core/0.0.2/fuzzyjoin-core-0.0.2.jar:/home/clemgi/.m2/repository/edu/uci/ics/fuzzyjoin/fuzzyjoin-core/0.0.2/fuzzyjoin-core-0.0.2-tests.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/clemgi"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire/surefirebooter-20240809052834059_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.23+9-post-Ubuntu-1ubuntu120.04.2"/>
+    <property name="user.name" value="clemgi"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.15.153.1-microsoft-standard-WSL2"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/clemgi/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="11.0.23"/>
+    <property name="user.dir" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="11.0.23+9-post-Ubuntu-1ubuntu120.04.2"/>
+    <property name="java.specification.maintenance.version" value="2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="test010" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="0.995">
+    <system-out><![CDATA[[-Dfuzzyjoin.data.dir=../data/dblp-small, -Dfuzzyjoin.record.data=2,3, -Dfuzzyjoin.similarity.threshold=0.5]
+FuzzyJoinDriver(RecordBuild)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/raw-000/*}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000
+  Map Jobs:    2
+  Reduce Jobs: 0
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:47 CEST 2024
+Job ended: Fri Aug 09 05:28:48 CEST 2024
+The job took 1.027 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2024 5:28:47 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0013
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 0
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0013_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0013_m_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0013_m_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/raw-000/part-00000:0+36395
+Aug 09, 2024 5:28:47 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0013_m_000000_0' done.
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 0%
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0013
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 6
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=0
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=100
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=100
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=36395
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=1545802
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=2104915
+]]></system-err>
+  </testcase>
+  <testcase name="test020" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.023">
+    <system-out><![CDATA[FuzzyJoinDriver(RecordBalance)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:48 CEST 2024
+Job ended: Fri Aug 09 05:28:49 CEST 2024
+The job took 1.02 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2024 5:28:48 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0014
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0014_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000/part-00000:0+36687
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0014_m_000000_0' done.
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 1 sorted segments
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 1 segments left of total size: 37127 bytes
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0014_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0014_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0014_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:48 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0014_r_000000_0' done.
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0014
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=0
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=200
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=100
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=100
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=100
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=100
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=36805
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=0
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=36687
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=100
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3257481
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4347643
+]]></system-err>
+  </testcase>
+  <testcase name="test100" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="2.049">
+    <system-out><![CDATA[Multi-Job started: Fri Aug 09 05:28:49 CEST 2024
+FuzzyJoinDriver(TokensBasic.phase1)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:49 CEST 2024
+1_1
+---
+(1)
+(1)
+2_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+3_1
+---
+(1)
+(1)
+(1)
+(1)
+3_2
+---
+(1)
+4_1
+---
+(1)
+5_1
+---
+(1)
+6_1
+---
+(1)
+80_1
+---
+(1)
+a_1
+---
+(1, 8)
+(1)
+(1, 16)
+(1, 11)
+(1, 10)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 17)
+(1)
+(1, 16)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+a_2
+---
+(1)
+(1)
+(1)
+(1)
+abiteboul_1
+---
+(1)
+abraham_1
+---
+(1)
+active_1
+---
+(1, 10)
+(1, 11)
+adds_1
+---
+(1)
+ahad_1
+---
+(1)
+ahmed_1
+---
+(1)
+aho_1
+---
+(1)
+(1)
+(1)
+(1)
+albert_1
+---
+(1)
+alfons_1
+---
+(1)
+alfred_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+algorithm_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+algorithms_1
+---
+(1)
+(1)
+(1)
+(1, 3)
+(1)
+alistair_1
+---
+(1)
+(1)
+all_1
+---
+(1)
+(1)
+allen_1
+---
+(1)
+amelia_1
+---
+(1)
+amihai_1
+---
+(1)
+amit_1
+---
+(1)
+an_1
+---
+(1)
+(1, 18)
+(1, 17)
+(1, 31)
+(1, 29)
+(1)
+(1, 15)
+(1, 19)
+(1, 17)
+(1)
+(1)
+(1)
+an_2
+---
+(1)
+(1)
+analysis_1
+---
+(1)
+and_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+and_2
+---
+(1)
+anders_1
+---
+(1)
+andrea_1
+---
+(1)
+(1)
+andreas_1
+---
+(1)
+(1)
+andrew_1
+---
+(1)
+andrews_1
+---
+(1)
+angelika_1
+---
+(1)
+anne_1
+---
+(1)
+annevelink_1
+---
+(1)
+(1)
+application_1
+---
+(1)
+(1)
+applications_1
+---
+(1)
+approach_1
+---
+(1)
+approaches_1
+---
+(1)
+architecture_1
+---
+(1)
+(1)
+aref_1
+---
+(1)
+arthur_1
+---
+(1)
+as_1
+---
+(1)
+aspnes_1
+---
+(1)
+(1)
+authorization_1
+---
+(1, 8)
+awk_1
+---
+(1)
+b_1
+---
+(1)
+(1)
+bala_1
+---
+(1)
+(1)
+ballou_1
+---
+(1)
+based_1
+---
+(1)
+(1)
+beech_1
+---
+(1)
+benchmark_1
+---
+(1)
+bernstein_1
+---
+(1)
+better_1
+---
+(1)
+beyond_1
+---
+(1)
+bindings_1
+---
+(1)
+björnerstedt_1
+---
+(1)
+blakeley_1
+---
+(1)
+(1)
+bloniarz_1
+---
+(1)
+(1)
+breitbart_1
+---
+(1)
+(1)
+bretl_1
+---
+(1)
+brian_1
+---
+(1)
+brom_1
+---
+(1)
+brozos_1
+---
+(1)
+bruce_1
+---
+(1)
+(1)
+c_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 10)
+c_2
+---
+(1)
+(1)
+cad_1
+---
+(1)
+canonical_1
+---
+(1)
+capability_1
+---
+(1)
+carey_1
+---
+(1)
+carlson_1
+---
+(1)
+cat_1
+---
+(1)
+catalyst_1
+---
+(1)
+chang_1
+---
+(1)
+(1)
+(1)
+changing_1
+---
+(1)
+chien_1
+---
+(1)
+(1)
+choi_1
+---
+(1)
+chou_1
+---
+(1)
+chow_1
+---
+(1)
+chris_1
+---
+(1)
+christer_1
+---
+(1)
+christodoulakis_1
+---
+(1)
+christoph_1
+---
+(1)
+(1)
+clarence_1
+---
+(1)
+classes_1
+---
+(1)
+claus_1
+---
+(1)
+(1)
+clement_1
+---
+(1)
+commercial_1
+---
+(1)
+common_1
+---
+(1)
+comparison_1
+---
+(1)
+compilers_1
+---
+(1, 13)
+compressed_1
+---
+(1)
+(1)
+computer_1
+---
+(1)
+concepts_1
+---
+(1)
+concurrency_1
+---
+(1, 12)
+concurrent_1
+---
+(1, 9)
+connors_1
+---
+(1)
+consensus_1
+---
+(1)
+(1)
+contents_1
+---
+(1)
+control_1
+---
+(1)
+(1)
+cooperative_1
+---
+(1, 8)
+cost_1
+---
+(1)
+(1)
+cover_1
+---
+(1)
+(1)
+craig_1
+---
+(1)
+critical_1
+---
+(1)
+critique_1
+---
+(1)
+d_1
+---
+(1)
+(1)
+(1)
+(1)
+dale_1
+---
+(1)
+dan_1
+---
+(1)
+(1)
+dan_2
+---
+(1)
+(1)
+daniel_1
+---
+(1)
+(1)
+darrell_1
+---
+(1)
+data_1
+---
+(1, 13)
+(1)
+(1)
+(1)
+(1)
+database_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 8)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+databases_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 16)
+david_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+davis_1
+---
+(1)
+(1)
+dayal_1
+---
+(1)
+dbms_1
+---
+(1)
+(1)
+dbmss_1
+---
+(1)
+declarative_1
+---
+(1)
+decouchant_1
+---
+(1)
+dennis_1
+---
+(1)
+(1)
+design_1
+---
+(1)
+(1)
+(1)
+(1)
+(1, 10)
+(1)
+deterministic_1
+---
+(1)
+(1)
+developing_1
+---
+(1)
+dewitt_1
+---
+(1)
+diederich_1
+---
+(1)
+directions_1
+---
+(1, 9)
+distributed_1
+---
+(1)
+(1, 9)
+(1, 7)
+(1)
+dittrich_1
+---
+(1)
+dittrich_2
+---
+(1)
+do_1
+---
+(1)
+dominique_1
+---
+(1)
+donald_1
+---
+(1)
+du_1
+---
+(1)
+e_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+ealities_1
+---
+(1)
+early_1
+---
+(1)
+eda_1
+---
+(1, 5)
+eduardo_1
+---
+(1)
+edward_1
+---
+(1)
+eliot_1
+---
+(1)
+ellis_1
+---
+(1)
+engine_1
+---
+(1)
+engineers_1
+---
+(1)
+enough_1
+---
+(1)
+environments_1
+---
+(1)
+epilogue_1
+---
+(1)
+eric_1
+---
+(1)
+eugene_1
+---
+(1)
+(1)
+(1)
+execution_1
+---
+(1)
+exodus_1
+---
+(1)
+expected_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+experiences_1
+---
+(1)
+extended_1
+---
+(1, 12)
+extending_1
+---
+(1)
+f_1
+---
+(1)
+(1)
+(1)
+fast_1
+---
+(1)
+features_1
+---
+(1, 20)
+fishman_1
+---
+(1)
+(1)
+flow_1
+---
+(1)
+(1)
+for_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+for_2
+---
+(1)
+form_1
+---
+(1)
+formal_1
+---
+(1)
+foundations_1
+---
+(1, 9)
+frame_1
+---
+(1)
+frank_1
+---
+(1)
+fred_1
+---
+(1)
+frederick_1
+---
+(1)
+from_1
+---
+(1)
+(1)
+future_1
+---
+(1)
+g_1
+---
+(1)
+(1)
+(1)
+gail_1
+---
+(1)
+gala_1
+---
+(1)
+(1)
+galil_1
+---
+(1)
+(1)
+(1)
+(1)
+garcia_1
+---
+(1)
+(1)
+garcía_1
+---
+(1)
+garza_1
+---
+(1)
+(1)
+gemstone_1
+---
+(1)
+generation_1
+---
+(1)
+genome_1
+---
+(1)
+geometric_1
+---
+(1, 12)
+(1, 13)
+geometry_1
+---
+(1)
+gibbs_1
+---
+(1)
+gilkey_1
+---
+(1)
+goodman_1
+---
+(1)
+graham_1
+---
+(1)
+graphics_1
+---
+(1)
+graphs_1
+---
+(1)
+(1)
+guide_1
+---
+(1)
+guido_1
+---
+(1)
+h_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+h_2
+---
+(1)
+(1)
+hanan_1
+---
+(1)
+(1)
+hanson_1
+---
+(1)
+hardware_1
+---
+(1)
+harold_1
+---
+(1)
+hasan_1
+---
+(1)
+hector_1
+---
+(1)
+(1)
+henry_1
+---
+(1)
+heterogeneity_1
+---
+(1)
+heterogeneous_1
+---
+(1)
+heytens_1
+---
+(1)
+hitting_1
+---
+(1)
+(1)
+hoch_1
+---
+(1)
+hoffmann_1
+---
+(1)
+(1)
+hong_1
+---
+(1)
+hopcroft_1
+---
+(1)
+(1)
+hsu_1
+---
+(1)
+hull_1
+---
+(1)
+hulten_1
+---
+(1)
+ibarra_1
+---
+(1)
+(1)
+implementation_1
+---
+(1)
+(1)
+in_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+indexing_1
+---
+(1, 14)
+inegration_1
+---
+(1)
+inequalities_1
+---
+(1, 12)
+inference_1
+---
+(1)
+information_1
+---
+(1)
+(1)
+ingram_1
+---
+(1)
+ingres_1
+---
+(1)
+(1)
+injun_1
+---
+(1)
+integrated_1
+---
+(1, 7)
+interfaces_1
+---
+(1)
+interoperability_1
+---
+(1)
+interoperating_1
+---
+(1)
+introduction_1
+---
+(1)
+(1)
+(1, 10)
+(1, 11)
+(1)
+(1)
+(1)
+(1)
+iris_1
+---
+(1)
+is_1
+---
+(1)
+isomorphism_1
+---
+(1)
+(1)
+issues_1
+---
+(1)
+its_1
+---
+(1)
+j_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+j_2
+---
+(1)
+j_3
+---
+(1)
+jack_1
+---
+(1)
+jacob_1
+---
+(1)
+james_1
+---
+(1)
+(1)
+jason_1
+---
+(1)
+java_1
+---
+(1)
+jeffrey_1
+---
+(1)
+(1)
+(1)
+jennifer_1
+---
+(1)
+jiang_1
+---
+(1)
+(1)
+jik_1
+---
+(1)
+(1)
+jim_1
+---
+(1)
+(1)
+joel_1
+---
+(1)
+john_1
+---
+(1)
+(1)
+jordan_1
+---
+(1, 9)
+jorge_1
+---
+(1)
+(1)
+josé_1
+---
+(1)
+(1)
+jurgen_1
+---
+(1)
+(1)
+k_1
+---
+(1)
+(1)
+kaiser_1
+---
+(1)
+kelley_1
+---
+(1)
+(1)
+kemper_1
+---
+(1)
+kent_1
+---
+(1)
+(1)
+(1)
+(1)
+kernighan_1
+---
+(1)
+kevin_1
+---
+(1)
+kifer_1
+---
+(1)
+kim_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+kim_2
+---
+(1)
+king_1
+---
+(1)
+klaus_1
+---
+(1)
+knuth_1
+---
+(1)
+kotz_1
+---
+(1)
+koveos_1
+---
+(1)
+kowalski_1
+---
+(1)
+krieger_1
+---
+(1)
+kyung_1
+---
+(1)
+l_1
+---
+(1)
+(1)
+lamport_1
+---
+(1)
+(1)
+landscape_1
+---
+(1)
+language_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+languages_1
+---
+(1)
+(1)
+(1)
+las_1
+---
+(1)
+latex_1
+---
+(1, 8)
+laue_1
+---
+(1)
+(1)
+lawrence_1
+---
+(1)
+legacy_1
+---
+(1)
+leichner_1
+---
+(1)
+lelescu_1
+---
+(1)
+(1)
+leonidas_1
+---
+(1)
+leslie_1
+---
+(1)
+(1)
+lewis_1
+---
+(1)
+lieberman_1
+---
+(1)
+lindholm_1
+---
+(1)
+linear_1
+---
+(1, 13)
+(1, 14)
+linear_2
+---
+(1)
+(1)
+list_1
+---
+(1)
+lochovsky_1
+---
+(1)
+log_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+log_2
+---
+(1)
+(1)
+(1)
+(1)
+log²_1
+---
+(1)
+lorenzo_1
+---
+(1)
+luks_1
+---
+(1)
+(1)
+lunt_1
+---
+(1)
+lyngbæk_1
+---
+(1)
+lynn_1
+---
+(1)
+m_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+m_2
+---
+(1)
+(1)
+machine_1
+---
+(1)
+mahbod_1
+---
+(1)
+maier_1
+---
+(1)
+(1)
+majorization_1
+---
+(1)
+making_1
+---
+(1, 10)
+management_1
+---
+(1, 8)
+(1)
+(1)
+(1)
+(1)
+(1)
+manager_1
+---
+(1)
+managing_1
+---
+(1)
+manifolds_1
+---
+(1)
+manual_1
+---
+(1)
+mapping_1
+---
+(1)
+marek_1
+---
+(1)
+marie_1
+---
+(1)
+mark_1
+---
+(1)
+(1)
+(1)
+(1)
+marshall_1
+---
+(1)
+megiddo_1
+---
+(1)
+(1)
+meichun_1
+---
+(1)
+mellender_1
+---
+(1)
+meng_1
+---
+(1)
+message_1
+---
+(1)
+messages_1
+---
+(1)
+michael_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+miguel_1
+---
+(1)
+milton_1
+---
+(1)
+min_1
+---
+(1)
+(1)
+ming_1
+---
+(1)
+(1)
+model_1
+---
+(1)
+(1)
+(1)
+(1)
+models_1
+---
+(1)
+modern_1
+---
+(1, 9)
+moerkotte_1
+---
+(1)
+moffat_1
+---
+(1)
+(1)
+molina_1
+---
+(1)
+(1)
+monty_1
+---
+(1)
+moon_1
+---
+(1)
+moss_1
+---
+(1)
+motro_1
+---
+(1)
+multidatabase_1
+---
+(1)
+(1)
+(1)
+(1)
+multimedia_1
+---
+(1)
+(1)
+(1, 10)
+multiuser_1
+---
+(1)
+my_1
+---
+(1, 7)
+n_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+n_2
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+n_3
+---
+(1)
+(1)
+(1)
+(1)
+n_4
+---
+(1)
+nat_1
+---
+(1)
+nathan_1
+---
+(1)
+nc_1
+---
+(1)
+nc¹_1
+---
+(1)
+neimat_1
+---
+(1)
+next_1
+---
+(1)
+nierstrasz_1
+---
+(1)
+(1)
+(1)
+nikcevic_1
+---
+(1)
+nimrod_1
+---
+(1)
+(1)
+nong_1
+---
+(1)
+nonmonotonic_1
+---
+(1)
+n²_1
+---
+(1)
+(1)
+(1)
+n³_1
+---
+(1)
+n³log_1
+---
+(1)
+o_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+o_2
+---
+(1)
+(1)
+object_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 12)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 26)
+(1, 10)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+object_2
+---
+(1)
+objects_1
+---
+(1)
+(1)
+(1, 11)
+of_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+of_2
+---
+(1)
+office_1
+---
+(1)
+olkin_1
+---
+(1)
+omg_1
+---
+(1)
+omiecinski_1
+---
+(1)
+on_1
+---
+(1, 16)
+(1)
+(1, 12)
+(1)
+(1, 15)
+operations_1
+---
+(1)
+(1)
+optimizing_1
+---
+(1, 10)
+oql_1
+---
+(1, 12)
+orientation_1
+---
+(1)
+oriented_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+orion_1
+---
+(1)
+orlando_1
+---
+(1)
+orli_1
+---
+(1)
+(1)
+oscar_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+otis_1
+---
+(1)
+overview_1
+---
+(1, 44)
+(1, 10)
+oz_1
+---
+(1, 12)
+p_1
+---
+(1)
+(1)
+(1)
+(1)
+pairs_1
+---
+(1)
+(1)
+parallel_1
+---
+(1, 6)
+part_1
+---
+(1)
+(1)
+path_1
+---
+(1)
+(1)
+(1)
+(1)
+pegasus_1
+---
+(1, 17)
+penney_1
+---
+(1)
+per_1
+---
+(1)
+(1)
+performance_1
+---
+(1)
+(1)
+peter_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+philip_1
+---
+(1)
+physical_1
+---
+(1, 7)
+pogo_1
+---
+(1, 13)
+polytopes_1
+---
+(1)
+(1)
+posc_1
+---
+(1)
+possibilities_1
+---
+(1)
+practice_1
+---
+(1)
+preface_1
+---
+(1)
+princiles_1
+---
+(1)
+probabilistic_1
+---
+(1)
+problems_1
+---
+(1)
+(1)
+processing_1
+---
+(1)
+(1)
+(1)
+(1)
+processor_1
+---
+(1)
+(1)
+program_1
+---
+(1)
+programming_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+promises_1
+---
+(1)
+proposal_1
+---
+(1)
+proteus_1
+---
+(1, 10)
+query_1
+---
+(1)
+(1)
+(1, 13)
+(1, 10)
+r_1
+---
+(1)
+(1)
+(1)
+rafi_1
+---
+(1)
+rafiul_1
+---
+(1)
+ralph_1
+---
+(1)
+randomized_1
+---
+(1, 16)
+(1, 15)
+ravi_1
+---
+(1)
+ravikumar_1
+---
+(1)
+(1)
+reality_1
+---
+(1)
+reference_1
+---
+(1)
+references_1
+---
+(1, 1)
+related_1
+---
+(1)
+(1)
+relational_1
+---
+(1)
+(1)
+(1)
+(1)
+representation_1
+---
+(1)
+requirements_1
+---
+(1, 15)
+research_1
+---
+(1)
+resolving_1
+---
+(1)
+retrieval_1
+---
+(1)
+(1)
+reyes_1
+---
+(1)
+(1)
+richard_1
+---
+(1)
+(1)
+(1)
+richardson_1
+---
+(1)
+riegel_1
+---
+(1)
+risch_1
+---
+(1)
+robert_1
+---
+(1)
+(1)
+roger_1
+---
+(1)
+rowe_1
+---
+(1)
+rules_1
+---
+(1)
+running_1
+---
+(1)
+rusinkiewicz_1
+---
+(1)
+russinoff_1
+---
+(1)
+r³_1
+---
+(1)
+(1)
+rámon_1
+---
+(1)
+río_1
+---
+(1)
+s_1
+---
+(1)
+(1)
+samet_1
+---
+(1)
+(1)
+scheevel_1
+---
+(1)
+(1)
+schema_1
+---
+(1, 20)
+schematic_1
+---
+(1)
+schnorr_1
+---
+(1)
+(1)
+schonfeld_1
+---
+(1)
+(1)
+schuchardt_1
+---
+(1)
+search_1
+---
+(1)
+section_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+sedgewick_1
+---
+(1)
+semantics_1
+---
+(1)
+serge_1
+---
+(1)
+set_1
+---
+(1)
+(1)
+sethi_1
+---
+(1)
+sets_1
+---
+(1)
+(1)
+shan_1
+---
+(1)
+(1)
+shared_1
+---
+(1)
+sharing_1
+---
+(1)
+shekita_1
+---
+(1)
+sheth_1
+---
+(1)
+shortest_1
+---
+(1)
+(1)
+(1)
+(1)
+should_1
+---
+(1)
+silberschatz_1
+---
+(1)
+simon_1
+---
+(1)
+skarra_1
+---
+(1)
+smalltalk_1
+---
+(1)
+(1)
+snodgrass_1
+---
+(1)
+software_1
+---
+(1)
+soley_1
+---
+(1)
+solution_1
+---
+(1)
+some_1
+---
+(1, 16)
+(1)
+spatial_1
+---
+(1, 5)
+(1, 11)
+specification_1
+---
+(1)
+(1, 11)
+specifying_1
+---
+(1, 14)
+sql_1
+---
+(1)
+(1)
+stana_1
+---
+(1)
+standard_1
+---
+(1)
+standards_1
+---
+(1)
+stanley_1
+---
+(1)
+stavros_1
+---
+(1)
+stein_1
+---
+(1)
+(1)
+stephen_1
+---
+(1)
+steve_1
+---
+(1)
+steven_1
+---
+(1)
+stonebraker_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+storage_1
+---
+(1, 16)
+story_1
+---
+(1)
+stout_1
+---
+(1)
+straw_1
+---
+(1)
+structures_1
+---
+(1)
+(1)
+studies_1
+---
+(1)
+sunit_1
+---
+(1)
+(1)
+support_1
+---
+(1)
+supporting_1
+---
+(1, 11)
+survey_1
+---
+(1)
+system_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+systems_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+sören_1
+---
+(1)
+(1)
+t_1
+---
+(1)
+(1)
+tadao_1
+---
+(1)
+(1)
+tai_1
+---
+(1)
+takaoka_1
+---
+(1)
+(1)
+tamer_1
+---
+(1)
+tao_1
+---
+(1)
+(1)
+tardos_1
+---
+(1)
+(1)
+tarlton_1
+---
+(1)
+tarlton_2
+---
+(1)
+techniques_1
+---
+(1)
+(1)
+technology_1
+---
+(1)
+(1)
+temporal_1
+---
+(1, 10)
+teresa_1
+---
+(1)
+test_1
+---
+(1)
+(1)
+tex_1
+---
+(1, 6)
+the_1
+---
+(1, 11)
+(1)
+(1, 9)
+(1)
+(1, 11)
+(1)
+(1, 13)
+(1)
+(1, 16)
+(1)
+(1, 23)
+(1)
+(1, 9)
+(1)
+(1)
+(1, 9)
+(1)
+(1, 18)
+(1)
+(1, 8)
+(1)
+(1, 9)
+theory_1
+---
+(1)
+(1)
+thompson_1
+---
+(1)
+tim_1
+---
+(1)
+(1)
+(1)
+time_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+title_1
+---
+(1, 3)
+tla_1
+---
+(1)
+to_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+tom_1
+---
+(1)
+(1)
+tomlinson_1
+---
+(1)
+tools_1
+---
+(1)
+(1)
+tore_1
+---
+(1)
+tracking_1
+---
+(1)
+(1)
+transaction_1
+---
+(1)
+(1, 12)
+transactional_1
+---
+(1)
+transactions_1
+---
+(1)
+treaty_1
+---
+(1)
+trivalent_1
+---
+(1)
+(1)
+tsichritzis_1
+---
+(1)
+(1)
+ullman_1
+---
+(1)
+(1)
+(1)
+umeshwar_1
+---
+(1)
+uncerainty_1
+---
+(1)
+ungar_1
+---
+(1)
+unisql_1
+---
+(1)
+user_1
+---
+(1)
+(1, 11)
+v_1
+---
+(1)
+(1)
+(1)
+(1)
+vegs_1
+---
+(1)
+version_1
+---
+(1, 11)
+vianu_1
+---
+(1)
+victor_1
+---
+(1)
+video_1
+---
+(1)
+(1)
+view_1
+---
+(1)
+(1)
+vincent_1
+---
+(1)
+virtual_1
+---
+(1)
+visual_1
+---
+(1)
+vortex_1
+---
+(1, 13)
+(1, 17)
+vázquez_1
+---
+(1)
+vázquez_2
+---
+(1)
+w_1
+---
+(1)
+(1)
+(1)
+(1)
+w_2
+---
+(1)
+waarts_1
+---
+(1)
+(1)
+walid_1
+---
+(1)
+walker_1
+---
+(1)
+wand_1
+---
+(1)
+waqar_1
+---
+(1)
+war_1
+---
+(1)
+weber_1
+---
+(1)
+(1)
+weimin_1
+---
+(1)
+weinberger_1
+---
+(1)
+weintraub_1
+---
+(1)
+weiser_1
+---
+(1)
+weiyi_1
+---
+(1)
+where_1
+---
+(1, 19)
+widom_1
+---
+(1)
+wilkinson_1
+---
+(1)
+william_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+williams_1
+---
+(1)
+williams_2
+---
+(1)
+with_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+woelk_1
+---
+(1)
+won_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+workflows_1
+---
+(1)
+yair_1
+---
+(1)
+yellin_1
+---
+(1)
+yu_1
+---
+(1)
+yuri_1
+---
+(1)
+(1)
+zdonik_1
+---
+(1)
+zvi_1
+---
+(1)
+(1)
+(1)
+(1)
+¾_1
+---
+(1)
+éva_1
+---
+(1)
+(1)
+özsu_1
+---
+(1)
+1_1
+---
+(2)
+2_1
+---
+(6)
+3_1
+---
+(4)
+3_2
+---
+(1)
+4_1
+---
+(1)
+5_1
+---
+(1)
+6_1
+---
+(1)
+80_1
+---
+(1)
+a_1
+---
+(19, 8, 17)
+a_2
+---
+(4)
+abiteboul_1
+---
+(1)
+abraham_1
+---
+(1)
+active_1
+---
+(2, 10, 11)
+adds_1
+---
+(1)
+ahad_1
+---
+(1)
+ahmed_1
+---
+(1)
+aho_1
+---
+(4)
+albert_1
+---
+(1)
+alfons_1
+---
+(1)
+alfred_1
+---
+(5)
+algorithm_1
+---
+(6)
+algorithms_1
+---
+(5, 3)
+alistair_1
+---
+(2)
+all_1
+---
+(2)
+allen_1
+---
+(1)
+amelia_1
+---
+(1)
+amihai_1
+---
+(1)
+amit_1
+---
+(1)
+an_1
+---
+(12, 15, 31)
+an_2
+---
+(2)
+analysis_1
+---
+(1)
+and_1
+---
+(25)
+and_2
+---
+(1)
+anders_1
+---
+(1)
+andrea_1
+---
+(2)
+andreas_1
+---
+(2)
+andrew_1
+---
+(1)
+andrews_1
+---
+(1)
+angelika_1
+---
+(1)
+anne_1
+---
+(1)
+annevelink_1
+---
+(2)
+application_1
+---
+(2)
+applications_1
+---
+(1)
+approach_1
+---
+(1)
+approaches_1
+---
+(1)
+architecture_1
+---
+(2)
+aref_1
+---
+(1)
+arthur_1
+---
+(1)
+as_1
+---
+(1)
+aspnes_1
+---
+(2)
+authorization_1
+---
+(1, 8)
+awk_1
+---
+(1)
+b_1
+---
+(2)
+bala_1
+---
+(2)
+ballou_1
+---
+(1)
+based_1
+---
+(2)
+beech_1
+---
+(1)
+benchmark_1
+---
+(1)
+bernstein_1
+---
+(1)
+better_1
+---
+(1)
+beyond_1
+---
+(1)
+bindings_1
+---
+(1)
+björnerstedt_1
+---
+(1)
+blakeley_1
+---
+(2)
+bloniarz_1
+---
+(2)
+breitbart_1
+---
+(2)
+bretl_1
+---
+(1)
+brian_1
+---
+(1)
+brom_1
+---
+(1)
+brozos_1
+---
+(1)
+bruce_1
+---
+(2)
+c_1
+---
+(6, 10)
+c_2
+---
+(2)
+cad_1
+---
+(1)
+canonical_1
+---
+(1)
+capability_1
+---
+(1)
+carey_1
+---
+(1)
+carlson_1
+---
+(1)
+cat_1
+---
+(1)
+catalyst_1
+---
+(1)
+chang_1
+---
+(3)
+changing_1
+---
+(1)
+chien_1
+---
+(2)
+choi_1
+---
+(1)
+chou_1
+---
+(1)
+chow_1
+---
+(1)
+chris_1
+---
+(1)
+christer_1
+---
+(1)
+christodoulakis_1
+---
+(1)
+christoph_1
+---
+(2)
+clarence_1
+---
+(1)
+classes_1
+---
+(1)
+claus_1
+---
+(2)
+clement_1
+---
+(1)
+commercial_1
+---
+(1)
+common_1
+---
+(1)
+comparison_1
+---
+(1)
+compilers_1
+---
+(1, 13)
+compressed_1
+---
+(2)
+computer_1
+---
+(1)
+concepts_1
+---
+(1)
+concurrency_1
+---
+(1, 12)
+concurrent_1
+---
+(1, 9)
+connors_1
+---
+(1)
+consensus_1
+---
+(2)
+contents_1
+---
+(1)
+control_1
+---
+(2)
+cooperative_1
+---
+(1, 8)
+cost_1
+---
+(2)
+cover_1
+---
+(2)
+craig_1
+---
+(1)
+critical_1
+---
+(1)
+critique_1
+---
+(1)
+d_1
+---
+(4)
+dale_1
+---
+(1)
+dan_1
+---
+(2)
+dan_2
+---
+(2)
+daniel_1
+---
+(2)
+darrell_1
+---
+(1)
+data_1
+---
+(5, 13)
+database_1
+---
+(19, 8)
+databases_1
+---
+(12, 16)
+david_1
+---
+(8)
+davis_1
+---
+(2)
+dayal_1
+---
+(1)
+dbms_1
+---
+(2)
+dbmss_1
+---
+(1)
+declarative_1
+---
+(1)
+decouchant_1
+---
+(1)
+dennis_1
+---
+(2)
+design_1
+---
+(6, 10)
+deterministic_1
+---
+(2)
+developing_1
+---
+(1)
+dewitt_1
+---
+(1)
+diederich_1
+---
+(1)
+directions_1
+---
+(1, 9)
+distributed_1
+---
+(4, 7, 9)
+dittrich_1
+---
+(1)
+dittrich_2
+---
+(1)
+do_1
+---
+(1)
+dominique_1
+---
+(1)
+donald_1
+---
+(1)
+du_1
+---
+(1)
+e_1
+---
+(8)
+ealities_1
+---
+(1)
+early_1
+---
+(1)
+eda_1
+---
+(1, 5)
+eduardo_1
+---
+(1)
+edward_1
+---
+(1)
+eliot_1
+---
+(1)
+ellis_1
+---
+(1)
+engine_1
+---
+(1)
+engineers_1
+---
+(1)
+enough_1
+---
+(1)
+environments_1
+---
+(1)
+epilogue_1
+---
+(1)
+eric_1
+---
+(1)
+eugene_1
+---
+(3)
+execution_1
+---
+(1)
+exodus_1
+---
+(1)
+expected_1
+---
+(6)
+experiences_1
+---
+(1)
+extended_1
+---
+(1, 12)
+extending_1
+---
+(1)
+f_1
+---
+(3)
+fast_1
+---
+(1)
+features_1
+---
+(1, 20)
+fishman_1
+---
+(2)
+flow_1
+---
+(2)
+for_1
+---
+(19)
+for_2
+---
+(1)
+form_1
+---
+(1)
+formal_1
+---
+(1)
+foundations_1
+---
+(1, 9)
+frame_1
+---
+(1)
+frank_1
+---
+(1)
+fred_1
+---
+(1)
+frederick_1
+---
+(1)
+from_1
+---
+(2)
+future_1
+---
+(1)
+g_1
+---
+(3)
+gail_1
+---
+(1)
+gala_1
+---
+(2)
+galil_1
+---
+(4)
+garcia_1
+---
+(2)
+garcía_1
+---
+(1)
+garza_1
+---
+(2)
+gemstone_1
+---
+(1)
+generation_1
+---
+(1)
+genome_1
+---
+(1)
+geometric_1
+---
+(2, 12, 13)
+geometry_1
+---
+(1)
+gibbs_1
+---
+(1)
+gilkey_1
+---
+(1)
+goodman_1
+---
+(1)
+graham_1
+---
+(1)
+graphics_1
+---
+(1)
+graphs_1
+---
+(2)
+guide_1
+---
+(1)
+guido_1
+---
+(1)
+h_1
+---
+(7)
+h_2
+---
+(2)
+hanan_1
+---
+(2)
+hanson_1
+---
+(1)
+hardware_1
+---
+(1)
+harold_1
+---
+(1)
+hasan_1
+---
+(1)
+hector_1
+---
+(2)
+henry_1
+---
+(1)
+heterogeneity_1
+---
+(1)
+heterogeneous_1
+---
+(1)
+heytens_1
+---
+(1)
+hitting_1
+---
+(2)
+hoch_1
+---
+(1)
+hoffmann_1
+---
+(2)
+hong_1
+---
+(1)
+hopcroft_1
+---
+(2)
+hsu_1
+---
+(1)
+hull_1
+---
+(1)
+hulten_1
+---
+(1)
+ibarra_1
+---
+(2)
+implementation_1
+---
+(2)
+in_1
+---
+(20)
+indexing_1
+---
+(1, 14)
+inegration_1
+---
+(1)
+inequalities_1
+---
+(1, 12)
+inference_1
+---
+(1)
+information_1
+---
+(2)
+ingram_1
+---
+(1)
+ingres_1
+---
+(2)
+injun_1
+---
+(1)
+integrated_1
+---
+(1, 7)
+interfaces_1
+---
+(1)
+interoperability_1
+---
+(1)
+interoperating_1
+---
+(1)
+introduction_1
+---
+(8, 10, 11)
+iris_1
+---
+(1)
+is_1
+---
+(1)
+isomorphism_1
+---
+(2)
+issues_1
+---
+(1)
+its_1
+---
+(1)
+j_1
+---
+(7)
+j_2
+---
+(1)
+j_3
+---
+(1)
+jack_1
+---
+(1)
+jacob_1
+---
+(1)
+james_1
+---
+(2)
+jason_1
+---
+(1)
+java_1
+---
+(1)
+jeffrey_1
+---
+(3)
+jennifer_1
+---
+(1)
+jiang_1
+---
+(2)
+jik_1
+---
+(2)
+jim_1
+---
+(2)
+joel_1
+---
+(1)
+john_1
+---
+(2)
+jordan_1
+---
+(1, 9)
+jorge_1
+---
+(2)
+josé_1
+---
+(2)
+jurgen_1
+---
+(2)
+k_1
+---
+(2)
+kaiser_1
+---
+(1)
+kelley_1
+---
+(2)
+kemper_1
+---
+(1)
+kent_1
+---
+(4)
+kernighan_1
+---
+(1)
+kevin_1
+---
+(1)
+kifer_1
+---
+(1)
+kim_1
+---
+(9)
+kim_2
+---
+(1)
+king_1
+---
+(1)
+klaus_1
+---
+(1)
+knuth_1
+---
+(1)
+kotz_1
+---
+(1)
+koveos_1
+---
+(1)
+kowalski_1
+---
+(1)
+krieger_1
+---
+(1)
+kyung_1
+---
+(1)
+l_1
+---
+(2)
+lamport_1
+---
+(2)
+landscape_1
+---
+(1)
+language_1
+---
+(5)
+languages_1
+---
+(3)
+las_1
+---
+(1)
+latex_1
+---
+(1, 8)
+laue_1
+---
+(2)
+lawrence_1
+---
+(1)
+legacy_1
+---
+(1)
+leichner_1
+---
+(1)
+lelescu_1
+---
+(2)
+leonidas_1
+---
+(1)
+leslie_1
+---
+(2)
+lewis_1
+---
+(1)
+lieberman_1
+---
+(1)
+lindholm_1
+---
+(1)
+linear_1
+---
+(2, 13, 14)
+linear_2
+---
+(2)
+list_1
+---
+(1)
+lochovsky_1
+---
+(1)
+log_1
+---
+(8)
+log_2
+---
+(4)
+log²_1
+---
+(1)
+lorenzo_1
+---
+(1)
+luks_1
+---
+(2)
+lunt_1
+---
+(1)
+lyngbæk_1
+---
+(1)
+lynn_1
+---
+(1)
+m_1
+---
+(8)
+m_2
+---
+(2)
+machine_1
+---
+(1)
+mahbod_1
+---
+(1)
+maier_1
+---
+(2)
+majorization_1
+---
+(1)
+making_1
+---
+(1, 10)
+management_1
+---
+(6, 8)
+manager_1
+---
+(1)
+managing_1
+---
+(1)
+manifolds_1
+---
+(1)
+manual_1
+---
+(1)
+mapping_1
+---
+(1)
+marek_1
+---
+(1)
+marie_1
+---
+(1)
+mark_1
+---
+(4)
+marshall_1
+---
+(1)
+megiddo_1
+---
+(2)
+meichun_1
+---
+(1)
+mellender_1
+---
+(1)
+meng_1
+---
+(1)
+message_1
+---
+(1)
+messages_1
+---
+(1)
+michael_1
+---
+(11)
+miguel_1
+---
+(1)
+milton_1
+---
+(1)
+min_1
+---
+(2)
+ming_1
+---
+(2)
+model_1
+---
+(4)
+models_1
+---
+(1)
+modern_1
+---
+(1, 9)
+moerkotte_1
+---
+(1)
+moffat_1
+---
+(2)
+molina_1
+---
+(2)
+monty_1
+---
+(1)
+moon_1
+---
+(1)
+moss_1
+---
+(1)
+motro_1
+---
+(1)
+multidatabase_1
+---
+(4)
+multimedia_1
+---
+(3, 10)
+multiuser_1
+---
+(1)
+my_1
+---
+(1, 7)
+n_1
+---
+(11)
+n_2
+---
+(8)
+n_3
+---
+(4)
+n_4
+---
+(1)
+nat_1
+---
+(1)
+nathan_1
+---
+(1)
+nc_1
+---
+(1)
+nc¹_1
+---
+(1)
+neimat_1
+---
+(1)
+next_1
+---
+(1)
+nierstrasz_1
+---
+(3)
+nikcevic_1
+---
+(1)
+nimrod_1
+---
+(2)
+nong_1
+---
+(1)
+nonmonotonic_1
+---
+(1)
+n²_1
+---
+(3)
+n³_1
+---
+(1)
+n³log_1
+---
+(1)
+o_1
+---
+(10)
+o_2
+---
+(2)
+object_1
+---
+(26, 10, 26)
+object_2
+---
+(1)
+objects_1
+---
+(3, 11)
+of_1
+---
+(17)
+of_2
+---
+(1)
+office_1
+---
+(1)
+olkin_1
+---
+(1)
+omg_1
+---
+(1)
+omiecinski_1
+---
+(1)
+on_1
+---
+(5, 12, 16)
+operations_1
+---
+(2)
+optimizing_1
+---
+(1, 10)
+oql_1
+---
+(1, 12)
+orientation_1
+---
+(1)
+oriented_1
+---
+(19)
+orion_1
+---
+(1)
+orlando_1
+---
+(1)
+orli_1
+---
+(2)
+oscar_1
+---
+(5)
+otis_1
+---
+(1)
+overview_1
+---
+(2, 10, 44)
+oz_1
+---
+(1, 12)
+p_1
+---
+(4)
+pairs_1
+---
+(2)
+parallel_1
+---
+(1, 6)
+part_1
+---
+(2)
+path_1
+---
+(4)
+pegasus_1
+---
+(1, 17)
+penney_1
+---
+(1)
+per_1
+---
+(2)
+performance_1
+---
+(2)
+peter_1
+---
+(7)
+philip_1
+---
+(1)
+physical_1
+---
+(1, 7)
+pogo_1
+---
+(1, 13)
+polytopes_1
+---
+(2)
+posc_1
+---
+(1)
+possibilities_1
+---
+(1)
+practice_1
+---
+(1)
+preface_1
+---
+(1)
+princiles_1
+---
+(1)
+probabilistic_1
+---
+(1)
+problems_1
+---
+(2)
+processing_1
+---
+(4)
+processor_1
+---
+(2)
+program_1
+---
+(1)
+programming_1
+---
+(5)
+promises_1
+---
+(1)
+proposal_1
+---
+(1)
+proteus_1
+---
+(1, 10)
+query_1
+---
+(4, 10, 13)
+r_1
+---
+(3)
+rafi_1
+---
+(1)
+rafiul_1
+---
+(1)
+ralph_1
+---
+(1)
+randomized_1
+---
+(2, 15, 16)
+ravi_1
+---
+(1)
+ravikumar_1
+---
+(2)
+reality_1
+---
+(1)
+reference_1
+---
+(1)
+references_1
+---
+(1, 1)
+related_1
+---
+(2)
+relational_1
+---
+(4)
+representation_1
+---
+(1)
+requirements_1
+---
+(1, 15)
+research_1
+---
+(1)
+resolving_1
+---
+(1)
+retrieval_1
+---
+(2)
+reyes_1
+---
+(2)
+richard_1
+---
+(3)
+richardson_1
+---
+(1)
+riegel_1
+---
+(1)
+risch_1
+---
+(1)
+robert_1
+---
+(2)
+roger_1
+---
+(1)
+rowe_1
+---
+(1)
+rules_1
+---
+(1)
+running_1
+---
+(1)
+rusinkiewicz_1
+---
+(1)
+russinoff_1
+---
+(1)
+r³_1
+---
+(2)
+rámon_1
+---
+(1)
+río_1
+---
+(1)
+s_1
+---
+(2)
+samet_1
+---
+(2)
+scheevel_1
+---
+(2)
+schema_1
+---
+(1, 20)
+schematic_1
+---
+(1)
+schnorr_1
+---
+(2)
+schonfeld_1
+---
+(2)
+schuchardt_1
+---
+(1)
+search_1
+---
+(1)
+section_1
+---
+(6)
+sedgewick_1
+---
+(1)
+semantics_1
+---
+(1)
+serge_1
+---
+(1)
+set_1
+---
+(2)
+sethi_1
+---
+(1)
+sets_1
+---
+(2)
+shan_1
+---
+(2)
+shared_1
+---
+(1)
+sharing_1
+---
+(1)
+shekita_1
+---
+(1)
+sheth_1
+---
+(1)
+shortest_1
+---
+(4)
+should_1
+---
+(1)
+silberschatz_1
+---
+(1)
+simon_1
+---
+(1)
+skarra_1
+---
+(1)
+smalltalk_1
+---
+(2)
+snodgrass_1
+---
+(1)
+software_1
+---
+(1)
+soley_1
+---
+(1)
+solution_1
+---
+(1)
+some_1
+---
+(2, 16)
+spatial_1
+---
+(2, 5, 11)
+specification_1
+---
+(2, 11)
+specifying_1
+---
+(1, 14)
+sql_1
+---
+(2)
+stana_1
+---
+(1)
+standard_1
+---
+(1)
+standards_1
+---
+(1)
+stanley_1
+---
+(1)
+stavros_1
+---
+(1)
+stein_1
+---
+(2)
+stephen_1
+---
+(1)
+steve_1
+---
+(1)
+steven_1
+---
+(1)
+stonebraker_1
+---
+(8)
+storage_1
+---
+(1, 16)
+story_1
+---
+(1)
+stout_1
+---
+(1)
+straw_1
+---
+(1)
+structures_1
+---
+(2)
+studies_1
+---
+(1)
+sunit_1
+---
+(2)
+support_1
+---
+(1)
+supporting_1
+---
+(1, 11)
+survey_1
+---
+(1)
+system_1
+---
+(9)
+systems_1
+---
+(19)
+sören_1
+---
+(2)
+t_1
+---
+(2)
+tadao_1
+---
+(2)
+tai_1
+---
+(1)
+takaoka_1
+---
+(2)
+tamer_1
+---
+(1)
+tao_1
+---
+(2)
+tardos_1
+---
+(2)
+tarlton_1
+---
+(1)
+tarlton_2
+---
+(1)
+techniques_1
+---
+(2)
+technology_1
+---
+(2)
+temporal_1
+---
+(1, 10)
+teresa_1
+---
+(1)
+test_1
+---
+(2)
+tex_1
+---
+(1, 6)
+the_1
+---
+(22, 8, 23)
+theory_1
+---
+(2)
+thompson_1
+---
+(1)
+tim_1
+---
+(3)
+time_1
+---
+(6)
+title_1
+---
+(1, 3)
+tla_1
+---
+(1)
+to_1
+---
+(10)
+tom_1
+---
+(2)
+tomlinson_1
+---
+(1)
+tools_1
+---
+(2)
+tore_1
+---
+(1)
+tracking_1
+---
+(2)
+transaction_1
+---
+(2, 12)
+transactional_1
+---
+(1)
+transactions_1
+---
+(1)
+treaty_1
+---
+(1)
+trivalent_1
+---
+(2)
+tsichritzis_1
+---
+(2)
+ullman_1
+---
+(3)
+umeshwar_1
+---
+(1)
+uncerainty_1
+---
+(1)
+ungar_1
+---
+(1)
+unisql_1
+---
+(1)
+user_1
+---
+(2, 11)
+v_1
+---
+(4)
+vegs_1
+---
+(1)
+version_1
+---
+(1, 11)
+vianu_1
+---
+(1)
+victor_1
+---
+(1)
+video_1
+---
+(2)
+view_1
+---
+(2)
+vincent_1
+---
+(1)
+virtual_1
+---
+(1)
+visual_1
+---
+(1)
+vortex_1
+---
+(2, 13, 17)
+vázquez_1
+---
+(1)
+vázquez_2
+---
+(1)
+w_1
+---
+(4)
+w_2
+---
+(1)
+waarts_1
+---
+(2)
+walid_1
+---
+(1)
+walker_1
+---
+(1)
+wand_1
+---
+(1)
+waqar_1
+---
+(1)
+war_1
+---
+(1)
+weber_1
+---
+(2)
+weimin_1
+---
+(1)
+weinberger_1
+---
+(1)
+weintraub_1
+---
+(1)
+weiser_1
+---
+(1)
+weiyi_1
+---
+(1)
+where_1
+---
+(1, 19)
+widom_1
+---
+(1)
+wilkinson_1
+---
+(1)
+william_1
+---
+(6)
+williams_1
+---
+(1)
+williams_2
+---
+(1)
+with_1
+---
+(5)
+woelk_1
+---
+(1)
+won_1
+---
+(9)
+workflows_1
+---
+(1)
+yair_1
+---
+(1)
+yellin_1
+---
+(1)
+yu_1
+---
+(1)
+yuri_1
+---
+(2)
+zdonik_1
+---
+(1)
+zvi_1
+---
+(4)
+¾_1
+---
+(1)
+éva_1
+---
+(2)
+özsu_1
+---
+(1)
+Job ended: Fri Aug 09 05:28:50 CEST 2024
+The job took 1.023 seconds.
+FuzzyJoinDriver(TokensBasic.phase2)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:50 CEST 2024
+Job ended: Fri Aug 09 05:28:51 CEST 2024
+The job took 1.017 seconds.
+Multi-Job ended: Fri Aug 09 05:28:51 CEST 2024
+The multi-job took 2.04 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2024 5:28:49 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0015
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0015_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0015_m_000000_0' done.
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 1 sorted segments
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 1 segments left of total size: 11770 bytes
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0015_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0015_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0015_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:49 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0015_r_000000_0' done.
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0015
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=597
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=1194
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=597
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=597
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=100
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=1248
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=20980
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=1248
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=36687
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=597
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3390820
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4498470
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0016
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0016_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000/part-00000:0+15588
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0016_m_000000_0' done.
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 1 sorted segments
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 1 segments left of total size: 11770 bytes
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0016_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0016_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0016_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:50 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0016_r_000000_0' done.
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0016
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=0
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=1194
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=597
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=597
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=597
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=597
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=10574
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=0
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=15490
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=58
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3490914
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4580490
+]]></system-err>
+  </testcase>
+  <testcase name="test110" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.022">
+    <system-out><![CDATA[FuzzyJoinDriver(TokensImproved)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:51 CEST 2024
+1_1
+---
+(1)
+(1)
+2_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+3_1
+---
+(1)
+(1)
+(1)
+(1)
+3_2
+---
+(1)
+4_1
+---
+(1)
+5_1
+---
+(1)
+6_1
+---
+(1)
+80_1
+---
+(1)
+a_1
+---
+(1, 8)
+(1)
+(1, 16)
+(1, 11)
+(1, 10)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 17)
+(1)
+(1, 16)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+a_2
+---
+(1)
+(1)
+(1)
+(1)
+abiteboul_1
+---
+(1)
+abraham_1
+---
+(1)
+active_1
+---
+(1, 10)
+(1, 11)
+adds_1
+---
+(1)
+ahad_1
+---
+(1)
+ahmed_1
+---
+(1)
+aho_1
+---
+(1)
+(1)
+(1)
+(1)
+albert_1
+---
+(1)
+alfons_1
+---
+(1)
+alfred_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+algorithm_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+algorithms_1
+---
+(1)
+(1)
+(1)
+(1, 3)
+(1)
+alistair_1
+---
+(1)
+(1)
+all_1
+---
+(1)
+(1)
+allen_1
+---
+(1)
+amelia_1
+---
+(1)
+amihai_1
+---
+(1)
+amit_1
+---
+(1)
+an_1
+---
+(1)
+(1, 18)
+(1, 17)
+(1, 31)
+(1, 29)
+(1)
+(1, 15)
+(1, 19)
+(1, 17)
+(1)
+(1)
+(1)
+an_2
+---
+(1)
+(1)
+analysis_1
+---
+(1)
+and_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+and_2
+---
+(1)
+anders_1
+---
+(1)
+andrea_1
+---
+(1)
+(1)
+andreas_1
+---
+(1)
+(1)
+andrew_1
+---
+(1)
+andrews_1
+---
+(1)
+angelika_1
+---
+(1)
+anne_1
+---
+(1)
+annevelink_1
+---
+(1)
+(1)
+application_1
+---
+(1)
+(1)
+applications_1
+---
+(1)
+approach_1
+---
+(1)
+approaches_1
+---
+(1)
+architecture_1
+---
+(1)
+(1)
+aref_1
+---
+(1)
+arthur_1
+---
+(1)
+as_1
+---
+(1)
+aspnes_1
+---
+(1)
+(1)
+authorization_1
+---
+(1, 8)
+awk_1
+---
+(1)
+b_1
+---
+(1)
+(1)
+bala_1
+---
+(1)
+(1)
+ballou_1
+---
+(1)
+based_1
+---
+(1)
+(1)
+beech_1
+---
+(1)
+benchmark_1
+---
+(1)
+bernstein_1
+---
+(1)
+better_1
+---
+(1)
+beyond_1
+---
+(1)
+bindings_1
+---
+(1)
+björnerstedt_1
+---
+(1)
+blakeley_1
+---
+(1)
+(1)
+bloniarz_1
+---
+(1)
+(1)
+breitbart_1
+---
+(1)
+(1)
+bretl_1
+---
+(1)
+brian_1
+---
+(1)
+brom_1
+---
+(1)
+brozos_1
+---
+(1)
+bruce_1
+---
+(1)
+(1)
+c_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 10)
+c_2
+---
+(1)
+(1)
+cad_1
+---
+(1)
+canonical_1
+---
+(1)
+capability_1
+---
+(1)
+carey_1
+---
+(1)
+carlson_1
+---
+(1)
+cat_1
+---
+(1)
+catalyst_1
+---
+(1)
+chang_1
+---
+(1)
+(1)
+(1)
+changing_1
+---
+(1)
+chien_1
+---
+(1)
+(1)
+choi_1
+---
+(1)
+chou_1
+---
+(1)
+chow_1
+---
+(1)
+chris_1
+---
+(1)
+christer_1
+---
+(1)
+christodoulakis_1
+---
+(1)
+christoph_1
+---
+(1)
+(1)
+clarence_1
+---
+(1)
+classes_1
+---
+(1)
+claus_1
+---
+(1)
+(1)
+clement_1
+---
+(1)
+commercial_1
+---
+(1)
+common_1
+---
+(1)
+comparison_1
+---
+(1)
+compilers_1
+---
+(1, 13)
+compressed_1
+---
+(1)
+(1)
+computer_1
+---
+(1)
+concepts_1
+---
+(1)
+concurrency_1
+---
+(1, 12)
+concurrent_1
+---
+(1, 9)
+connors_1
+---
+(1)
+consensus_1
+---
+(1)
+(1)
+contents_1
+---
+(1)
+control_1
+---
+(1)
+(1)
+cooperative_1
+---
+(1, 8)
+cost_1
+---
+(1)
+(1)
+cover_1
+---
+(1)
+(1)
+craig_1
+---
+(1)
+critical_1
+---
+(1)
+critique_1
+---
+(1)
+d_1
+---
+(1)
+(1)
+(1)
+(1)
+dale_1
+---
+(1)
+dan_1
+---
+(1)
+(1)
+dan_2
+---
+(1)
+(1)
+daniel_1
+---
+(1)
+(1)
+darrell_1
+---
+(1)
+data_1
+---
+(1, 13)
+(1)
+(1)
+(1)
+(1)
+database_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 8)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+databases_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 16)
+david_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+davis_1
+---
+(1)
+(1)
+dayal_1
+---
+(1)
+dbms_1
+---
+(1)
+(1)
+dbmss_1
+---
+(1)
+declarative_1
+---
+(1)
+decouchant_1
+---
+(1)
+dennis_1
+---
+(1)
+(1)
+design_1
+---
+(1)
+(1)
+(1)
+(1)
+(1, 10)
+(1)
+deterministic_1
+---
+(1)
+(1)
+developing_1
+---
+(1)
+dewitt_1
+---
+(1)
+diederich_1
+---
+(1)
+directions_1
+---
+(1, 9)
+distributed_1
+---
+(1)
+(1, 9)
+(1, 7)
+(1)
+dittrich_1
+---
+(1)
+dittrich_2
+---
+(1)
+do_1
+---
+(1)
+dominique_1
+---
+(1)
+donald_1
+---
+(1)
+du_1
+---
+(1)
+e_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+ealities_1
+---
+(1)
+early_1
+---
+(1)
+eda_1
+---
+(1, 5)
+eduardo_1
+---
+(1)
+edward_1
+---
+(1)
+eliot_1
+---
+(1)
+ellis_1
+---
+(1)
+engine_1
+---
+(1)
+engineers_1
+---
+(1)
+enough_1
+---
+(1)
+environments_1
+---
+(1)
+epilogue_1
+---
+(1)
+eric_1
+---
+(1)
+eugene_1
+---
+(1)
+(1)
+(1)
+execution_1
+---
+(1)
+exodus_1
+---
+(1)
+expected_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+experiences_1
+---
+(1)
+extended_1
+---
+(1, 12)
+extending_1
+---
+(1)
+f_1
+---
+(1)
+(1)
+(1)
+fast_1
+---
+(1)
+features_1
+---
+(1, 20)
+fishman_1
+---
+(1)
+(1)
+flow_1
+---
+(1)
+(1)
+for_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+for_2
+---
+(1)
+form_1
+---
+(1)
+formal_1
+---
+(1)
+foundations_1
+---
+(1, 9)
+frame_1
+---
+(1)
+frank_1
+---
+(1)
+fred_1
+---
+(1)
+frederick_1
+---
+(1)
+from_1
+---
+(1)
+(1)
+future_1
+---
+(1)
+g_1
+---
+(1)
+(1)
+(1)
+gail_1
+---
+(1)
+gala_1
+---
+(1)
+(1)
+galil_1
+---
+(1)
+(1)
+(1)
+(1)
+garcia_1
+---
+(1)
+(1)
+garcía_1
+---
+(1)
+garza_1
+---
+(1)
+(1)
+gemstone_1
+---
+(1)
+generation_1
+---
+(1)
+genome_1
+---
+(1)
+geometric_1
+---
+(1, 12)
+(1, 13)
+geometry_1
+---
+(1)
+gibbs_1
+---
+(1)
+gilkey_1
+---
+(1)
+goodman_1
+---
+(1)
+graham_1
+---
+(1)
+graphics_1
+---
+(1)
+graphs_1
+---
+(1)
+(1)
+guide_1
+---
+(1)
+guido_1
+---
+(1)
+h_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+h_2
+---
+(1)
+(1)
+hanan_1
+---
+(1)
+(1)
+hanson_1
+---
+(1)
+hardware_1
+---
+(1)
+harold_1
+---
+(1)
+hasan_1
+---
+(1)
+hector_1
+---
+(1)
+(1)
+henry_1
+---
+(1)
+heterogeneity_1
+---
+(1)
+heterogeneous_1
+---
+(1)
+heytens_1
+---
+(1)
+hitting_1
+---
+(1)
+(1)
+hoch_1
+---
+(1)
+hoffmann_1
+---
+(1)
+(1)
+hong_1
+---
+(1)
+hopcroft_1
+---
+(1)
+(1)
+hsu_1
+---
+(1)
+hull_1
+---
+(1)
+hulten_1
+---
+(1)
+ibarra_1
+---
+(1)
+(1)
+implementation_1
+---
+(1)
+(1)
+in_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+indexing_1
+---
+(1, 14)
+inegration_1
+---
+(1)
+inequalities_1
+---
+(1, 12)
+inference_1
+---
+(1)
+information_1
+---
+(1)
+(1)
+ingram_1
+---
+(1)
+ingres_1
+---
+(1)
+(1)
+injun_1
+---
+(1)
+integrated_1
+---
+(1, 7)
+interfaces_1
+---
+(1)
+interoperability_1
+---
+(1)
+interoperating_1
+---
+(1)
+introduction_1
+---
+(1)
+(1)
+(1, 10)
+(1, 11)
+(1)
+(1)
+(1)
+(1)
+iris_1
+---
+(1)
+is_1
+---
+(1)
+isomorphism_1
+---
+(1)
+(1)
+issues_1
+---
+(1)
+its_1
+---
+(1)
+j_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+j_2
+---
+(1)
+j_3
+---
+(1)
+jack_1
+---
+(1)
+jacob_1
+---
+(1)
+james_1
+---
+(1)
+(1)
+jason_1
+---
+(1)
+java_1
+---
+(1)
+jeffrey_1
+---
+(1)
+(1)
+(1)
+jennifer_1
+---
+(1)
+jiang_1
+---
+(1)
+(1)
+jik_1
+---
+(1)
+(1)
+jim_1
+---
+(1)
+(1)
+joel_1
+---
+(1)
+john_1
+---
+(1)
+(1)
+jordan_1
+---
+(1, 9)
+jorge_1
+---
+(1)
+(1)
+josé_1
+---
+(1)
+(1)
+jurgen_1
+---
+(1)
+(1)
+k_1
+---
+(1)
+(1)
+kaiser_1
+---
+(1)
+kelley_1
+---
+(1)
+(1)
+kemper_1
+---
+(1)
+kent_1
+---
+(1)
+(1)
+(1)
+(1)
+kernighan_1
+---
+(1)
+kevin_1
+---
+(1)
+kifer_1
+---
+(1)
+kim_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+kim_2
+---
+(1)
+king_1
+---
+(1)
+klaus_1
+---
+(1)
+knuth_1
+---
+(1)
+kotz_1
+---
+(1)
+koveos_1
+---
+(1)
+kowalski_1
+---
+(1)
+krieger_1
+---
+(1)
+kyung_1
+---
+(1)
+l_1
+---
+(1)
+(1)
+lamport_1
+---
+(1)
+(1)
+landscape_1
+---
+(1)
+language_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+languages_1
+---
+(1)
+(1)
+(1)
+las_1
+---
+(1)
+latex_1
+---
+(1, 8)
+laue_1
+---
+(1)
+(1)
+lawrence_1
+---
+(1)
+legacy_1
+---
+(1)
+leichner_1
+---
+(1)
+lelescu_1
+---
+(1)
+(1)
+leonidas_1
+---
+(1)
+leslie_1
+---
+(1)
+(1)
+lewis_1
+---
+(1)
+lieberman_1
+---
+(1)
+lindholm_1
+---
+(1)
+linear_1
+---
+(1, 13)
+(1, 14)
+linear_2
+---
+(1)
+(1)
+list_1
+---
+(1)
+lochovsky_1
+---
+(1)
+log_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+log_2
+---
+(1)
+(1)
+(1)
+(1)
+log²_1
+---
+(1)
+lorenzo_1
+---
+(1)
+luks_1
+---
+(1)
+(1)
+lunt_1
+---
+(1)
+lyngbæk_1
+---
+(1)
+lynn_1
+---
+(1)
+m_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+m_2
+---
+(1)
+(1)
+machine_1
+---
+(1)
+mahbod_1
+---
+(1)
+maier_1
+---
+(1)
+(1)
+majorization_1
+---
+(1)
+making_1
+---
+(1, 10)
+management_1
+---
+(1, 8)
+(1)
+(1)
+(1)
+(1)
+(1)
+manager_1
+---
+(1)
+managing_1
+---
+(1)
+manifolds_1
+---
+(1)
+manual_1
+---
+(1)
+mapping_1
+---
+(1)
+marek_1
+---
+(1)
+marie_1
+---
+(1)
+mark_1
+---
+(1)
+(1)
+(1)
+(1)
+marshall_1
+---
+(1)
+megiddo_1
+---
+(1)
+(1)
+meichun_1
+---
+(1)
+mellender_1
+---
+(1)
+meng_1
+---
+(1)
+message_1
+---
+(1)
+messages_1
+---
+(1)
+michael_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+miguel_1
+---
+(1)
+milton_1
+---
+(1)
+min_1
+---
+(1)
+(1)
+ming_1
+---
+(1)
+(1)
+model_1
+---
+(1)
+(1)
+(1)
+(1)
+models_1
+---
+(1)
+modern_1
+---
+(1, 9)
+moerkotte_1
+---
+(1)
+moffat_1
+---
+(1)
+(1)
+molina_1
+---
+(1)
+(1)
+monty_1
+---
+(1)
+moon_1
+---
+(1)
+moss_1
+---
+(1)
+motro_1
+---
+(1)
+multidatabase_1
+---
+(1)
+(1)
+(1)
+(1)
+multimedia_1
+---
+(1)
+(1)
+(1, 10)
+multiuser_1
+---
+(1)
+my_1
+---
+(1, 7)
+n_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+n_2
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+n_3
+---
+(1)
+(1)
+(1)
+(1)
+n_4
+---
+(1)
+nat_1
+---
+(1)
+nathan_1
+---
+(1)
+nc_1
+---
+(1)
+nc¹_1
+---
+(1)
+neimat_1
+---
+(1)
+next_1
+---
+(1)
+nierstrasz_1
+---
+(1)
+(1)
+(1)
+nikcevic_1
+---
+(1)
+nimrod_1
+---
+(1)
+(1)
+nong_1
+---
+(1)
+nonmonotonic_1
+---
+(1)
+n²_1
+---
+(1)
+(1)
+(1)
+n³_1
+---
+(1)
+n³log_1
+---
+(1)
+o_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+o_2
+---
+(1)
+(1)
+object_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 12)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1, 26)
+(1, 10)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+object_2
+---
+(1)
+objects_1
+---
+(1)
+(1)
+(1, 11)
+of_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+of_2
+---
+(1)
+office_1
+---
+(1)
+olkin_1
+---
+(1)
+omg_1
+---
+(1)
+omiecinski_1
+---
+(1)
+on_1
+---
+(1, 16)
+(1)
+(1, 12)
+(1)
+(1, 15)
+operations_1
+---
+(1)
+(1)
+optimizing_1
+---
+(1, 10)
+oql_1
+---
+(1, 12)
+orientation_1
+---
+(1)
+oriented_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+orion_1
+---
+(1)
+orlando_1
+---
+(1)
+orli_1
+---
+(1)
+(1)
+oscar_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+otis_1
+---
+(1)
+overview_1
+---
+(1, 44)
+(1, 10)
+oz_1
+---
+(1, 12)
+p_1
+---
+(1)
+(1)
+(1)
+(1)
+pairs_1
+---
+(1)
+(1)
+parallel_1
+---
+(1, 6)
+part_1
+---
+(1)
+(1)
+path_1
+---
+(1)
+(1)
+(1)
+(1)
+pegasus_1
+---
+(1, 17)
+penney_1
+---
+(1)
+per_1
+---
+(1)
+(1)
+performance_1
+---
+(1)
+(1)
+peter_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+philip_1
+---
+(1)
+physical_1
+---
+(1, 7)
+pogo_1
+---
+(1, 13)
+polytopes_1
+---
+(1)
+(1)
+posc_1
+---
+(1)
+possibilities_1
+---
+(1)
+practice_1
+---
+(1)
+preface_1
+---
+(1)
+princiles_1
+---
+(1)
+probabilistic_1
+---
+(1)
+problems_1
+---
+(1)
+(1)
+processing_1
+---
+(1)
+(1)
+(1)
+(1)
+processor_1
+---
+(1)
+(1)
+program_1
+---
+(1)
+programming_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+promises_1
+---
+(1)
+proposal_1
+---
+(1)
+proteus_1
+---
+(1, 10)
+query_1
+---
+(1)
+(1)
+(1, 13)
+(1, 10)
+r_1
+---
+(1)
+(1)
+(1)
+rafi_1
+---
+(1)
+rafiul_1
+---
+(1)
+ralph_1
+---
+(1)
+randomized_1
+---
+(1, 16)
+(1, 15)
+ravi_1
+---
+(1)
+ravikumar_1
+---
+(1)
+(1)
+reality_1
+---
+(1)
+reference_1
+---
+(1)
+references_1
+---
+(1, 1)
+related_1
+---
+(1)
+(1)
+relational_1
+---
+(1)
+(1)
+(1)
+(1)
+representation_1
+---
+(1)
+requirements_1
+---
+(1, 15)
+research_1
+---
+(1)
+resolving_1
+---
+(1)
+retrieval_1
+---
+(1)
+(1)
+reyes_1
+---
+(1)
+(1)
+richard_1
+---
+(1)
+(1)
+(1)
+richardson_1
+---
+(1)
+riegel_1
+---
+(1)
+risch_1
+---
+(1)
+robert_1
+---
+(1)
+(1)
+roger_1
+---
+(1)
+rowe_1
+---
+(1)
+rules_1
+---
+(1)
+running_1
+---
+(1)
+rusinkiewicz_1
+---
+(1)
+russinoff_1
+---
+(1)
+r³_1
+---
+(1)
+(1)
+rámon_1
+---
+(1)
+río_1
+---
+(1)
+s_1
+---
+(1)
+(1)
+samet_1
+---
+(1)
+(1)
+scheevel_1
+---
+(1)
+(1)
+schema_1
+---
+(1, 20)
+schematic_1
+---
+(1)
+schnorr_1
+---
+(1)
+(1)
+schonfeld_1
+---
+(1)
+(1)
+schuchardt_1
+---
+(1)
+search_1
+---
+(1)
+section_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+sedgewick_1
+---
+(1)
+semantics_1
+---
+(1)
+serge_1
+---
+(1)
+set_1
+---
+(1)
+(1)
+sethi_1
+---
+(1)
+sets_1
+---
+(1)
+(1)
+shan_1
+---
+(1)
+(1)
+shared_1
+---
+(1)
+sharing_1
+---
+(1)
+shekita_1
+---
+(1)
+sheth_1
+---
+(1)
+shortest_1
+---
+(1)
+(1)
+(1)
+(1)
+should_1
+---
+(1)
+silberschatz_1
+---
+(1)
+simon_1
+---
+(1)
+skarra_1
+---
+(1)
+smalltalk_1
+---
+(1)
+(1)
+snodgrass_1
+---
+(1)
+software_1
+---
+(1)
+soley_1
+---
+(1)
+solution_1
+---
+(1)
+some_1
+---
+(1, 16)
+(1)
+spatial_1
+---
+(1, 5)
+(1, 11)
+specification_1
+---
+(1)
+(1, 11)
+specifying_1
+---
+(1, 14)
+sql_1
+---
+(1)
+(1)
+stana_1
+---
+(1)
+standard_1
+---
+(1)
+standards_1
+---
+(1)
+stanley_1
+---
+(1)
+stavros_1
+---
+(1)
+stein_1
+---
+(1)
+(1)
+stephen_1
+---
+(1)
+steve_1
+---
+(1)
+steven_1
+---
+(1)
+stonebraker_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+storage_1
+---
+(1, 16)
+story_1
+---
+(1)
+stout_1
+---
+(1)
+straw_1
+---
+(1)
+structures_1
+---
+(1)
+(1)
+studies_1
+---
+(1)
+sunit_1
+---
+(1)
+(1)
+support_1
+---
+(1)
+supporting_1
+---
+(1, 11)
+survey_1
+---
+(1)
+system_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+systems_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+sören_1
+---
+(1)
+(1)
+t_1
+---
+(1)
+(1)
+tadao_1
+---
+(1)
+(1)
+tai_1
+---
+(1)
+takaoka_1
+---
+(1)
+(1)
+tamer_1
+---
+(1)
+tao_1
+---
+(1)
+(1)
+tardos_1
+---
+(1)
+(1)
+tarlton_1
+---
+(1)
+tarlton_2
+---
+(1)
+techniques_1
+---
+(1)
+(1)
+technology_1
+---
+(1)
+(1)
+temporal_1
+---
+(1, 10)
+teresa_1
+---
+(1)
+test_1
+---
+(1)
+(1)
+tex_1
+---
+(1, 6)
+the_1
+---
+(1, 11)
+(1)
+(1, 9)
+(1)
+(1, 11)
+(1)
+(1, 13)
+(1)
+(1, 16)
+(1)
+(1, 23)
+(1)
+(1, 9)
+(1)
+(1)
+(1, 9)
+(1)
+(1, 18)
+(1)
+(1, 8)
+(1)
+(1, 9)
+theory_1
+---
+(1)
+(1)
+thompson_1
+---
+(1)
+tim_1
+---
+(1)
+(1)
+(1)
+time_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+title_1
+---
+(1, 3)
+tla_1
+---
+(1)
+to_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+tom_1
+---
+(1)
+(1)
+tomlinson_1
+---
+(1)
+tools_1
+---
+(1)
+(1)
+tore_1
+---
+(1)
+tracking_1
+---
+(1)
+(1)
+transaction_1
+---
+(1)
+(1, 12)
+transactional_1
+---
+(1)
+transactions_1
+---
+(1)
+treaty_1
+---
+(1)
+trivalent_1
+---
+(1)
+(1)
+tsichritzis_1
+---
+(1)
+(1)
+ullman_1
+---
+(1)
+(1)
+(1)
+umeshwar_1
+---
+(1)
+uncerainty_1
+---
+(1)
+ungar_1
+---
+(1)
+unisql_1
+---
+(1)
+user_1
+---
+(1)
+(1, 11)
+v_1
+---
+(1)
+(1)
+(1)
+(1)
+vegs_1
+---
+(1)
+version_1
+---
+(1, 11)
+vianu_1
+---
+(1)
+victor_1
+---
+(1)
+video_1
+---
+(1)
+(1)
+view_1
+---
+(1)
+(1)
+vincent_1
+---
+(1)
+virtual_1
+---
+(1)
+visual_1
+---
+(1)
+vortex_1
+---
+(1, 13)
+(1, 17)
+vázquez_1
+---
+(1)
+vázquez_2
+---
+(1)
+w_1
+---
+(1)
+(1)
+(1)
+(1)
+w_2
+---
+(1)
+waarts_1
+---
+(1)
+(1)
+walid_1
+---
+(1)
+walker_1
+---
+(1)
+wand_1
+---
+(1)
+waqar_1
+---
+(1)
+war_1
+---
+(1)
+weber_1
+---
+(1)
+(1)
+weimin_1
+---
+(1)
+weinberger_1
+---
+(1)
+weintraub_1
+---
+(1)
+weiser_1
+---
+(1)
+weiyi_1
+---
+(1)
+where_1
+---
+(1, 19)
+widom_1
+---
+(1)
+wilkinson_1
+---
+(1)
+william_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+williams_1
+---
+(1)
+williams_2
+---
+(1)
+with_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+woelk_1
+---
+(1)
+won_1
+---
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+(1)
+workflows_1
+---
+(1)
+yair_1
+---
+(1)
+yellin_1
+---
+(1)
+yu_1
+---
+(1)
+yuri_1
+---
+(1)
+(1)
+zdonik_1
+---
+(1)
+zvi_1
+---
+(1)
+(1)
+(1)
+(1)
+¾_1
+---
+(1)
+éva_1
+---
+(1)
+(1)
+özsu_1
+---
+(1)
+Job ended: Fri Aug 09 05:28:52 CEST 2024
+The job took 1.019 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2024 5:28:51 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0017
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0017_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0017_m_000000_0' done.
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 1 sorted segments
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 1 segments left of total size: 11770 bytes
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0017_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0017_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0017_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:51 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0017_r_000000_0' done.
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0017
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=597
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=1194
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=597
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=597
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=100
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=1248
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=20980
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=1248
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=36687
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=597
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3581198
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4705234
+]]></system-err>
+  </testcase>
+  <testcase name="test200" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.03">
+    <system-out><![CDATA[FuzzyJoinDriver(RIDPairsImproved)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=../data/dblp-small/tokens-000/part-00000
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:52 CEST 2024
+Job ended: Fri Aug 09 05:28:53 CEST 2024
+The job took 1.021 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2024 5:28:52 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0018
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0018_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0018_m_000000_0' done.
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 1 sorted segments
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 1 segments left of total size: 51489 bytes
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0018_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0018_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0018_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:52 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0018_r_000000_0' done.
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0018
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=0
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=1396
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=698
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=83
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=100
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=698
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=50052
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=0
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=36687
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=542
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3747533
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4870149
+]]></system-err>
+  </testcase>
+  <testcase name="test210" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.018">
+    <system-out><![CDATA[FuzzyJoinDriver(RIDPairsPPJoin.TokenIdentity)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=../data/dblp-small/tokens-000/part-00000
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:53 CEST 2024
+Job ended: Fri Aug 09 05:28:54 CEST 2024
+The job took 1.016 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2024 5:28:53 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0019
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0019_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0019_m_000000_0' done.
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 1 sorted segments
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 1 segments left of total size: 54281 bytes
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0019_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0019_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0019_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:53 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0019_r_000000_0' done.
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0019
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=0
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=1396
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=698
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=83
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=100
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=698
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=52844
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=0
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=36687
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=542
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3916281
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=5078135
+]]></system-err>
+  </testcase>
+  <testcase name="test300" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="2.046">
+    <system-out><![CDATA[Multi-Job started: Fri Aug 09 05:28:54 CEST 2024
+FuzzyJoinDriver(RecordPairsBasic.phase1)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000
+                file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs.phase1-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:54 CEST 2024
+Job ended: Fri Aug 09 05:28:55 CEST 2024
+The job took 1.018 seconds.
+FuzzyJoinDriver(RecordPairsBasic.phase2)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs.phase1-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=}
+Job started: Fri Aug 09 05:28:55 CEST 2024
+Job ended: Fri Aug 09 05:28:56 CEST 2024
+The job took 1.013 seconds.
+Multi-Job ended: Fri Aug 09 05:28:56 CEST 2024
+The multi-job took 2.032 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2024 5:28:54 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 2
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0020
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 2
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0020_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0020_m_000000_0' done.
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0020_m_000001_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000/part-00000:0+1239
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0020_m_000001_0' done.
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 2 sorted segments
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 2 segments left of total size: 41569 bytes
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0020_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0020_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0020_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs.phase1-000
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:54 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0020_r_000000_0' done.
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0020
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=0
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=532
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=266
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=28
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=183
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=266
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=40913
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=0
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=37926
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=100
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=6092447
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=7896064
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0021
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0021_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs.phase1-000/part-00000:0+7463
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0021_m_000000_0' done.
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 1 sorted segments
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 1 segments left of total size: 7179 bytes
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0021_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0021_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0021_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:55 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0021_r_000000_0' done.
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0021
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=0
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=56
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=28
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=14
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=28
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=28
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=7082
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=0
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=7366
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=14
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=4150708
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=5369611
+]]></system-err>
+  </testcase>
+  <testcase name="test310" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.025">
+    <system-out><![CDATA[FuzzyJoinDriver(RecordPairsImproved)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
+  Map Jobs:    2
+  Reduce Jobs: 1
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Array
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=../data/dblp-small/ridpairs-000/part-00000}
+Job started: Fri Aug 09 05:28:56 CEST 2024
+Job ended: Fri Aug 09 05:28:57 CEST 2024
+The job took 1.022 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 09, 2024 5:28:56 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0022
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 1
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: io.sort.mb = 100
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: data buffer = 79691776/99614720
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+INFO: record buffer = 262144/327680
+Aug 09, 2024 5:28:56 AM edu.uci.ics.fuzzyjoin.hadoop.recordpairs.MapBroadcastSelfJoin configure
+INFO: Configure START
+Aug 09, 2024 5:28:56 AM edu.uci.ics.fuzzyjoin.hadoop.recordpairs.MapBroadcastSelfJoin configure
+INFO: Configure END
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+INFO: Starting flush of map output
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+INFO: Finished spill 0
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0022_m_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0022_m_000000_0' done.
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Merging 1 sorted segments
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+INFO: Down to the last merge-pass, with 1 segments left of total size: 41586 bytes
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0022_r_000000_0 is done. And is in the process of commiting
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0022_r_000000_0 is allowed to commit now
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0022_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: reduce > reduce
+Aug 09, 2024 5:28:56 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0022_r_000000_0' done.
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 100%
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0022
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 13
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine output records=0
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=332
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input records=85
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce output records=14
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=100
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=166
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output bytes=41035
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce shuffle bytes=0
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Combine input records=0
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=36687
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     Reduce input groups=14
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=4304156
+Aug 09, 2024 5:28:57 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=5520134
+]]></system-err>
+  </testcase>
+</testsuite>

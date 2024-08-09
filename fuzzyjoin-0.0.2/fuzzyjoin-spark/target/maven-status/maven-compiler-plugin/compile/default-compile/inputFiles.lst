@@ -1,0 +1,8 @@
+/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/java/edu/uci/ics/fuzzyjoin/spark/tokens/TokensBasic.java
+/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/java/edu/uci/ics/fuzzyjoin/spark/tokens/Array/ArrayReduceAggregate.java
+/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/java/edu/uci/ics/fuzzyjoin/spark/tokens/Scalar/ScalarReduceAggregate.java
+/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/java/edu/uci/ics/fuzzyjoin/spark/tokens/Scalar/ScalarMap.java
+/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/java/edu/uci/ics/fuzzyjoin/spark/Main.java
+/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/java/edu/uci/ics/fuzzyjoin/spark/tokens/Array/ArrayMapExperimental.java
+/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/java/edu/uci/ics/fuzzyjoin/spark/recordpairs/RecordPairsBasic.java
+/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/java/edu/uci/ics/fuzzyjoin/spark/ridpairs/RIDPairsPPJoin.java

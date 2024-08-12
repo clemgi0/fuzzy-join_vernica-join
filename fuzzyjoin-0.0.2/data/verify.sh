@@ -48,7 +48,7 @@ fi
 diff --brief ${TMP}0 ${TMP}1
 if [ "$?" -ne "0" ]
 then
-    echo Fail -- differnt tokens
+    echo Fail -- different tokens
     exit 1
 fi
 rm ${TMP}0 ${TMP}1

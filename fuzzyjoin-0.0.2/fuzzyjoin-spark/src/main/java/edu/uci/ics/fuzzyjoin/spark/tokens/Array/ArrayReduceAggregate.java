@@ -5,19 +5,17 @@ import java.util.Map;
 
 import org.apache.spark.api.java.function.Function2;
 
-import scala.Tuple2;
-
-public class ArrayReduceAggregate implements
-        Function2<Tuple2<String, Integer[]>, Tuple2<String, Integer[]>, Tuple2<String, Integer[]>> {
+// pas tester, abandonner pour le moment
+public class ArrayReduceAggregate implements Function2<Integer[], Integer[], Integer[]> {
     private static final long serialVersionUID = 1L;
 
     @Override
-    public Tuple2<String, Integer[]> call(Tuple2<String, Integer[]> token1, Tuple2<String, Integer[]> token2)
+    public Integer[] call(Integer[] token1, Integer[] token2)
             throws Exception {
-        int count1 = token1._2[0];
-        int count2 = token2._2[0];
-        int length1 = token1._2.length > 1 ? token1._2[1] : 0;
-        int length2 = token2._2.length > 1 ? token2._2[1] : 0;
+        int count1 = token1[0];
+        int count2 = token2[0];
+        int length1 = token1.length > 1 ? token1[1] : 0;
+        int length2 = token2.length > 1 ? token2[1] : 0;
 
         int count = count1 + count2;
         int min = Math.min(length1, length2);
@@ -49,6 +47,6 @@ public class ArrayReduceAggregate implements
             }
         }
 
-        return new Tuple2<>(token1._1, result);
+        return result;
     }
 }

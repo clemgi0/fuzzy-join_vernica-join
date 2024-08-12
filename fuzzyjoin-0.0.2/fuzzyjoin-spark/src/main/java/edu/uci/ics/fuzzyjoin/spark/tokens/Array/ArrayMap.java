@@ -19,10 +19,13 @@ import scala.Tuple2;
  **          then tokenizes the data using te TOKEN_SEPARATOR
  **          and then maps each token with a 1
  **
- ** @return JavaPairRDD<String, Integer> containing the tokens and a 1 for
+ ** @return JavaPairRDD<String, Integer[]> containing the tokens and a 1 for
  *         each
  **         token
  */
+
+// pas tester, abandonner pour le moment
+// normalement, la valeur de retour est un Tuple2<String, Integer[]>
 public class ArrayMap implements PairFlatMapFunction<String, String, Integer> {
     private static final long serialVersionUID = 1L;
 

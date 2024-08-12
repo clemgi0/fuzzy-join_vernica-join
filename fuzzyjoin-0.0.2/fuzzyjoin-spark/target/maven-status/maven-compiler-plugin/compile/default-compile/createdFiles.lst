@@ -1,7 +1,0 @@
-edu/uci/ics/fuzzyjoin/spark/tokens/TokensBasic.class
-edu/uci/ics/fuzzyjoin/spark/tokens/Array/ArrayMapExperimental.class
-edu/uci/ics/fuzzyjoin/spark/recordpairs/RecordPairsBasic.class
-edu/uci/ics/fuzzyjoin/spark/ridpairs/RIDPairsPPJoin.class
-edu/uci/ics/fuzzyjoin/spark/Main.class
-edu/uci/ics/fuzzyjoin/spark/tokens/Scalar/ScalarReduceAggregate.class
-edu/uci/ics/fuzzyjoin/spark/tokens/Scalar/ScalarMap.class

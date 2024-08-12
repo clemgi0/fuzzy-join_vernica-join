@@ -6,7 +6,11 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
+import com.esotericsoftware.kryo.util.Util;
+
 import edu.uci.ics.fuzzyjoin.FuzzyJoinConfig;
+import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
+import edu.uci.ics.fuzzyjoin.spark.logging.RedirectOutput;
 import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
 
 public class Main {
@@ -46,67 +50,56 @@ public class Main {
             System.exit(1);
         }
 
-        System.out.println();
-        System.out.println("-------------------- Starting of the app --------------------");
-        System.out.println();
+        if (args.length > 2) {
+            if (args[1].equals("true")) {
+                RedirectOutput.setFile("output.log");
+            }
+        }
 
+        LogUtil.logStage("Starting of the app");
         SparkConf conf = new SparkConf().setAppName("FuzzyJoinSpark");
 
-        System.out.println();
-        System.out.println("-------------------- Creating Java Spark Context --------------------");
-        System.out.println();
-
+        LogUtil.logStage("Creating Java Spark Context");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        System.out.println();
-        System.out.println("-------------------- Read files from HDFS --------------------");
-        System.out.println();
-
+        LogUtil.logStage("Read files from HDFS");
         JavaRDD<String> records = sc.textFile(args[0]);
 
-        System.out.println();
-        System.out.println("-------------------- Print infos --------------------");
-        System.out.println();
-
+        LogUtil.logStage("Print properties");
         String ret = "Main" + sc.appName() + "\n"
-                + "  Input Path:  {";
+                + " Input Path: {";
         ret += "}\n";
-        ret += "  Properties:  {";
+        ret += " Properties: {";
         String[][] properties = new String[][] {
                 new String[] { FuzzyJoinConfig.SIMILARITY_NAME_PROPERTY,
                         FuzzyJoinConfig.SIMILARITY_NAME_VALUE },
                 new String[] { FuzzyJoinConfig.SIMILARITY_THRESHOLD_PROPERTY,
                         "" + FuzzyJoinConfig.SIMILARITY_THRESHOLD_VALUE },
-                new String[] { FuzzyJoinConfig.TOKENIZER_PROPERTY, FuzzyJoinConfig.TOKENIZER_VALUE },
+                new String[] { FuzzyJoinConfig.TOKENIZER_PROPERTY,
+                        FuzzyJoinConfig.TOKENIZER_VALUE },
                 new String[] { TOKENS_PACKAGE_PROPERTY, TOKENS_PACKAGE_VALUE },
                 new String[] { TOKENS_LENGTHSTATS_PROPERTY, "" + TOKENS_LENGTHSTATS_VALUE },
                 new String[] { RIDPAIRS_GROUP_CLASS_PROPERTY, RIDPAIRS_GROUP_CLASS_VALUE },
-                new String[] { RIDPAIRS_GROUP_FACTOR_PROPERTY, "" + RIDPAIRS_GROUP_FACTOR_VALUE },
+                new String[] { RIDPAIRS_GROUP_FACTOR_PROPERTY, "" +
+                        RIDPAIRS_GROUP_FACTOR_VALUE },
                 new String[] { FuzzyJoinConfig.DATA_TOKENS_PROPERTY, "" },
                 new String[] { DATA_JOININDEX_PROPERTY, "" }, };
         for (int crt = 0; crt < properties.length; crt++) {
             if (crt > 0) {
-                ret += "\n                ";
+                ret += "\n ";
             }
             ret += properties[crt][0];
         }
         ret += "}";
         System.out.println(ret);
 
-        System.out.println();
-        System.out.println("-------------------- Start Stage 1 : TokensBasic --------------------");
-        System.out.println();
-
+        LogUtil.logStage("Start Stage 1 : TokensBasic");
         TokensBasic.main(records, sc);
 
-        System.out.println();
-        System.out.println("-------------------- Close Java Spark Context and Spark Session --------------------");
-        System.out.println();
-
+        LogUtil.logStage("Close Java Spark Context and Spark Session");
         sc.close();
 
-        System.out.println();
-        System.out.println("-------------------- Ending of the app --------------------");
-        System.out.println();
+        LogUtil.logStage("Ending of the app");
+        RedirectOutput.setConsole();
     }
 }

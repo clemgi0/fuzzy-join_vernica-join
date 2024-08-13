@@ -15,7 +15,10 @@ import edu.uci.ics.fuzzyjoin.spark.tokens.Scalar.ScalarReduceSelect;
 import scala.Tuple2;
 
 public class TokensBasic {
-    public static void main(JavaRDD<String> records, JavaSparkContext sc) throws IOException {
+    public static JavaPairRDD<Integer, String> main(JavaRDD<String> records, JavaSparkContext sc) throws IOException {
+        //
+        // -------------------- PHASE 1 --------------------
+        //
 
         JavaPairRDD<String, Integer> tokensOne;
         JavaPairRDD<String, Integer> tokensCount;
@@ -48,6 +51,10 @@ public class TokensBasic {
         LogUtil.logStage("");
         showPairRDD(tokensCount);
 
+        //
+        // -------------------- PHASE 2 --------------------
+        //
+
         JavaPairRDD<Integer, String> tokensCountInverted;
         JavaPairRDD<Tuple2<Integer, String>, Tuple2<Integer, String>> tokensCountInvertedSorted;
 
@@ -79,6 +86,8 @@ public class TokensBasic {
         LogUtil.logStage("");
         showPairRDDInverted(tokensCountInvertedSorted.mapToPair(t -> t._1));
 
+        // return the list of tokens ranked
+        return tokensCountInvertedSorted.mapToPair(t -> t._1);
     }
 
     private static void showPairRDD(JavaPairRDD<String, Integer> rdd) {

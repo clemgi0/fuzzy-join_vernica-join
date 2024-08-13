@@ -3,3 +3,7 @@
 
 # Rejet des fichiers .class
 *.class
+
+# Rejet fichiers debug
+output.log
+tree.txt

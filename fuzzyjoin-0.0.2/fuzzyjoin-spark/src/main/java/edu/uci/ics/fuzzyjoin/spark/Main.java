@@ -3,14 +3,13 @@ package edu.uci.ics.fuzzyjoin.spark;
 import java.io.IOException;
 
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
-import com.esotericsoftware.kryo.util.Util;
-
-import edu.uci.ics.fuzzyjoin.FuzzyJoinConfig;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.logging.RedirectOutput;
+// import edu.uci.ics.fuzzyjoin.spark.ridpairs.RIDPairsPPJoin;
 import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
 
 public class Main {
@@ -41,60 +40,81 @@ public class Main {
     public static final String DATA_DICTIONARY_FACTOR_PROPERTY = NAMESPACE + ".data.dictionary.factor";
     // other constants
     public static final String DATA_LENGTH_STATS_FILE = "lengthstats";
-    public static final char SEPSARATOR = ',';
-    public static final String SEPSARATOR_REGEX = ",";
+    public static final char SEPARATOR = ',';
+    public static final String SEPARATOR_REGEX = ",";
 
     public static void main(String[] args) throws IOException {
+        //
+        // Handling the args
+        //
+
         if (args.length < 1) {
-            System.err.println("Usage: Main <file>");
+            System.err.println("Usage: spark-submit \\\n" +
+                    "--class PATH_TO_MAIN \\\n" +
+                    "--master YARN \\\n" +
+                    "PATH_TO_JAR \\\n" +
+                    "HDFS_PATH_TO_INPUT_FILE \\\n" +
+                    "[OPTIONS] : \\\n" +
+                    "LOG_TO_FILE: true/false \\\n" +
+                    "PATH_TO_CONFIG_FILE");
             System.exit(1);
         }
 
-        if (args.length > 2) {
-            if (args[1].equals("true")) {
-                RedirectOutput.setFile("output.log");
-            }
+        // Redirect log output to file if specified
+        if (args.length > 1 && args[1].equals("true")) {
+            RedirectOutput.setFile("output.log");
         }
 
+        // Set config file
+        SparkConfig configuration;
+        if (args.length > 2) {
+            configuration = new SparkConfig(args[2]);
+        } else {
+            configuration = new SparkConfig("dblp.quickstart.xml");
+        }
+
+        //
+        // Create Java Spark Context
+        //
+
         LogUtil.logStage("Starting of the app");
-        SparkConf conf = new SparkConf().setAppName("FuzzyJoinSpark");
 
         LogUtil.logStage("Creating Java Spark Context");
-        JavaSparkContext sc = new JavaSparkContext(conf);
+        SparkConf sparkConf = configuration.getSparkContext();
+        JavaSparkContext sc = new JavaSparkContext(sparkConf);
+        configuration.printProperties(sc);
+
+        //
+        // Read files from HDFS
+        //
 
         LogUtil.logStage("Read files from HDFS");
         JavaRDD<String> records = sc.textFile(args[0]);
 
-        LogUtil.logStage("Print properties");
-        String ret = "Main" + sc.appName() + "\n"
-                + " Input Path: {";
-        ret += "}\n";
-        ret += " Properties: {";
-        String[][] properties = new String[][] {
-                new String[] { FuzzyJoinConfig.SIMILARITY_NAME_PROPERTY,
-                        FuzzyJoinConfig.SIMILARITY_NAME_VALUE },
-                new String[] { FuzzyJoinConfig.SIMILARITY_THRESHOLD_PROPERTY,
-                        "" + FuzzyJoinConfig.SIMILARITY_THRESHOLD_VALUE },
-                new String[] { FuzzyJoinConfig.TOKENIZER_PROPERTY,
-                        FuzzyJoinConfig.TOKENIZER_VALUE },
-                new String[] { TOKENS_PACKAGE_PROPERTY, TOKENS_PACKAGE_VALUE },
-                new String[] { TOKENS_LENGTHSTATS_PROPERTY, "" + TOKENS_LENGTHSTATS_VALUE },
-                new String[] { RIDPAIRS_GROUP_CLASS_PROPERTY, RIDPAIRS_GROUP_CLASS_VALUE },
-                new String[] { RIDPAIRS_GROUP_FACTOR_PROPERTY, "" +
-                        RIDPAIRS_GROUP_FACTOR_VALUE },
-                new String[] { FuzzyJoinConfig.DATA_TOKENS_PROPERTY, "" },
-                new String[] { DATA_JOININDEX_PROPERTY, "" }, };
-        for (int crt = 0; crt < properties.length; crt++) {
-            if (crt > 0) {
-                ret += "\n ";
-            }
-            ret += properties[crt][0];
-        }
-        ret += "}";
-        System.out.println(ret);
+        //
+        // Launch Stage 1 : Tokenization
+        //
 
         LogUtil.logStage("Start Stage 1 : TokensBasic");
-        TokensBasic.main(records, sc);
+        JavaPairRDD<Integer, String> tokensRank = TokensBasic.main(records, sc);
+
+        //
+        // Launch Stage 2 : FuzzyJoin
+        //
+
+        // LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
+        // RIDPairsPPJoin.main(tokensRank, records, sc);
+
+        //
+        // Launch Stage 3 : Similar records join
+        //
+
+        // LogUtil.logStage("Start Stage 3 : RecordsPairsBasic");
+        // RecordsPairsBasic.main(tokensRank, records, sc);
+
+        //
+        // Ending of the app
+        //
 
         LogUtil.logStage("Close Java Spark Context and Spark Session");
         sc.close();

@@ -23,7 +23,7 @@ public class TokensBasic {
         JavaPairRDD<String, Integer> tokensOne;
         JavaPairRDD<String, Integer> tokensCount;
 
-        if (Main.TOKENS_PACKAGE_VALUE.equals("Array")) {
+        if (sc.getConf().get(Main.TOKENS_PACKAGE_PROPERTY).equals("Array")) {
             LogUtil.logStage("Phase 1 : Map : Array");
             System.out.println("PAS COMPLETEMENT IMPLEMENTE, A FINIR PEUT ETRE"); // TODO
 
@@ -58,7 +58,7 @@ public class TokensBasic {
         JavaPairRDD<Integer, String> tokensCountInverted;
         JavaPairRDD<Tuple2<Integer, String>, Tuple2<Integer, String>> tokensCountInvertedSorted;
 
-        if (Main.TOKENS_PACKAGE_VALUE.equals("Array")) {
+        if (sc.getConf().get(Main.TOKENS_PACKAGE_PROPERTY).equals("Array")) {
             LogUtil.logStage("Phase 2 : Map : Array");
 
             // tokensOne = records.flatMapToPair(new ArrayMap());

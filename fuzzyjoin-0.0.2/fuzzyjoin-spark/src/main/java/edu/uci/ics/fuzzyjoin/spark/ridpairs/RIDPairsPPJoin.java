@@ -1,45 +1,56 @@
-// package edu.uci.ics.fuzzyjoin.spark.ridpairs;
+package edu.uci.ics.fuzzyjoin.spark.ridpairs;
 
-// import java.io.IOException;
+import java.io.IOException;
+import java.util.List;
 
-// import org.apache.spark.api.java.JavaPairRDD;
-// import org.apache.spark.api.java.JavaRDD;
-// import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
 
-// import edu.uci.ics.fuzzyjoin.FuzzyJoinConfig;
-// import edu.uci.ics.fuzzyjoin.spark.Main;
-// import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-// import edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin.SelfJoinMap;
-// import edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin.ValueSelfJoin;
-// import scala.Tuple2;
+import edu.uci.ics.fuzzyjoin.spark.Main;
+import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
+import edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin.SelfJoinMap;
+import edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin.ValueSelfJoin;
+import scala.Tuple2;
 
-// public class RIDPairsPPJoin {
-// public static void main(JavaPairRDD<Integer, String> tokendsRank,
-// JavaRDD<String> records, JavaSparkContext sc)
-// throws IOException {
+public class RIDPairsPPJoin {
+    public static void main(String[] tokenStrings,
+            JavaRDD<String> records, JavaSparkContext sc)
+            throws IOException {
 
-// JavaPairRDD<Tuple2<Integer, Integer>, Tuple2<Integer, Integer[]>>
-// tokensGrouped;
-// if (Main.DATA_SUFFIX_INPUT_PROPERTY.isEmpty()) {
-// // self-join
+        JavaPairRDD<Tuple2<Integer, Integer>, Tuple2<Integer, Integer[]>> tokensGrouped;
+        JavaPairRDD<IntPair, ValueSelfJoin> selfJoinMappedData;
 
-// LogUtil.logStage("Self-join : Map");
-// JavaPairRDD<IntPair, ValueSelfJoin> = records.flatMapToPair(new
-// SelfJoinMap());
+        if (sc.getConf().get(Main.DATA_SUFFIX_INPUT_PROPERTY).isEmpty()) {
+            // self-join
 
-// LogUtil.logStage("Self-join : Reduce");
-// // job.setReducerClass(ReduceSelfJoin
+            LogUtil.logStage("Self-join : Map");
 
-// } else {
-// // R-S join
+            selfJoinMappedData = records
+                    .flatMapToPair(new SelfJoinMap(sc, tokenStrings));
 
-// System.out.println("PAS COMPLETEMENT IMPLEMENTE, A FINIR PEUT ETRE");
-// LogUtil.logStage("R-S join : Map");
-// // job.setMapperClass(MapJoin
+            showPairRDD(selfJoinMappedData);
 
-// LogUtil.logStage("R-S join : Reduce");
-// // job.setReducerClass(ReduceJoin
-// }
+            LogUtil.logStage("Self-join : Reduce");
+            // job.setReducerClass(ReduceSelfJoin
 
-// }
-// }
+        } else {
+            // R-S join
+
+            System.out.println("PAS COMPLETEMENT IMPLEMENTE, A FINIR PEUT ETRE");
+            LogUtil.logStage("R-S join : Map");
+            // job.setMapperClass(MapJoin
+
+            LogUtil.logStage("R-S join : Reduce");
+            // job.setReducerClass(ReduceJoin
+        }
+
+    }
+
+    public static void showPairRDD(JavaPairRDD<IntPair, ValueSelfJoin> rdd) {
+        List<Tuple2<IntPair, ValueSelfJoin>> results = rdd.collect();
+        results.forEach(r -> System.out
+                .println("Key[0] : " + r._1().getFirst() + " Key[1]" + r._1().getSecond() + " Value[0] : "
+                        + r._2().getRID() + " Value[1] : " + r._2().getTokens()));
+    }
+}

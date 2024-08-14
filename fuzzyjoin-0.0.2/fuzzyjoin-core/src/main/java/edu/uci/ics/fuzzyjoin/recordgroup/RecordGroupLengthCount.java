@@ -45,7 +45,7 @@ public class RecordGroupLengthCount extends RecordGroup {
             min = in.readInt();
             max = in.readInt();
             range = max - min + 1;
-            lengthGroups = new int[range]; // stores freqencies initally
+            lengthGroups = new int[range]; // stores frequencies initially
             try {
                 while (true) {
                     int length = in.readInt();

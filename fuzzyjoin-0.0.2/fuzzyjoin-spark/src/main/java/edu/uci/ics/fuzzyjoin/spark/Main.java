@@ -9,7 +9,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.logging.RedirectOutput;
-// import edu.uci.ics.fuzzyjoin.spark.ridpairs.RIDPairsPPJoin;
+import edu.uci.ics.fuzzyjoin.spark.ridpairs.RIDPairsPPJoin;
 import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
 
 public class Main {
@@ -108,8 +108,8 @@ public class Main {
         // Launch Stage 2 : FuzzyJoin
         //
 
-        // LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
-        // RIDPairsPPJoin.main(tokensRank, records, sc);
+        LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
+        RIDPairsPPJoin.main(tokensRank.values().collect().toArray(new String[0]), records, sc);
 
         //
         // Launch Stage 3 : Similar records join

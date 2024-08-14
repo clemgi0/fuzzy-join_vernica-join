@@ -2,6 +2,31 @@
 -------------------- Début du logging --------------------
 
 
+-------------------- Reading configuration file: /home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/resources/config/set.log4j.xml | true --------------------
+
+
+-------------------- Print all properties --------------------
+
+All org.apache.spark.SparkConf
+ Properties: {fuzzyjoin.similarity.threshold=.5
+fuzzyjoin.data.norecords=100
+fuzzyjoin.ridpairs.group.class=TokenIdentity
+fuzzyjoin.tokens.package=Scalar
+fuzzyjoin.tokens.lengthstats=false
+spark.executor.extraJavaOptions=-Dlog4j.configuration=file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/resources/log4j.properties
+fuzzyjoin.data.dir=dblp-small
+spark.app.submitTime=1723612750760
+spark.driver.extraJavaOptions=-Dlog4j.configuration=file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/src/main/resources/log4j.properties
+fuzzyjoin.ridpairs.group.factor=1
+spark.master=yarn
+spark.app.name=FuzzyJoinSpark
+spark.jars=file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/target/fuzzyjoin-spark-0.0.1.jar
+fuzzyjoin.data.raw=*
+spark.submit.pyFiles=
+spark.submit.deployMode=client
+fuzzyjoin.record.data=2,3
+}
+
 -------------------- Starting of the app --------------------
 
 
@@ -10,20 +35,6 @@
 
 -------------------- Read files from HDFS --------------------
 
-
--------------------- Print properties --------------------
-
-MainFuzzyJoinSpark
- Input Path: {}
- Properties: {fuzzyjoin.similarity.name
- fuzzyjoin.similarity.threshold
- fuzzyjoin.tokenizer
- fuzzyjoin.tokens.package
- fuzzyjoin.tokens.lengthstats
- fuzzyjoin.ridpairs.group.class
- fuzzyjoin.ridpairs.group.factor
- fuzzyjoin.data.tokens
- fuzzyjoin.data.joinindex}
 
 -------------------- Start Stage 1 : TokensBasic --------------------
 

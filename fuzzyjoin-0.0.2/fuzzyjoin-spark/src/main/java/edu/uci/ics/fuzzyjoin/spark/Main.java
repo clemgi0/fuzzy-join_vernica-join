@@ -53,25 +53,33 @@ public class Main {
                     "--class PATH_TO_MAIN \\\n" +
                     "--master YARN \\\n" +
                     "PATH_TO_JAR \\\n" +
-                    "HDFS_PATH_TO_INPUT_FILE \\\n" +
+                    "PATH_TO_CONFIG_FILE \\\n" +
                     "[OPTIONS] : \\\n" +
-                    "LOG_TO_FILE: true/false \\\n" +
-                    "PATH_TO_CONFIG_FILE");
+                    "LOG_TO_FILE: true/false");
             System.exit(1);
+        }
+
+        // Set config file
+        SparkConfig configuration = new SparkConfig();
+        SparkConf sparkConf = configuration.getSparkContext();
+
+        if (args.length > 0) {
+            configuration.readConfig("fuzzyjoin/", args[0]);
+        } else {
+            LogUtil.logStage("Configuration file not specified, using default dblp.quickstart.xml");
+            configuration.readConfig("fuzzyjoin/", "dblp.quickstart.xml");
         }
 
         // Redirect log output to file if specified
         if (args.length > 1 && args[1].equals("true")) {
             RedirectOutput.setFile("output.log");
+        } else {
+            LogUtil.logStage("Log output to console");
         }
 
-        // Set config file
-        SparkConfig configuration;
-        if (args.length > 2) {
-            configuration = new SparkConfig(args[2]);
-        } else {
-            configuration = new SparkConfig("dblp.quickstart.xml");
-        }
+        // Print properties
+        // configuration.printMainProperties();
+        configuration.printAllProperties();
 
         //
         // Create Java Spark Context
@@ -80,16 +88,14 @@ public class Main {
         LogUtil.logStage("Starting of the app");
 
         LogUtil.logStage("Creating Java Spark Context");
-        SparkConf sparkConf = configuration.getSparkContext();
         JavaSparkContext sc = new JavaSparkContext(sparkConf);
-        configuration.printProperties(sc);
 
         //
         // Read files from HDFS
         //
 
         LogUtil.logStage("Read files from HDFS");
-        JavaRDD<String> records = sc.textFile(args[0]);
+        JavaRDD<String> records = configuration.readData(sc);
 
         //
         // Launch Stage 1 : Tokenization

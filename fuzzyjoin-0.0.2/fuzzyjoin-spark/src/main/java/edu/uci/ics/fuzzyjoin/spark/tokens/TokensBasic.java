@@ -47,10 +47,6 @@ public class TokensBasic {
             tokensCount = tokensOne.reduceByKey(new ScalarReduceAggregate());
         }
 
-        showPairRDD(tokensOne);
-        LogUtil.logStage("");
-        showPairRDD(tokensCount);
-
         //
         // -------------------- PHASE 2 --------------------
         //
@@ -82,17 +78,11 @@ public class TokensBasic {
                     .sortByKey(new ScalarReduceSelect());
         }
 
-        showPairRDDInverted(tokensCountInverted.mapToPair(t -> t));
         LogUtil.logStage("");
         showPairRDDInverted(tokensCountInvertedSorted.mapToPair(t -> t._1));
 
         // return the list of tokens ranked
         return tokensCountInvertedSorted.mapToPair(t -> t._1);
-    }
-
-    private static void showPairRDD(JavaPairRDD<String, Integer> rdd) {
-        List<Tuple2<String, Integer>> results = rdd.collect();
-        results.forEach(r -> System.out.println("Id : " + r._1() + " Value : " + r._2()));
     }
 
     private static void showPairRDDInverted(JavaPairRDD<Integer, String> rdd) {

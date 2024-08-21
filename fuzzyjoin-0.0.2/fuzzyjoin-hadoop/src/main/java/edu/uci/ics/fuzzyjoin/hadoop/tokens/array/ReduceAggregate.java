@@ -88,7 +88,7 @@ public class ReduceAggregate extends MapReduceBase implements
                     ReduceSort.addMap(lengthFreq, length);
                 }
             } else if (stats.length > 2) { // count, min, max(, length
-                // frequencies)
+                // freqencies)
                 min = Math.min(min, stats[1].get());
                 max = Math.max(max, stats[2].get());
                 for (int i = 3; i < stats.length; i += 2) {

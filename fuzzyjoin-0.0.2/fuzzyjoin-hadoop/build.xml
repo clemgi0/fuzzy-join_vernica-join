@@ -33,8 +33,8 @@
        ================================= -->
   <target name="compile" depends="fuzzyjoin-core" description="">
     <mkdir dir="${classes.dir}" />
-    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" target="11" source="11" debug="true" includeantruntime="false">
-        <include name="**/*.java"/>
+    <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" target="1.6" debug="true" includeantruntime="false">
+      <include name="**/*.java"/>
     </javac>
   </target>
   <!-- ================================= 

@@ -1,6 +1,7 @@
 package edu.uci.ics.fuzzyjoin.spark.ridpairs;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.spark.api.java.JavaPairRDD;
@@ -50,7 +51,7 @@ public class RIDPairsPPJoin {
     public static void showPairRDD(JavaPairRDD<IntPair, ValueSelfJoin> rdd) {
         List<Tuple2<IntPair, ValueSelfJoin>> results = rdd.collect();
         results.forEach(r -> System.out
-                .println("Key[0] : " + r._1().getFirst() + " Key[1]" + r._1().getSecond() + " Value[0] : "
-                        + r._2().getRID() + " Value[1] : " + r._2().getTokens()));
+                .println("Group : " + r._1().getFirst() + " | Length : " + r._1().getSecond() + "  ||  RID : "
+                        + r._2().getRID() + " TokensRanked : " + Arrays.toString(r._2().getTokens())));
     }
 }

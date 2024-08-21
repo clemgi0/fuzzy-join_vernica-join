@@ -10,6 +10,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.logging.RedirectOutput;
 import edu.uci.ics.fuzzyjoin.spark.ridpairs.RIDPairsPPJoin;
+import edu.uci.ics.fuzzyjoin.spark.ridrecordpairs.IntTriple;
 import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
 
 public class Main {
@@ -43,6 +44,11 @@ public class Main {
     public static final char SEPARATOR = ',';
     public static final String SEPARATOR_REGEX = ",";
 
+    // conf variables
+    public static SparkConfig configuration;
+    public static SparkConf sparkConf;
+    public static JavaSparkContext sc;
+
     public static void main(String[] args) throws IOException {
         //
         // Handling the args
@@ -54,14 +60,15 @@ public class Main {
                     "--master YARN \\\n" +
                     "PATH_TO_JAR \\\n" +
                     "NAME_OF_CONFIG_FILE \\\n" +
+                    "STAGES_TO_RUN \\\n" +
                     "[OPTIONS] : \\\n" +
                     "LOG_TO_FILE: true/false");
             System.exit(1);
         }
 
         // Set config file
-        SparkConfig configuration = new SparkConfig();
-        SparkConf sparkConf = configuration.getSparkContext();
+        configuration = new SparkConfig();
+        sparkConf = configuration.getSparkContext();
 
         if (args.length > 0) {
             configuration.readConfig("fuzzyjoin/", args[0]);
@@ -71,7 +78,7 @@ public class Main {
         }
 
         // Redirect log output to file if specified
-        if (args.length > 1 && args[1].equals("true")) {
+        if (args.length > 2 && args[2].equals("true")) {
             RedirectOutput.setFile("output.log");
         } else {
             LogUtil.logStage("Log output to console");
@@ -88,39 +95,29 @@ public class Main {
         LogUtil.logStage("Starting of the app");
 
         LogUtil.logStage("Creating Java Spark Context");
-        JavaSparkContext sc = new JavaSparkContext(sparkConf);
+        sc = new JavaSparkContext(sparkConf);
 
         //
-        // Read files from HDFS
+        // Select stages to run
         //
 
-        LogUtil.logStage("Read raw data from HDFS");
-        JavaRDD<String> raw = configuration.readData(sc, "raw");
+        switch (args[1].toLowerCase()) {
+            case "tokensbasic":
+                StartTokensBasic.startTokensBasic(true);
+                break;
 
-        //
-        // Launch Stage 1 : Tokenization
-        //
+            case "ridpairsppjoin":
+                StartRidPairsPPJoin.startRidPairsPPJoin(true, null);
+                break;
 
-        LogUtil.logStage("Start Stage 1 : TokensBasic");
-        JavaPairRDD<Integer, String> tokensRank = TokensBasic.main(raw, sc);
+            case "fuzzyjoin":
+                StartFuzzyJoin.startFuzzyJoin();
+                break;
 
-        //
-        // Launch Stage 2 : FuzzyJoin
-        //
-
-        LogUtil.logStage("Read records from HDFS");
-        JavaRDD<String> records = configuration.readData(sc, "records");
-
-        LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
-        RIDPairsPPJoin.main(tokensRank.values().collect().toArray(new String[0]),
-                records, sc);
-
-        //
-        // Launch Stage 3 : Similar records join
-        //
-
-        // LogUtil.logStage("Start Stage 3 : RecordsPairsBasic");
-        // RecordsPairsBasic.main(tokensRank, records, sc);
+            default:
+                StartFuzzyJoin.startFuzzyJoin();
+                break;
+        }
 
         //
         // Ending of the app

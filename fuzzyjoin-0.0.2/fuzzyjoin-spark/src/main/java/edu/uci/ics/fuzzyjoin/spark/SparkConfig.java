@@ -86,7 +86,7 @@ public class SparkConfig {
         System.out.println(ret);
     }
 
-    public JavaRDD<String> readData(JavaSparkContext sc) {
+    public JavaRDD<String> readData(JavaSparkContext sc, String subDir) {
         // Read the records from HDFS
         String dataDir = sc.getConf().get(Main.DATA_DIR_PROPERTY);
 
@@ -97,7 +97,7 @@ public class SparkConfig {
 
         int dataCopy = Integer.parseInt(sc.getConf().get(Main.DATA_COPY_PROPERTY, "1"));
         String dataCopyFormatted = String.format("-%03d", dataCopy - 1);
-        JavaRDD<String> data = sc.textFile(dataDir + "/raw" + dataCopyFormatted + "/part-00000");
+        JavaRDD<String> data = sc.textFile(dataDir + "/" + subDir + dataCopyFormatted + "/part-00000");
 
         return data;
     }

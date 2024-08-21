@@ -53,7 +53,7 @@ public class Main {
                     "--class PATH_TO_MAIN \\\n" +
                     "--master YARN \\\n" +
                     "PATH_TO_JAR \\\n" +
-                    "PATH_TO_CONFIG_FILE \\\n" +
+                    "NAME_OF_CONFIG_FILE \\\n" +
                     "[OPTIONS] : \\\n" +
                     "LOG_TO_FILE: true/false");
             System.exit(1);
@@ -94,22 +94,26 @@ public class Main {
         // Read files from HDFS
         //
 
-        LogUtil.logStage("Read files from HDFS");
-        JavaRDD<String> records = configuration.readData(sc);
+        LogUtil.logStage("Read raw data from HDFS");
+        JavaRDD<String> raw = configuration.readData(sc, "raw");
 
         //
         // Launch Stage 1 : Tokenization
         //
 
         LogUtil.logStage("Start Stage 1 : TokensBasic");
-        JavaPairRDD<Integer, String> tokensRank = TokensBasic.main(records, sc);
+        JavaPairRDD<Integer, String> tokensRank = TokensBasic.main(raw, sc);
 
         //
         // Launch Stage 2 : FuzzyJoin
         //
 
+        LogUtil.logStage("Read records from HDFS");
+        JavaRDD<String> records = configuration.readData(sc, "records");
+
         LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
-        RIDPairsPPJoin.main(tokensRank.values().collect().toArray(new String[0]), records, sc);
+        RIDPairsPPJoin.main(tokensRank.values().collect().toArray(new String[0]),
+                records, sc);
 
         //
         // Launch Stage 3 : Similar records join

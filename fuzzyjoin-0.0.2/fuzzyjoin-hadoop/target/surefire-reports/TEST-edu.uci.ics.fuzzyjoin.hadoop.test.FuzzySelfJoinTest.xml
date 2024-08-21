@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="10.228" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="10.267" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/test-classes:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/classes:/home/clemgi/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2/hadoop-core-0.20.2.jar:/home/clemgi/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/clemgi/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/clemgi/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/clemgi/.m2/repository/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.jar:/home/clemgi/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar:/home/clemgi/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty/6.1.14/jetty-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty-util/6.1.14/jetty-util-6.1.14.jar:/home/clemgi/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar:/home/clemgi/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/home/clemgi/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/clemgi/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/home/clemgi/.m2/repository/net/java/dev/jets3t/jets3t/0.7.1/jets3t-0.7.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/home/clemgi/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar:/home/clemgi/.m2/repository/junit/junit/4.5/junit-4.5.jar:/home/clemgi/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar:/home/clemgi/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/clemgi/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/home/clemgi/.m2/repository/edu/uci/ics/fuzzyjoin/fuzzyjoin-core/0.0.2/fuzzyjoin-core-0.0.2.jar:/home/clemgi/.m2/repository/edu/uci/ics/fuzzyjoin/fuzzyjoin-core/0.0.2/fuzzyjoin-core-0.0.2-tests.jar:"/>
+    <property name="java.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/test-classes:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/classes:/home/clemgi/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2/hadoop-core-0.20.2.jar:/home/clemgi/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/clemgi/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/clemgi/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/clemgi/.m2/repository/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.jar:/home/clemgi/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar:/home/clemgi/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty/6.1.14/jetty-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty-util/6.1.14/jetty-util-6.1.14.jar:/home/clemgi/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar:/home/clemgi/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/home/clemgi/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/clemgi/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/home/clemgi/.m2/repository/net/java/dev/jets3t/jets3t/0.7.1/jets3t-0.7.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/home/clemgi/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar:/home/clemgi/.m2/repository/junit/junit/4.5/junit-4.5.jar:/home/clemgi/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar:/home/clemgi/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/clemgi/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-core/target/fuzzyjoin-core-0.0.2.jar:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-core/target/fuzzyjoin-core-0.0.2-tests.jar:"/>
     <property name="java.vm.vendor" value="Ubuntu"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
@@ -14,14 +14,14 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire/surefirebooter-20240814110855280_3.jar /home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire 2024-08-14T11-08-55_079-jvmRun1 surefire-20240814110855280_1tmp surefire_0-20240814110855280_2tmp"/>
+    <property name="sun.java.command" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire/surefirebooter-20240821044301150_6.jar /home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire 2024-08-21T04-42-59_134-jvmRun1 surefire-20240821044301150_4tmp surefire_1-20240821044301150_5tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/test-classes:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/classes:/home/clemgi/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2/hadoop-core-0.20.2.jar:/home/clemgi/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/clemgi/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/clemgi/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/clemgi/.m2/repository/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.jar:/home/clemgi/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar:/home/clemgi/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty/6.1.14/jetty-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty-util/6.1.14/jetty-util-6.1.14.jar:/home/clemgi/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar:/home/clemgi/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/home/clemgi/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/clemgi/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/home/clemgi/.m2/repository/net/java/dev/jets3t/jets3t/0.7.1/jets3t-0.7.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/home/clemgi/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar:/home/clemgi/.m2/repository/junit/junit/4.5/junit-4.5.jar:/home/clemgi/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar:/home/clemgi/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/clemgi/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/home/clemgi/.m2/repository/edu/uci/ics/fuzzyjoin/fuzzyjoin-core/0.0.2/fuzzyjoin-core-0.0.2.jar:/home/clemgi/.m2/repository/edu/uci/ics/fuzzyjoin/fuzzyjoin-core/0.0.2/fuzzyjoin-core-0.0.2-tests.jar:"/>
+    <property name="surefire.test.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/test-classes:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/classes:/home/clemgi/.m2/repository/org/apache/hadoop/hadoop-core/0.20.2/hadoop-core-0.20.2.jar:/home/clemgi/.m2/repository/commons-cli/commons-cli/1.2/commons-cli-1.2.jar:/home/clemgi/.m2/repository/xmlenc/xmlenc/0.52/xmlenc-0.52.jar:/home/clemgi/.m2/repository/commons-httpclient/commons-httpclient/3.0.1/commons-httpclient-3.0.1.jar:/home/clemgi/.m2/repository/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.jar:/home/clemgi/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar:/home/clemgi/.m2/repository/commons-net/commons-net/1.4.1/commons-net-1.4.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty/6.1.14/jetty-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jetty-util/6.1.14/jetty-util-6.1.14.jar:/home/clemgi/.m2/repository/tomcat/jasper-runtime/5.5.12/jasper-runtime-5.5.12.jar:/home/clemgi/.m2/repository/tomcat/jasper-compiler/5.5.12/jasper-compiler-5.5.12.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-api-2.1/6.1.14/jsp-api-2.1-6.1.14.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/jsp-2.1/6.1.14/jsp-2.1-6.1.14.jar:/home/clemgi/.m2/repository/ant/ant/1.6.5/ant-1.6.5.jar:/home/clemgi/.m2/repository/commons-el/commons-el/1.0/commons-el-1.0.jar:/home/clemgi/.m2/repository/net/java/dev/jets3t/jets3t/0.7.1/jets3t-0.7.1.jar:/home/clemgi/.m2/repository/org/mortbay/jetty/servlet-api-2.5/6.1.14/servlet-api-2.5-6.1.14.jar:/home/clemgi/.m2/repository/net/sf/kosmosfs/kfs/0.3/kfs-0.3.jar:/home/clemgi/.m2/repository/junit/junit/4.5/junit-4.5.jar:/home/clemgi/.m2/repository/hsqldb/hsqldb/1.8.0.10/hsqldb-1.8.0.10.jar:/home/clemgi/.m2/repository/oro/oro/2.0.8/oro-2.0.8.jar:/home/clemgi/.m2/repository/org/eclipse/jdt/core/3.1.1/core-3.1.1.jar:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-core/target/fuzzyjoin-core-0.0.2.jar:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-core/target/fuzzyjoin-core-0.0.2-tests.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/clemgi"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.version.date" value="2024-07-16"/>
     <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
     <property name="file.separator" value="/"/>
     <property name="basedir" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop"/>
@@ -30,9 +30,9 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire/surefirebooter-20240814110855280_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/surefire/surefirebooter-20240821044301150_6.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="11.0.23+9-post-Ubuntu-1ubuntu120.04.2"/>
+    <property name="java.runtime.version" value="11.0.24+8-post-Ubuntu-1ubuntu322.04"/>
     <property name="user.name" value="clemgi"/>
     <property name="path.separator" value=":"/>
     <property name="os.version" value="5.15.153.1-microsoft-standard-WSL2"/>
@@ -42,7 +42,7 @@
     <property name="localRepository" value="/home/clemgi/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-lts"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="java.version" value="11.0.23"/>
+    <property name="java.version" value="11.0.24"/>
     <property name="user.dir" value="/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-hadoop"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
@@ -51,80 +51,12 @@
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Ubuntu"/>
-    <property name="java.vm.version" value="11.0.23+9-post-Ubuntu-1ubuntu120.04.2"/>
+    <property name="java.vm.version" value="11.0.24+8-post-Ubuntu-1ubuntu322.04"/>
     <property name="java.specification.maintenance.version" value="2"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="test010" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.005">
-    <system-out><![CDATA[[-Dfuzzyjoin.data.dir=../data/dblp-small, -Dfuzzyjoin.record.data=2,3, -Dfuzzyjoin.similarity.threshold=0.5]
-FuzzyJoinDriver(RecordBuild)
-  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/raw-000/*}
-  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000
-  Map Jobs:    2
-  Reduce Jobs: 0
-  Properties:  {fuzzyjoin.similarity.name=Jaccard
-                fuzzyjoin.similarity.threshold=0.5
-                fuzzyjoin.tokenizer=Word
-                fuzzyjoin.tokens.package=Scalar
-                fuzzyjoin.tokens.lengthstats=false
-                fuzzyjoin.ridpairs.group.class=TokenIdentity
-                fuzzyjoin.ridpairs.group.factor=1
-                fuzzyjoin.data.tokens=
-                fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:08 CEST 2024
-Job ended: Wed Aug 14 11:09:09 CEST 2024
-The job took 1.032 seconds.
-]]></system-out>
-    <system-err><![CDATA[Aug 14, 2024 11:09:08 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
-INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
-WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.FileInputFormat listStatus
-INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0013
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.FileInputFormat listStatus
-INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.MapTask runOldMapper
-INFO: numReduceTasks: 0
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0013_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
-INFO: 
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0013_m_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0013_m_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
-INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/raw-000/part-00000:0+36395
-Aug 14, 2024 11:09:08 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0013_m_000000_0' done.
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO:  map 100% reduce 0%
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0013
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO: Counters: 6
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO:     Spilled Records=0
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO:     Map input records=100
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO:     Map output records=100
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO:     Map input bytes=36395
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO:   FileSystemCounters
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=1534787
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=2093985
-]]></system-err>
-  </testcase>
-  <testcase name="test020" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.028">
+  <testcase name="test020" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.009">
     <system-out><![CDATA[FuzzyJoinDriver(RecordBalance)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000}
   Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000
@@ -139,98 +71,98 @@ INFO:     FILE_BYTES_READ=2093985
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=
                 fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:09 CEST 2024
-Job ended: Wed Aug 14 11:09:10 CEST 2024
+Job started: Wed Aug 21 04:43:14 CEST 2024
+Job ended: Wed Aug 21 04:43:15 CEST 2024
 The job took 1.024 seconds.
 ]]></system-out>
-    <system-err><![CDATA[Aug 14, 2024 11:09:09 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+    <system-err><![CDATA[Aug 21, 2024 4:43:14 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0014
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0013
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0014_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0013_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000/part-00000:0+36687
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0014_m_000000_0' done.
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0013_m_000000_0' done.
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 1 sorted segments
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 1 segments left of total size: 37127 bytes
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0014_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0013_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0014_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0014_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0013_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0013_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:09 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0014_r_000000_0' done.
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:14 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0013_r_000000_0' done.
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0014
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0013
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=0
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=200
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=100
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=100
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=100
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=100
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=36805
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=0
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=36687
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=100
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=3235451
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=4325783
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3107001
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4226295
 ]]></system-err>
   </testcase>
-  <testcase name="test100" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="2.046">
-    <system-out><![CDATA[Multi-Job started: Wed Aug 14 11:09:10 CEST 2024
+  <testcase name="test100" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="2.047">
+    <system-out><![CDATA[Multi-Job started: Wed Aug 21 04:43:15 CEST 2024
 FuzzyJoinDriver(TokensBasic.phase1)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
   Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000
@@ -245,8 +177,8 @@ FuzzyJoinDriver(TokensBasic.phase1)
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=
                 fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:10 CEST 2024
-Job ended: Wed Aug 14 11:09:11 CEST 2024
+Job started: Wed Aug 21 04:43:15 CEST 2024
+Job ended: Wed Aug 21 04:43:16 CEST 2024
 The job took 1.02 seconds.
 FuzzyJoinDriver(TokensBasic.phase2)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000}
@@ -262,183 +194,183 @@ FuzzyJoinDriver(TokensBasic.phase2)
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=
                 fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:11 CEST 2024
-Job ended: Wed Aug 14 11:09:12 CEST 2024
+Job started: Wed Aug 21 04:43:16 CEST 2024
+Job ended: Wed Aug 21 04:43:17 CEST 2024
 The job took 1.017 seconds.
-Multi-Job ended: Wed Aug 14 11:09:12 CEST 2024
-The multi-job took 2.037 seconds.
+Multi-Job ended: Wed Aug 21 04:43:17 CEST 2024
+The multi-job took 2.038 seconds.
 ]]></system-out>
-    <system-err><![CDATA[Aug 14, 2024 11:09:10 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+    <system-err><![CDATA[Aug 21, 2024 4:43:15 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0015
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0014
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0015_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0014_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0015_m_000000_0' done.
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0014_m_000000_0' done.
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 1 sorted segments
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 1 segments left of total size: 9062 bytes
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0015_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0014_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0015_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0015_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0014_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0014_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:10 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0015_r_000000_0' done.
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:15 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0014_r_000000_0' done.
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0015
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0014
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=597
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=1194
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=597
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=597
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=100
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=1248
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=15588
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=1248
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=36687
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=597
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=3360521
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=4473856
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3232043
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4374354
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0016
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0015
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0016_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0015_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens.phase1-000/part-00000:0+12847
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0016_m_000000_0' done.
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0015_m_000000_0' done.
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 1 sorted segments
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 1 segments left of total size: 9062 bytes
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0016_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0015_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0016_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0016_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0015_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0015_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:11 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0016_r_000000_0' done.
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:16 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0015_r_000000_0' done.
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0016
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0015
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=0
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=1194
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=597
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=597
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=597
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=597
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=7866
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=0
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=12762
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=18
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=3452370
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=4544914
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3323864
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4445398
 ]]></system-err>
   </testcase>
-  <testcase name="test110" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.024">
+  <testcase name="test110" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.027">
     <system-out><![CDATA[FuzzyJoinDriver(TokensImproved)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
   Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
@@ -453,97 +385,97 @@ INFO:     FILE_BYTES_READ=4544914
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=
                 fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:12 CEST 2024
-Job ended: Wed Aug 14 11:09:13 CEST 2024
-The job took 1.02 seconds.
+Job started: Wed Aug 21 04:43:17 CEST 2024
+Job ended: Wed Aug 21 04:43:18 CEST 2024
+The job took 1.022 seconds.
 ]]></system-out>
-    <system-err><![CDATA[Aug 14, 2024 11:09:12 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+    <system-err><![CDATA[Aug 21, 2024 4:43:17 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0017
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0016
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0017_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0016_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0017_m_000000_0' done.
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0016_m_000000_0' done.
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 1 sorted segments
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 1 segments left of total size: 9062 bytes
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0017_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0016_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0017_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0017_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0016_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0016_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/tokens-000
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:12 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0017_r_000000_0' done.
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:17 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0016_r_000000_0' done.
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0017
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0016
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=597
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=1194
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=597
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=597
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=100
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=1248
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=15588
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=1248
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=36687
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=597
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=3537158
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=4664222
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3408624
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4564692
 ]]></system-err>
   </testcase>
-  <testcase name="test200" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.027">
+  <testcase name="test200" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.024">
     <system-out><![CDATA[FuzzyJoinDriver(RIDPairsImproved)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
   Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
@@ -558,97 +490,97 @@ INFO:     FILE_BYTES_READ=4664222
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=../data/dblp-small/tokens-000/part-00000
                 fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:13 CEST 2024
-Job ended: Wed Aug 14 11:09:14 CEST 2024
-The job took 1.023 seconds.
+Job started: Wed Aug 21 04:43:18 CEST 2024
+Job ended: Wed Aug 21 04:43:19 CEST 2024
+The job took 1.02 seconds.
 ]]></system-out>
-    <system-err><![CDATA[Aug 14, 2024 11:09:13 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+    <system-err><![CDATA[Aug 21, 2024 4:43:18 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0018
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0017
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0018_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0017_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0018_m_000000_0' done.
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0017_m_000000_0' done.
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 1 sorted segments
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 1 segments left of total size: 51489 bytes
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0018_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0017_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0018_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0018_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0017_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0017_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:13 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0018_r_000000_0' done.
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:18 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0017_r_000000_0' done.
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0018
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0017
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=0
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=1396
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=698
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=83
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=100
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=698
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=50052
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=0
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=36687
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=542
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=3703473
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=4826429
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3574911
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4726885
 ]]></system-err>
   </testcase>
-  <testcase name="test210" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.031">
+  <testcase name="test210" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.029">
     <system-out><![CDATA[FuzzyJoinDriver(RIDPairsPPJoin.TokenIdentity)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
   Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
@@ -663,98 +595,98 @@ INFO:     FILE_BYTES_READ=4826429
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=../data/dblp-small/tokens-000/part-00000
                 fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:14 CEST 2024
-Job ended: Wed Aug 14 11:09:15 CEST 2024
-The job took 1.028 seconds.
+Job started: Wed Aug 21 04:43:19 CEST 2024
+Job ended: Wed Aug 21 04:43:20 CEST 2024
+The job took 1.024 seconds.
 ]]></system-out>
-    <system-err><![CDATA[Aug 14, 2024 11:09:14 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+    <system-err><![CDATA[Aug 21, 2024 4:43:19 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0019
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0018
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0019_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0018_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0019_m_000000_0' done.
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0018_m_000000_0' done.
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 1 sorted segments
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 1 segments left of total size: 54281 bytes
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0019_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0018_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0019_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0019_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0018_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0018_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:14 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0019_r_000000_0' done.
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:19 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0018_r_000000_0' done.
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0019
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0018
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=0
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=1396
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=698
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=83
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=100
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=698
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=52844
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=0
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=36687
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=542
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=3872221
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=5034415
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3743631
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=4934857
 ]]></system-err>
   </testcase>
-  <testcase name="test300" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="2.042">
-    <system-out><![CDATA[Multi-Job started: Wed Aug 14 11:09:15 CEST 2024
+  <testcase name="test300" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="2.057">
+    <system-out><![CDATA[Multi-Job started: Wed Aug 21 04:43:20 CEST 2024
 FuzzyJoinDriver(RecordPairsBasic.phase1)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000
                 file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000}
@@ -770,9 +702,9 @@ FuzzyJoinDriver(RecordPairsBasic.phase1)
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=
                 fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:15 CEST 2024
-Job ended: Wed Aug 14 11:09:16 CEST 2024
-The job took 1.021 seconds.
+Job started: Wed Aug 21 04:43:20 CEST 2024
+Job ended: Wed Aug 21 04:43:21 CEST 2024
+The job took 1.022 seconds.
 FuzzyJoinDriver(RecordPairsBasic.phase2)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs.phase1-000}
   Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
@@ -787,201 +719,201 @@ FuzzyJoinDriver(RecordPairsBasic.phase2)
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=
                 fuzzyjoin.data.joinindex=}
-Job started: Wed Aug 14 11:09:16 CEST 2024
-Job ended: Wed Aug 14 11:09:17 CEST 2024
-The job took 1.014 seconds.
-Multi-Job ended: Wed Aug 14 11:09:17 CEST 2024
-The multi-job took 2.036 seconds.
+Job started: Wed Aug 21 04:43:21 CEST 2024
+Job ended: Wed Aug 21 04:43:22 CEST 2024
+The job took 1.019 seconds.
+Multi-Job ended: Wed Aug 21 04:43:22 CEST 2024
+The multi-job took 2.042 seconds.
 ]]></system-out>
-    <system-err><![CDATA[Aug 14, 2024 11:09:15 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+    <system-err><![CDATA[Aug 21, 2024 4:43:20 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 2
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0020
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0019
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 2
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0020_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0019_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0020_m_000000_0' done.
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0019_m_000000_0' done.
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0020_m_000001_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0019_m_000001_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/ridpairs-000/part-00000:0+1239
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0020_m_000001_0' done.
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0019_m_000001_0' done.
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 2 sorted segments
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 2 segments left of total size: 41569 bytes
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0020_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0019_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0020_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0020_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs.phase1-000
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0019_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0019_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs.phase1-000
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:15 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0020_r_000000_0' done.
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:20 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0019_r_000000_0' done.
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0020
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0019
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=0
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=532
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=266
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=28
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=183
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=266
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=40913
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=0
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=37926
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=100
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=6026357
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=7830484
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=5833430
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=7681126
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0021
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0020
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0021_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0020_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs.phase1-000/part-00000:0+7463
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0021_m_000000_0' done.
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0020_m_000000_0' done.
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 1 sorted segments
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 1 segments left of total size: 7179 bytes
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0021_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0020_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0021_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0021_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0020_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0020_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:16 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0021_r_000000_0' done.
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:21 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0020_r_000000_0' done.
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0021
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0020
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=0
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=56
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=28
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=14
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=28
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=28
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=7082
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=0
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=7366
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=14
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=4106648
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=5325891
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=3978002
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=5226305
 ]]></system-err>
   </testcase>
-  <testcase name="test310" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.024">
+  <testcase name="test310" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.023">
     <system-out><![CDATA[FuzzyJoinDriver(RecordPairsImproved)
   Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000}
   Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
@@ -996,98 +928,166 @@ INFO:     FILE_BYTES_READ=5325891
                 fuzzyjoin.ridpairs.group.factor=1
                 fuzzyjoin.data.tokens=
                 fuzzyjoin.data.joinindex=../data/dblp-small/ridpairs-000/part-00000}
-Job started: Wed Aug 14 11:09:17 CEST 2024
-Job ended: Wed Aug 14 11:09:18 CEST 2024
-The job took 1.02 seconds.
+Job started: Wed Aug 21 04:43:22 CEST 2024
+Job ended: Wed Aug 21 04:43:23 CEST 2024
+The job took 1.019 seconds.
 ]]></system-out>
-    <system-err><![CDATA[Aug 14, 2024 11:09:17 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+    <system-err><![CDATA[Aug 21, 2024 4:43:22 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
 INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
 WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Running job: job_local_0022
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0021
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.FileInputFormat listStatus
 INFO: Total input paths to process : 1
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.MapTask runOldMapper
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.MapTask runOldMapper
 INFO: numReduceTasks: 1
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: io.sort.mb = 100
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: data buffer = 79691776/99614720
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer <init>
 INFO: record buffer = 262144/327680
-Aug 14, 2024 11:09:17 AM edu.uci.ics.fuzzyjoin.hadoop.recordpairs.MapBroadcastSelfJoin configure
+Aug 21, 2024 4:43:22 AM edu.uci.ics.fuzzyjoin.hadoop.recordpairs.MapBroadcastSelfJoin configure
 INFO: Configure START
-Aug 14, 2024 11:09:17 AM edu.uci.ics.fuzzyjoin.hadoop.recordpairs.MapBroadcastSelfJoin configure
+Aug 21, 2024 4:43:22 AM edu.uci.ics.fuzzyjoin.hadoop.recordpairs.MapBroadcastSelfJoin configure
 INFO: Configure END
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer flush
 INFO: Starting flush of map output
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.MapTask$MapOutputBuffer sortAndSpill
 INFO: Finished spill 0
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0022_m_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0021_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/records-000/part-00000:0+36687
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0022_m_000000_0' done.
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0021_m_000000_0' done.
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Merging 1 sorted segments
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Merger$MergeQueue merge
 INFO: Down to the last merge-pass, with 1 segments left of total size: 41586 bytes
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Task done
-INFO: Task:attempt_local_0022_r_000000_0 is done. And is in the process of commiting
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0021_r_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: 
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Task commit
-INFO: Task attempt_local_0022_r_000000_0 is allowed to commit now
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
-INFO: Saved output of task 'attempt_local_0022_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0021_r_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0021_r_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordpairs-000
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
 INFO: reduce > reduce
-Aug 14, 2024 11:09:17 AM org.apache.hadoop.mapred.Task sendDone
-INFO: Task 'attempt_local_0022_r_000000_0' done.
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+Aug 21, 2024 4:43:22 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0021_r_000000_0' done.
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
 INFO:  map 100% reduce 100%
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
-INFO: Job complete: job_local_0022
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0021
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO: Counters: 13
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:   Map-Reduce Framework
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine output records=0
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Spilled Records=332
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input records=85
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce output records=14
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input records=100
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output records=166
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map output bytes=41035
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce shuffle bytes=0
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Combine input records=0
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Map input bytes=36687
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:     Reduce input groups=14
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
 INFO:   FileSystemCounters
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_WRITTEN=4260096
-Aug 14, 2024 11:09:18 AM org.apache.hadoop.mapred.Counters log
-INFO:     FILE_BYTES_READ=5476414
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=4131422
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=5376814
+]]></system-err>
+  </testcase>
+  <testcase name="test010" classname="edu.uci.ics.fuzzyjoin.hadoop.test.FuzzySelfJoinTest" time="1.049">
+    <system-out><![CDATA[[-Dfuzzyjoin.data.dir=../data/dblp-small, -Dfuzzyjoin.record.data=2,3, -Dfuzzyjoin.similarity.threshold=0.5]
+FuzzyJoinDriver(RecordBuild)
+  Input Path:  {file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/raw-000/*}
+  Output Path: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000
+  Map Jobs:    2
+  Reduce Jobs: 0
+  Properties:  {fuzzyjoin.similarity.name=Jaccard
+                fuzzyjoin.similarity.threshold=0.5
+                fuzzyjoin.tokenizer=Word
+                fuzzyjoin.tokens.package=Scalar
+                fuzzyjoin.tokens.lengthstats=false
+                fuzzyjoin.ridpairs.group.class=TokenIdentity
+                fuzzyjoin.ridpairs.group.factor=1
+                fuzzyjoin.data.tokens=
+                fuzzyjoin.data.joinindex=}
+Job started: Wed Aug 21 04:43:23 CEST 2024
+Job ended: Wed Aug 21 04:43:24 CEST 2024
+The job took 1.047 seconds.
+]]></system-out>
+    <system-err><![CDATA[Aug 21, 2024 4:43:23 AM org.apache.hadoop.metrics.jvm.JvmMetrics init
+INFO: Cannot initialize JVM Metrics with processName=JobTracker, sessionId= - already initialized
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.JobClient configureCommandLineOptions
+WARNING: No job jar file set.  User classes may not be found. See JobConf(Class) or JobConf#setJar(String).
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Running job: job_local_0022
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.FileInputFormat listStatus
+INFO: Total input paths to process : 1
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.MapTask runOldMapper
+INFO: numReduceTasks: 0
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Task done
+INFO: Task:attempt_local_0022_m_000000_0 is done. And is in the process of commiting
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: 
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Task commit
+INFO: Task attempt_local_0022_m_000000_0 is allowed to commit now
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.FileOutputCommitter commitTask
+INFO: Saved output of task 'attempt_local_0022_m_000000_0' to file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/recordsbulk-000
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.LocalJobRunner$Job statusUpdate
+INFO: file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/data/dblp-small/raw-000/part-00000:0+36395
+Aug 21, 2024 4:43:23 AM org.apache.hadoop.mapred.Task sendDone
+INFO: Task 'attempt_local_0022_m_000000_0' done.
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO:  map 100% reduce 0%
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.JobClient monitorAndPrintJob
+INFO: Job complete: job_local_0022
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO: Counters: 6
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO:   Map-Reduce Framework
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO:     Spilled Records=0
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input records=100
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map output records=100
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO:     Map input bytes=36395
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO:   FileSystemCounters
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_WRITTEN=2133121
+Aug 21, 2024 4:43:24 AM org.apache.hadoop.mapred.Counters log
+INFO:     FILE_BYTES_READ=2758848
 ]]></system-err>
   </testcase>
 </testsuite>

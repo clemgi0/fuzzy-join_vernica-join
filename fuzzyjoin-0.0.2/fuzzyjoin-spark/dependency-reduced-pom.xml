@@ -39,6 +39,8 @@
                     <exclude>META-INF/*.SF</exclude>
                     <exclude>META-INF/*.DSA</exclude>
                     <exclude>META-INF/*.RSA</exclude>
+                    <exclude>META-INF/NOTICE</exclude>
+                    <exclude>META-INF/LICENSE</exclude>
                   </excludes>
                 </filter>
               </filters>
@@ -48,13 +50,4 @@
       </plugin>
     </plugins>
   </build>
-  <dependencies>
-    <dependency>
-      <groupId>edu.uci.ics.fuzzyjoin</groupId>
-      <artifactId>fuzzyjoin-core</artifactId>
-      <version>0.0.2</version>
-      <classifier>tests</classifier>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
 </project>

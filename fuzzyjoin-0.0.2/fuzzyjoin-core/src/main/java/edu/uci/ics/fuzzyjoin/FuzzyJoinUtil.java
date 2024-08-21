@@ -48,11 +48,11 @@ public class FuzzyJoinUtil {
 
     /**
      * @param splits
-     *            splitted record
+     *                       splitted record
      * @param dataColumns
-     *            column index of data columns
+     *                       column index of data columns
      * @param tokenSeparator
-     *            TODO
+     *                       TODO
      * 
      * @return concatenation of data column values
      */
@@ -76,7 +76,8 @@ public class FuzzyJoinUtil {
 
     /**
      * @param columnsString
-     *            string containing the indexes of the columns containing data
+     *                      string containing the indexes of the columns containing
+     *                      data
      * 
      * @return array of data columns indexes
      */

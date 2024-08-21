@@ -12,12 +12,12 @@ fuzzyjoin.tokens.package=Scalar
 fuzzyjoin.tokens.lengthstats=false
 fuzzyjoin.data.dir=dblp-small
 fuzzyjoin.ridpairs.group.factor=1
-spark.master=yarn
 fuzzyjoin.data.lengthstats=
-spark.app.submitTime=1723630118393
 spark.app.name=FuzzyJoinSpark
 spark.jars=file:/home/clemgi/4IF/stage/fuzzy-join_vernica-join/fuzzyjoin-0.0.2/fuzzyjoin-spark/target/fuzzyjoin-spark-0.0.1.jar
 fuzzyjoin.data.raw=*
+spark.app.submitTime=1724224542916
+spark.master=local[*]
 spark.submit.pyFiles=
 spark.submit.deployMode=client
 fuzzyjoin.record.data=2,3
@@ -30,7 +30,7 @@ fuzzyjoin.data.suffix.input=
 -------------------- Creating Java Spark Context --------------------
 
 
--------------------- Read files from HDFS --------------------
+-------------------- Read raw data from HDFS --------------------
 
 
 -------------------- Start Stage 1 : TokensBasic --------------------
@@ -41,1339 +41,12 @@ fuzzyjoin.data.suffix.input=
 
 -------------------- Phase 1 : Reduce : Scalar --------------------
 
-Id : object_1 Value : 1
-Id : sql_1 Value : 1
-Id : a_1 Value : 1
-Id : language_1 Value : 1
-Id : for_1 Value : 1
-Id : the_1 Value : 1
-Id : design_1 Value : 1
-Id : and_1 Value : 1
-Id : implementation_1 Value : 1
-Id : of_1 Value : 1
-Id : object_2 Value : 1
-Id : databases_1 Value : 1
-Id : oql_1 Value : 1
-Id : c_1 Value : 1
-Id : extending_1 Value : 1
-Id : c_2 Value : 1
-Id : with_1 Value : 1
-Id : an_1 Value : 1
-Id : object_1 Value : 1
-Id : query_1 Value : 1
-Id : capability_1 Value : 1
-Id : transaction_1 Value : 1
-Id : management_1 Value : 1
-Id : in_1 Value : 1
-Id : multidatabase_1 Value : 1
-Id : systems_1 Value : 1
-Id : multimedia_1 Value : 1
-Id : information_1 Value : 1
-Id : systems_1 Value : 1
-Id : issues_1 Value : 1
-Id : and_1 Value : 1
-Id : approaches_1 Value : 1
-Id : active_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : where_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : dbmss_1 Value : 1
-Id : should_1 Value : 1
-Id : do_1 Value : 1
-Id : better_1 Value : 1
-Id : a_1 Value : 1
-Id : critique_1 Value : 1
-Id : based_1 Value : 1
-Id : on_1 Value : 1
-Id : early_1 Value : 1
-Id : experiences_1 Value : 1
-Id : distributed_1 Value : 1
-Id : databases_1 Value : 1
-Id : an_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : dbms_1 Value : 1
-Id : war_1 Value : 1
-Id : story_1 Value : 1
-Id : developing_1 Value : 1
-Id : a_1 Value : 1
-Id : genome_1 Value : 1
-Id : mapping_1 Value : 1
-Id : database_1 Value : 1
-Id : in_1 Value : 1
-Id : c_1 Value : 1
-Id : cooperative_1 Value : 1
-Id : transactions_1 Value : 1
-Id : for_1 Value : 1
-Id : multiuser_1 Value : 1
-Id : environments_1 Value : 1
-Id : schema_1 Value : 1
-Id : architecture_1 Value : 1
-Id : of_1 Value : 1
-Id : the_1 Value : 1
-Id : unisql_1 Value : 1
-Id : m_1 Value : 1
-Id : multidatabase_1 Value : 1
-Id : system_1 Value : 1
-Id : physical_1 Value : 1
-Id : object_1 Value : 1
-Id : management_1 Value : 1
-Id : introduction_1 Value : 1
-Id : to_1 Value : 1
-Id : part_1 Value : 1
-Id : 1_1 Value : 1
-Id : next_1 Value : 1
-Id : generation_1 Value : 1
-Id : database_1 Value : 1
-Id : technology_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : promises_1 Value : 1
-Id : reality_1 Value : 1
-Id : and_1 Value : 1
-Id : future_1 Value : 1
-Id : introduction_1 Value : 1
-Id : to_1 Value : 1
-Id : part_1 Value : 1
-Id : 2_1 Value : 1
-Id : technology_1 Value : 1
-Id : for_1 Value : 1
-Id : interoperating_1 Value : 1
-Id : legacy_1 Value : 1
-Id : databases_1 Value : 1
-Id : on_1 Value : 1
-Id : resolving_1 Value : 1
-Id : schematic_1 Value : 1
-Id : heterogeneity_1 Value : 1
-Id : in_1 Value : 1
-Id : multidatabase_1 Value : 1
-Id : systems_1 Value : 1
-Id : requirements_1 Value : 1
-Id : for_1 Value : 1
-Id : a_1 Value : 1
-Id : performance_1 Value : 1
-Id : benchmark_1 Value : 1
-Id : for_2 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : on_1 Value : 1
-Id : view_1 Value : 1
-Id : support_1 Value : 1
-Id : in_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : databases_1 Value : 1
-Id : systems_1 Value : 1
-Id : the_1 Value : 1
-Id : posc_1 Value : 1
-Id : solution_1 Value : 1
-Id : to_1 Value : 1
-Id : managing_1 Value : 1
-Id : e_1 Value : 1
-Id : p_1 Value : 1
-Id : data_1 Value : 1
-Id : c_1 Value : 1
-Id : bindings_1 Value : 1
-Id : to_1 Value : 1
-Id : an_1 Value : 1
-Id : object_1 Value : 1
-Id : database_1 Value : 1
-Id : authorization_1 Value : 1
-Id : in_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : databases_1 Value : 1
-Id : query_1 Value : 1
-Id : processing_1 Value : 1
-Id : in_1 Value : 1
-Id : multidatabase_1 Value : 1
-Id : systems_1 Value : 1
-Id : management_1 Value : 1
-Id : of_1 Value : 1
-Id : uncerainty_1 Value : 1
-Id : in_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : parallel_1 Value : 1
-Id : relational_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : query_1 Value : 1
-Id : processing_1 Value : 1
-Id : in_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : specification_1 Value : 1
-Id : and_1 Value : 1
-Id : execution_1 Value : 1
-Id : of_1 Value : 1
-Id : transactional_1 Value : 1
-Id : workflows_1 Value : 1
-Id : spatial_1 Value : 1
-Id : data_1 Value : 1
-Id : structures_1 Value : 1
-Id : spatial_1 Value : 1
-Id : data_1 Value : 1
-Id : models_1 Value : 1
-Id : and_1 Value : 1
-Id : query_1 Value : 1
-Id : processing_1 Value : 1
-Id : pegasus_1 Value : 1
-Id : a_1 Value : 1
-Id : heterogeneous_1 Value : 1
-Id : information_1 Value : 1
-Id : management_1 Value : 1
-Id : system_1 Value : 1
-Id : temporal_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : databases_1 Value : 1
-Id : a_1 Value : 1
-Id : critical_1 Value : 1
-Id : comparison_1 Value : 1
-Id : the_1 Value : 1
-Id : omg_1 Value : 1
-Id : object_1 Value : 1
-Id : model_1 Value : 1
-Id : eda_1 Value : 1
-Id : sql_1 Value : 1
-Id : the_1 Value : 1
-Id : changing_1 Value : 1
-Id : database_1 Value : 1
-Id : standards_1 Value : 1
-Id : landscape_1 Value : 1
-Id : overview_1 Value : 1
-Id : of_1 Value : 1
-Id : the_1 Value : 1
-Id : adds_1 Value : 1
-Id : system_1 Value : 1
-Id : modern_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : the_1 Value : 1
-Id : object_1 Value : 1
-Id : model_1 Value : 1
-Id : interoperability_1 Value : 1
-Id : and_1 Value : 1
-Id : beyond_1 Value : 1
-Id : inequalities_1 Value : 1
-Id : theory_1 Value : 1
-Id : of_1 Value : 1
-Id : majorization_1 Value : 1
-Id : and_1 Value : 1
-Id : its_1 Value : 1
-Id : application_1 Value : 1
-Id : version_1 Value : 1
-Id : control_1 Value : 1
-Id : in_1 Value : 1
-Id : an_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : architecture_1 Value : 1
-Id : the_1 Value : 1
-Id : gemstone_1 Value : 1
-Id : data_1 Value : 1
-Id : management_1 Value : 1
-Id : system_1 Value : 1
-Id : storage_1 Value : 1
-Id : management_1 Value : 1
-Id : in_1 Value : 1
-Id : exodus_1 Value : 1
-Id : a_1 Value : 1
-Id : distributed_1 Value : 1
-Id : object_1 Value : 1
-Id : manager_1 Value : 1
-Id : for_1 Value : 1
-Id : the_1 Value : 1
-Id : smalltalk_1 Value : 1
-Id : 80_1 Value : 1
-Id : system_1 Value : 1
-Id : objects_1 Value : 1
-Id : messages_1 Value : 1
-Id : and_1 Value : 1
-Id : rules_1 Value : 1
-Id : in_1 Value : 1
-Id : database_1 Value : 1
-Id : design_1 Value : 1
-Id : active_1 Value : 1
-Id : objects_1 Value : 1
-Id : ealities_1 Value : 1
-Id : and_1 Value : 1
-Id : possibilities_1 Value : 1
-Id : overview_1 Value : 1
-Id : of_1 Value : 1
-Id : the_1 Value : 1
-Id : iris_1 Value : 1
-Id : dbms_1 Value : 1
-Id : features_1 Value : 1
-Id : of_1 Value : 1
-Id : the_1 Value : 1
-Id : orion_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : database_1 Value : 1
-Id : system_1 Value : 1
-Id : indexing_1 Value : 1
-Id : techniques_1 Value : 1
-Id : for_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : databases_1 Value : 1
-Id : my_1 Value : 1
-Id : cat_1 Value : 1
-Id : is_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : making_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : fast_1 Value : 1
-Id : enough_1 Value : 1
-Id : for_1 Value : 1
-Id : cad_1 Value : 1
-Id : applications_1 Value : 1
-Id : optimizing_1 Value : 1
-Id : smalltalk_1 Value : 1
-Id : message_1 Value : 1
-Id : performance_1 Value : 1
-Id : the_1 Value : 1
-Id : common_1 Value : 1
-Id : list_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : programming_1 Value : 1
-Id : language_1 Value : 1
-Id : standard_1 Value : 1
-Id : object_1 Value : 1
-Id : orientation_1 Value : 1
-Id : as_1 Value : 1
-Id : catalyst_1 Value : 1
-Id : for_1 Value : 1
-Id : language_1 Value : 1
-Id : database_1 Value : 1
-Id : inegration_1 Value : 1
-Id : a_1 Value : 1
-Id : survey_1 Value : 1
-Id : of_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : concepts_1 Value : 1
-Id : integrated_1 Value : 1
-Id : office_1 Value : 1
-Id : systems_1 Value : 1
-Id : proteus_1 Value : 1
-Id : a_1 Value : 1
-Id : frame_1 Value : 1
-Id : based_1 Value : 1
-Id : nonmonotonic_1 Value : 1
-Id : inference_1 Value : 1
-Id : system_1 Value : 1
-Id : concurrency_1 Value : 1
-Id : control_1 Value : 1
-Id : and_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : databases_1 Value : 1
-Id : a_1 Value : 1
-Id : shared_1 Value : 1
-Id : view_1 Value : 1
-Id : of_1 Value : 1
-Id : sharing_1 Value : 1
-Id : the_1 Value : 1
-Id : treaty_1 Value : 1
-Id : of_2 Value : 1
-Id : orlando_1 Value : 1
-Id : pogo_1 Value : 1
-Id : a_1 Value : 1
-Id : declarative_1 Value : 1
-Id : representation_1 Value : 1
-Id : system_1 Value : 1
-Id : for_1 Value : 1
-Id : graphics_1 Value : 1
-Id : concurrent_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : programming_1 Value : 1
-Id : languages_1 Value : 1
-Id : directions_1 Value : 1
-Id : in_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : research_1 Value : 1
-Id : a_1 Value : 1
-Id : proposal_1 Value : 1
-Id : for_1 Value : 1
-Id : a_2 Value : 1
-Id : formal_1 Value : 1
-Id : model_1 Value : 1
-Id : of_1 Value : 1
-Id : objects_1 Value : 1
-Id : oz_1 Value : 1
-Id : an_1 Value : 1
-Id : object_1 Value : 1
-Id : oriented_1 Value : 1
-Id : database_1 Value : 1
-Id : system_1 Value : 1
-Id : the_1 Value : 1
-Id : commercial_1 Value : 1
-Id : ingres_1 Value : 1
-Id : epilogue_1 Value : 1
-Id : design_1 Value : 1
-Id : of_1 Value : 1
-Id : relational_1 Value : 1
-Id : systems_1 Value : 1
-Id : introduction_1 Value : 1
-Id : to_1 Value : 1
-Id : section_1 Value : 1
-Id : 1_1 Value : 1
-Id : supporting_1 Value : 1
-Id : studies_1 Value : 1
-Id : on_1 Value : 1
-Id : relational_1 Value : 1
-Id : systems_1 Value : 1
-Id : introduction_1 Value : 1
-Id : to_1 Value : 1
-Id : section_1 Value : 1
-Id : 2_1 Value : 1
-Id : distributed_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : introduction_1 Value : 1
-Id : to_1 Value : 1
-Id : section_1 Value : 1
-Id : 3_1 Value : 1
-Id : the_1 Value : 1
-Id : design_1 Value : 1
-Id : and_1 Value : 1
-Id : implementation_1 Value : 1
-Id : of_1 Value : 1
-Id : distributed_1 Value : 1
-Id : ingres_1 Value : 1
-Id : user_1 Value : 1
-Id : interfaces_1 Value : 1
-Id : for_1 Value : 1
-Id : database_1 Value : 1
-Id : systems_1 Value : 1
-Id : introduction_1 Value : 1
-Id : to_1 Value : 1
-Id : section_1 Value : 1
-Id : 4_1 Value : 1
-Id : extended_1 Value : 1
-Id : semantics_1 Value : 1
-Id : for_1 Value : 1
-Id : the_1 Value : 1
-Id : relational_1 Value : 1
-Id : model_1 Value : 1
-Id : introduction_1 Value : 1
-Id : to_1 Value : 1
-Id : section_1 Value : 1
-Id : 5_1 Value : 1
-Id : database_1 Value : 1
-Id : design_1 Value : 1
-Id : introduction_1 Value : 1
-Id : to_1 Value : 1
-Id : section_1 Value : 1
-Id : 6_1 Value : 1
-Id : title_1 Value : 1
-Id : preface_1 Value : 1
-Id : contents_1 Value : 1
-Id : references_1 Value : 1
-Id : tex_1 Value : 1
-Id : the_1 Value : 1
-Id : program_1 Value : 1
-Id : foundations_1 Value : 1
-Id : of_1 Value : 1
-Id : databases_1 Value : 1
-Id : latex_1 Value : 1
-Id : user_1 Value : 1
-Id : s_1 Value : 1
-Id : guide_1 Value : 1
-Id : reference_1 Value : 1
-Id : manual_1 Value : 1
-Id : the_1 Value : 1
-Id : design_1 Value : 1
-Id : and_1 Value : 1
-Id : analysis_1 Value : 1
-Id : of_1 Value : 1
-Id : computer_1 Value : 1
-Id : algorithms_1 Value : 1
-Id : specifying_1 Value : 1
-Id : systems_1 Value : 1
-Id : the_1 Value : 1
-Id : tla_1 Value : 1
-Id : language_1 Value : 1
-Id : and_1 Value : 1
-Id : tools_1 Value : 1
-Id : for_1 Value : 1
-Id : hardware_1 Value : 1
-Id : and_2 Value : 1
-Id : software_1 Value : 1
-Id : engineers_1 Value : 1
-Id : data_1 Value : 1
-Id : structures_1 Value : 1
-Id : and_1 Value : 1
-Id : algorithms_1 Value : 1
-Id : databases_1 Value : 1
-Id : and_1 Value : 1
-Id : transaction_1 Value : 1
-Id : processing_1 Value : 1
-Id : an_1 Value : 1
-Id : application_1 Value : 1
-Id : oriented_1 Value : 1
-Id : approach_1 Value : 1
-Id : the_1 Value : 1
-Id : awk_1 Value : 1
-Id : programming_1 Value : 1
-Id : language_1 Value : 1
-Id : the_1 Value : 1
-Id : java_1 Value : 1
-Id : virtual_1 Value : 1
-Id : machine_1 Value : 1
-Id : specification_1 Value : 1
-Id : compilers_1 Value : 1
-Id : princiles_1 Value : 1
-Id : techniques_1 Value : 1
-Id : and_1 Value : 1
-Id : tools_1 Value : 1
-Id : algorithms_1 Value : 1
-Id : randomized_1 Value : 1
-Id : consensus_1 Value : 1
-Id : in_1 Value : 1
-Id : expected_1 Value : 1
-Id : o_1 Value : 1
-Id : n_1 Value : 1
-Id : log²_1 Value : 1
-Id : n_2 Value : 1
-Id : operations_1 Value : 1
-Id : per_1 Value : 1
-Id : processor_1 Value : 1
-Id : randomized_1 Value : 1
-Id : consensus_1 Value : 1
-Id : in_1 Value : 1
-Id : expected_1 Value : 1
-Id : o_1 Value : 1
-Id : n_1 Value : 1
-Id : log_1 Value : 1
-Id : 2_1 Value : 1
-Id : n_2 Value : 1
-Id : operations_1 Value : 1
-Id : per_1 Value : 1
-Id : processor_1 Value : 1
-Id : a_1 Value : 1
-Id : shortest_1 Value : 1
-Id : path_1 Value : 1
-Id : algorithm_1 Value : 1
-Id : with_1 Value : 1
-Id : expected_1 Value : 1
-Id : time_1 Value : 1
-Id : o_1 Value : 1
-Id : n²_1 Value : 1
-Id : log_1 Value : 1
-Id : n_1 Value : 1
-Id : log_2 Value : 1
-Id : n_2 Value : 1
-Id : a_1 Value : 1
-Id : shortest_1 Value : 1
-Id : path_1 Value : 1
-Id : algorithm_1 Value : 1
-Id : with_1 Value : 1
-Id : expected_1 Value : 1
-Id : time_1 Value : 1
-Id : o_1 Value : 1
-Id : n_1 Value : 1
-Id : 2_1 Value : 1
-Id : log_1 Value : 1
-Id : n_2 Value : 1
-Id : log_2 Value : 1
-Id : n_3 Value : 1
-Id : linear_1 Value : 1
-Id : time_1 Value : 1
-Id : algorithms_1 Value : 1
-Id : for_1 Value : 1
-Id : linear_2 Value : 1
-Id : programming_1 Value : 1
-Id : in_1 Value : 1
-Id : r³_1 Value : 1
-Id : and_1 Value : 1
-Id : related_1 Value : 1
-Id : problems_1 Value : 1
-Id : linear_1 Value : 1
-Id : time_1 Value : 1
-Id : algorithms_1 Value : 1
-Id : for_1 Value : 1
-Id : linear_2 Value : 1
-Id : programming_1 Value : 1
-Id : in_1 Value : 1
-Id : r_1 Value : 1
-Id : 3_1 Value : 1
-Id : and_1 Value : 1
-Id : related_1 Value : 1
-Id : problems_1 Value : 1
-Id : an_1 Value : 1
-Id : all_1 Value : 1
-Id : pairs_1 Value : 1
-Id : shortest_1 Value : 1
-Id : path_1 Value : 1
-Id : algorithm_1 Value : 1
-Id : with_1 Value : 1
-Id : expected_1 Value : 1
-Id : time_1 Value : 1
-Id : o_1 Value : 1
-Id : n²_1 Value : 1
-Id : log_1 Value : 1
-Id : n_1 Value : 1
-Id : an_1 Value : 1
-Id : all_1 Value : 1
-Id : pairs_1 Value : 1
-Id : shortest_1 Value : 1
-Id : path_1 Value : 1
-Id : algorithm_1 Value : 1
-Id : with_1 Value : 1
-Id : expected_1 Value : 1
-Id : running_1 Value : 1
-Id : time_1 Value : 1
-Id : o_1 Value : 1
-Id : n_1 Value : 1
-Id : 2_1 Value : 1
-Id : log_1 Value : 1
-Id : n_2 Value : 1
-Id : vortex_1 Value : 1
-Id : video_1 Value : 1
-Id : retrieval_1 Value : 1
-Id : and_1 Value : 1
-Id : tracking_1 Value : 1
-Id : from_1 Value : 1
-Id : compressed_1 Value : 1
-Id : multimedia_1 Value : 1
-Id : databases_1 Value : 1
-Id : vortex_1 Value : 1
-Id : video_1 Value : 1
-Id : retrieval_1 Value : 1
-Id : and_1 Value : 1
-Id : tracking_1 Value : 1
-Id : from_1 Value : 1
-Id : compressed_1 Value : 1
-Id : multimedia_1 Value : 1
-Id : databases_1 Value : 1
-Id : ¾_1 Value : 1
-Id : visual_1 Value : 1
-Id : search_1 Value : 1
-Id : engine_1 Value : 1
-Id : geometric_1 Value : 1
-Id : set_1 Value : 1
-Id : cover_1 Value : 1
-Id : and_1 Value : 1
-Id : hitting_1 Value : 1
-Id : sets_1 Value : 1
-Id : for_1 Value : 1
-Id : polytopes_1 Value : 1
-Id : in_1 Value : 1
-Id : r_1 Value : 1
-Id : 3_1 Value : 1
-Id : geometric_1 Value : 1
-Id : set_1 Value : 1
-Id : cover_1 Value : 1
-Id : and_1 Value : 1
-Id : hitting_1 Value : 1
-Id : sets_1 Value : 1
-Id : for_1 Value : 1
-Id : polytopes_1 Value : 1
-Id : in_1 Value : 1
-Id : r³_1 Value : 1
-Id : some_1 Value : 1
-Id : classes_1 Value : 1
-Id : of_1 Value : 1
-Id : languages_1 Value : 1
-Id : in_1 Value : 1
-Id : nc¹_1 Value : 1
-Id : on_1 Value : 1
-Id : some_1 Value : 1
-Id : languages_1 Value : 1
-Id : in_1 Value : 1
-Id : nc_1 Value : 1
-Id : an_1 Value : 1
-Id : o_1 Value : 1
-Id : n³log_1 Value : 1
-Id : n_1 Value : 1
-Id : deterministic_1 Value : 1
-Id : and_1 Value : 1
-Id : an_2 Value : 1
-Id : o_2 Value : 1
-Id : n³_1 Value : 1
-Id : las_1 Value : 1
-Id : vegs_1 Value : 1
-Id : isomorphism_1 Value : 1
-Id : test_1 Value : 1
-Id : for_1 Value : 1
-Id : trivalent_1 Value : 1
-Id : graphs_1 Value : 1
-Id : an_1 Value : 1
-Id : o_1 Value : 1
-Id : n_1 Value : 1
-Id : 3_1 Value : 1
-Id : log_1 Value : 1
-Id : n_2 Value : 1
-Id : deterministic_1 Value : 1
-Id : and_1 Value : 1
-Id : an_2 Value : 1
-Id : o_2 Value : 1
-Id : n_3 Value : 1
-Id : 3_2 Value : 1
-Id : probabilistic_1 Value : 1
-Id : isomorphism_1 Value : 1
-Id : test_1 Value : 1
-Id : for_1 Value : 1
-Id : trivalent_1 Value : 1
-Id : graphs_1 Value : 1
-Id : an_1 Value : 1
-Id : o_1 Value : 1
-Id : n²_1 Value : 1
-Id : m_1 Value : 1
-Id : n_1 Value : 1
-Id : log_1 Value : 1
-Id : n_2 Value : 1
-Id : log_2 Value : 1
-Id : n_3 Value : 1
-Id : min_1 Value : 1
-Id : cost_1 Value : 1
-Id : flow_1 Value : 1
-Id : algorithm_1 Value : 1
-Id : an_1 Value : 1
-Id : o_1 Value : 1
-Id : n_1 Value : 1
-Id : 2_1 Value : 1
-Id : m_1 Value : 1
-Id : n_2 Value : 1
-Id : log_1 Value : 1
-Id : n_3 Value : 1
-Id : log_2 Value : 1
-Id : n_4 Value : 1
-Id : min_1 Value : 1
-Id : cost_1 Value : 1
-Id : flow_1 Value : 1
-Id : algorithm_1 Value : 1
-Id : jordan_1 Value : 1
-Id : canonical_1 Value : 1
-Id : form_1 Value : 1
-Id : theory_1 Value : 1
-Id : and_1 Value : 1
-Id : practice_1 Value : 1
-Id : the_1 Value : 1
-Id : geometry_1 Value : 1
-Id : of_1 Value : 1
-Id : walker_1 Value : 1
-Id : manifolds_1 Value : 1
-
---------------------  --------------------
-
-Id : engineers_1 Value : 1
-Id : execution_1 Value : 1
-Id : query_1 Value : 4
-Id : introduction_1 Value : 8
-Id : bindings_1 Value : 1
-Id : 4_1 Value : 1
-Id : oql_1 Value : 1
-Id : better_1 Value : 1
-Id : classes_1 Value : 1
-Id : ealities_1 Value : 1
-Id : form_1 Value : 1
-Id : 6_1 Value : 1
-Id : approach_1 Value : 1
-Id : program_1 Value : 1
-Id : temporal_1 Value : 1
-Id : jordan_1 Value : 1
-Id : java_1 Value : 1
-Id : pegasus_1 Value : 1
-Id : promises_1 Value : 1
-Id : models_1 Value : 1
-Id : mapping_1 Value : 1
-Id : compilers_1 Value : 1
-Id : epilogue_1 Value : 1
-Id : r_1 Value : 2
-Id : preface_1 Value : 1
-Id : object_2 Value : 1
-Id : transaction_1 Value : 2
-Id : generation_1 Value : 1
-Id : p_1 Value : 1
-Id : war_1 Value : 1
-Id : latex_1 Value : 1
-Id : uncerainty_1 Value : 1
-Id : managing_1 Value : 1
-Id : problems_1 Value : 2
-Id : active_1 Value : 2
-Id : an_2 Value : 2
-Id : multiuser_1 Value : 1
-Id : foundations_1 Value : 1
-Id : capability_1 Value : 1
-Id : retrieval_1 Value : 2
-Id : version_1 Value : 1
-Id : sharing_1 Value : 1
-Id : o_2 Value : 2
-Id : from_1 Value : 2
-Id : set_1 Value : 2
-Id : vortex_1 Value : 2
-Id : flow_1 Value : 2
-Id : manual_1 Value : 1
-Id : objects_1 Value : 3
-Id : performance_1 Value : 2
-Id : messages_1 Value : 1
-Id : log_1 Value : 8
-Id : as_1 Value : 1
-Id : shortest_1 Value : 4
-Id : enough_1 Value : 1
-Id : ¾_1 Value : 1
-Id : systems_1 Value : 19
-Id : expected_1 Value : 6
-Id : contents_1 Value : 1
-Id : fast_1 Value : 1
-Id : my_1 Value : 1
-Id : gemstone_1 Value : 1
-Id : commercial_1 Value : 1
-Id : optimizing_1 Value : 1
-Id : ingres_1 Value : 2
-Id : cad_1 Value : 1
-Id : interfaces_1 Value : 1
-Id : min_1 Value : 2
-Id : a_2 Value : 1
-Id : exodus_1 Value : 1
-Id : interoperability_1 Value : 1
-Id : workflows_1 Value : 1
-Id : data_1 Value : 5
-Id : processor_1 Value : 2
-Id : for_2 Value : 1
-Id : list_1 Value : 1
-Id : structures_1 Value : 2
-Id : design_1 Value : 6
-Id : of_2 Value : 1
-Id : geometry_1 Value : 1
-Id : standards_1 Value : 1
-Id : inegration_1 Value : 1
-Id : nc¹_1 Value : 1
-Id : language_1 Value : 5
-Id : and_2 Value : 1
-Id : n_3 Value : 4
-Id : title_1 Value : 1
-Id : orientation_1 Value : 1
-Id : c_2 Value : 1
-Id : application_1 Value : 2
-Id : operations_1 Value : 2
-Id : test_1 Value : 2
-Id : reality_1 Value : 1
-Id : requirements_1 Value : 1
-Id : directions_1 Value : 1
-Id : oriented_1 Value : 19
-Id : adds_1 Value : 1
-Id : some_1 Value : 2
-Id : deterministic_1 Value : 2
-Id : analysis_1 Value : 1
-Id : databases_1 Value : 12
-Id : extending_1 Value : 1
-Id : information_1 Value : 2
-Id : 3_2 Value : 1
-Id : log²_1 Value : 1
-Id : technology_1 Value : 2
-Id : 80_1 Value : 1
-Id : heterogeneity_1 Value : 1
-Id : hardware_1 Value : 1
-Id : office_1 Value : 1
-Id : its_1 Value : 1
-Id : eda_1 Value : 1
-Id : spatial_1 Value : 2
-Id : canonical_1 Value : 1
-Id : algorithms_1 Value : 5
-Id : multidatabase_1 Value : 4
-Id : references_1 Value : 1
-Id : issues_1 Value : 1
-Id : approaches_1 Value : 1
-Id : n²_1 Value : 3
-Id : walker_1 Value : 1
-Id : visual_1 Value : 1
-Id : dbms_1 Value : 2
-Id : n_1 Value : 10
-Id : proteus_1 Value : 1
-Id : with_1 Value : 5
-Id : guide_1 Value : 1
-Id : linear_2 Value : 2
-Id : proposal_1 Value : 1
-Id : implementation_1 Value : 2
-Id : cat_1 Value : 1
-Id : environments_1 Value : 1
-Id : declarative_1 Value : 1
-Id : 2_1 Value : 6
-Id : las_1 Value : 1
-Id : engine_1 Value : 1
-Id : unisql_1 Value : 1
-Id : critique_1 Value : 1
-Id : isomorphism_1 Value : 2
-Id : sql_1 Value : 2
-Id : is_1 Value : 1
-Id : survey_1 Value : 1
-Id : indexing_1 Value : 1
-Id : search_1 Value : 1
-Id : linear_1 Value : 2
-Id : tla_1 Value : 1
-Id : of_1 Value : 17
-Id : heterogeneous_1 Value : 1
-Id : object_1 Value : 26
-Id : future_1 Value : 1
-Id : virtual_1 Value : 1
-Id : omg_1 Value : 1
-Id : features_1 Value : 1
-Id : developing_1 Value : 1
-Id : support_1 Value : 1
-Id : legacy_1 Value : 1
-Id : the_1 Value : 22
-Id : distributed_1 Value : 4
-Id : r³_1 Value : 2
-Id : manager_1 Value : 1
-Id : per_1 Value : 2
-Id : overview_1 Value : 2
-Id : programming_1 Value : 5
-Id : m_1 Value : 3
-Id : oz_1 Value : 1
-Id : landscape_1 Value : 1
-Id : n_4 Value : 1
-Id : machine_1 Value : 1
-Id : tex_1 Value : 1
-Id : standard_1 Value : 1
-Id : manifolds_1 Value : 1
-Id : multimedia_1 Value : 3
-Id : where_1 Value : 1
-Id : algorithm_1 Value : 6
-Id : probabilistic_1 Value : 1
-Id : o_1 Value : 10
-Id : applications_1 Value : 1
-Id : user_1 Value : 2
-Id : e_1 Value : 1
-Id : for_1 Value : 19
-Id : specifying_1 Value : 1
-Id : iris_1 Value : 1
-Id : representation_1 Value : 1
-Id : nc_1 Value : 1
-Id : compressed_1 Value : 2
-Id : n³_1 Value : 1
-Id : polytopes_1 Value : 2
-Id : running_1 Value : 1
-Id : transactional_1 Value : 1
-Id : languages_1 Value : 3
-Id : benchmark_1 Value : 1
-Id : shared_1 Value : 1
-Id : s_1 Value : 1
-Id : nonmonotonic_1 Value : 1
-Id : an_1 Value : 12
-Id : rules_1 Value : 1
-Id : beyond_1 Value : 1
-Id : extended_1 Value : 1
-Id : a_1 Value : 14
-Id : critical_1 Value : 1
-Id : control_1 Value : 2
-Id : system_1 Value : 9
-Id : semantics_1 Value : 1
-Id : database_1 Value : 19
-Id : specification_1 Value : 2
-Id : trivalent_1 Value : 2
-Id : integrated_1 Value : 1
-Id : tracking_1 Value : 2
-Id : making_1 Value : 1
-Id : management_1 Value : 6
-Id : in_1 Value : 20
-Id : comparison_1 Value : 1
-Id : log_2 Value : 4
-Id : software_1 Value : 1
-Id : resolving_1 Value : 1
-Id : computer_1 Value : 1
-Id : relational_1 Value : 4
-Id : genome_1 Value : 1
-Id : should_1 Value : 1
-Id : theory_1 Value : 2
-Id : schema_1 Value : 1
-Id : message_1 Value : 1
-Id : 1_1 Value : 2
-Id : reference_1 Value : 1
-Id : cost_1 Value : 2
-Id : posc_1 Value : 1
-Id : cooperative_1 Value : 1
-Id : concurrent_1 Value : 1
-Id : model_1 Value : 4
-Id : based_1 Value : 2
-Id : graphs_1 Value : 2
-Id : concepts_1 Value : 1
-Id : related_1 Value : 2
-Id : awk_1 Value : 1
-Id : early_1 Value : 1
-Id : possibilities_1 Value : 1
-Id : section_1 Value : 6
-Id : practice_1 Value : 1
-Id : catalyst_1 Value : 1
-Id : majorization_1 Value : 1
-Id : c_1 Value : 3
-Id : graphics_1 Value : 1
-Id : transactions_1 Value : 1
-Id : solution_1 Value : 1
-Id : video_1 Value : 2
-Id : time_1 Value : 6
-Id : n_2 Value : 8
-Id : randomized_1 Value : 2
-Id : pairs_1 Value : 2
-Id : formal_1 Value : 1
-Id : architecture_1 Value : 2
-Id : schematic_1 Value : 1
-Id : interoperating_1 Value : 1
-Id : princiles_1 Value : 1
-Id : parallel_1 Value : 1
-Id : inference_1 Value : 1
-Id : changing_1 Value : 1
-Id : orlando_1 Value : 1
-Id : part_1 Value : 2
-Id : experiences_1 Value : 1
-Id : authorization_1 Value : 1
-Id : orion_1 Value : 1
-Id : story_1 Value : 1
-Id : common_1 Value : 1
-Id : dbmss_1 Value : 1
-Id : frame_1 Value : 1
-Id : cover_1 Value : 2
-Id : 5_1 Value : 1
-Id : n³log_1 Value : 1
-Id : consensus_1 Value : 2
-Id : physical_1 Value : 1
-Id : tools_1 Value : 2
-Id : studies_1 Value : 1
-Id : on_1 Value : 5
-Id : techniques_1 Value : 2
-Id : processing_1 Value : 4
-Id : next_1 Value : 1
-Id : do_1 Value : 1
-Id : storage_1 Value : 1
-Id : pogo_1 Value : 1
-Id : hitting_1 Value : 2
-Id : to_1 Value : 10
-Id : supporting_1 Value : 1
-Id : concurrency_1 Value : 1
-Id : research_1 Value : 1
-Id : all_1 Value : 2
-Id : view_1 Value : 2
-Id : modern_1 Value : 1
-Id : treaty_1 Value : 1
-Id : smalltalk_1 Value : 2
-Id : inequalities_1 Value : 1
-Id : vegs_1 Value : 1
-Id : sets_1 Value : 2
-Id : 3_1 Value : 4
-Id : geometric_1 Value : 2
-Id : and_1 Value : 25
-Id : path_1 Value : 4
 
 -------------------- Phase 2 : Map : Scalar --------------------
 
 
 -------------------- Phase 2 : Reduce : Scalar --------------------
 
-Value : 8 Id : introduction_1
-Value : 1 Id : execution_1
-Value : 1 Id : bindings_1
-Value : 1 Id : engineers_1
-Value : 1 Id : 4_1
-Value : 1 Id : oql_1
-Value : 1 Id : engine_1
-Value : 1 Id : better_1
-Value : 1 Id : classes_1
-Value : 1 Id : ealities_1
-Value : 1 Id : form_1
-Value : 1 Id : 6_1
-Value : 1 Id : program_1
-Value : 1 Id : approach_1
-Value : 1 Id : temporal_1
-Value : 1 Id : jordan_1
-Value : 1 Id : models_1
-Value : 1 Id : pegasus_1
-Value : 1 Id : promises_1
-Value : 1 Id : generation_1
-Value : 1 Id : mapping_1
-Value : 1 Id : compilers_1
-Value : 1 Id : epilogue_1
-Value : 2 Id : r_1
-Value : 1 Id : preface_1
-Value : 1 Id : object_2
-Value : 2 Id : transaction_1
-Value : 1 Id : p_1
-Value : 1 Id : java_1
-Value : 1 Id : war_1
-Value : 1 Id : uncerainty_1
-Value : 1 Id : latex_1
-Value : 1 Id : managing_1
-Value : 2 Id : active_1
-Value : 1 Id : foundations_1
-Value : 2 Id : an_2
-Value : 1 Id : multiuser_1
-Value : 1 Id : capability_1
-Value : 2 Id : problems_1
-Value : 1 Id : version_1
-Value : 2 Id : retrieval_1
-Value : 1 Id : sharing_1
-Value : 2 Id : o_2
-Value : 1 Id : messages_1
-Value : 1 Id : interfaces_1
-Value : 2 Id : set_1
-Value : 3 Id : objects_1
-Value : 2 Id : performance_1
-Value : 1 Id : manual_1
-Value : 2 Id : vortex_1
-Value : 2 Id : flow_1
-Value : 2 Id : from_1
-Value : 8 Id : log_1
-Value : 1 Id : as_1
-Value : 4 Id : shortest_1
-Value : 1 Id : enough_1
-Value : 1 Id : ¾_1
-Value : 1 Id : fast_1
-Value : 19 Id : systems_1
-Value : 1 Id : contents_1
-Value : 1 Id : my_1
-Value : 6 Id : expected_1
-Value : 1 Id : gemstone_1
-Value : 1 Id : commercial_1
-Value : 1 Id : optimizing_1
-Value : 2 Id : ingres_1
-Value : 1 Id : cad_1
-Value : 2 Id : min_1
-Value : 1 Id : a_2
-Value : 1 Id : exodus_1
-Value : 1 Id : interoperability_1
-Value : 1 Id : workflows_1
-Value : 5 Id : data_1
-Value : 1 Id : for_2
-Value : 2 Id : processor_1
-Value : 1 Id : list_1
-Value : 1 Id : of_2
-Value : 6 Id : design_1
-Value : 1 Id : inegration_1
-Value : 1 Id : orientation_1
-Value : 1 Id : standards_1
-Value : 2 Id : structures_1
-Value : 5 Id : language_1
-Value : 4 Id : n_3
-Value : 1 Id : nc¹_1
-Value : 1 Id : and_2
-Value : 1 Id : title_1
-Value : 1 Id : c_2
-Value : 2 Id : application_1
-Value : 1 Id : reality_1
-Value : 2 Id : test_1
-Value : 2 Id : operations_1
-Value : 1 Id : geometry_1
-Value : 1 Id : requirements_1
-Value : 1 Id : directions_1
-Value : 1 Id : adds_1
-Value : 19 Id : oriented_1
-Value : 2 Id : some_1
-Value : 12 Id : databases_1
-Value : 2 Id : deterministic_1
-Value : 1 Id : analysis_1
-Value : 1 Id : extending_1
-Value : 2 Id : information_1
-Value : 1 Id : 3_2
-Value : 2 Id : technology_1
-Value : 1 Id : log²_1
-Value : 1 Id : 80_1
-Value : 1 Id : heterogeneity_1
-Value : 1 Id : office_1
-Value : 1 Id : hardware_1
-Value : 1 Id : its_1
-Value : 1 Id : eda_1
-Value : 2 Id : spatial_1
-Value : 1 Id : canonical_1
-Value : 4 Id : multidatabase_1
-Value : 5 Id : algorithms_1
-Value : 1 Id : references_1
-Value : 1 Id : issues_1
-Value : 1 Id : approaches_1
-Value : 3 Id : n²_1
-Value : 1 Id : walker_1
-Value : 2 Id : dbms_1
-Value : 1 Id : visual_1
-Value : 10 Id : n_1
-Value : 1 Id : proteus_1
-Value : 5 Id : with_1
-Value : 1 Id : proposal_1
-Value : 1 Id : guide_1
-Value : 2 Id : linear_2
-Value : 2 Id : implementation_1
-Value : 1 Id : cat_1
-Value : 1 Id : environments_1
-Value : 1 Id : declarative_1
-Value : 6 Id : 2_1
-Value : 2 Id : sql_1
-Value : 4 Id : query_1
-Value : 1 Id : unisql_1
-Value : 1 Id : critique_1
-Value : 1 Id : is_1
-Value : 1 Id : las_1
-Value : 1 Id : survey_1
-Value : 1 Id : indexing_1
-Value : 1 Id : search_1
-Value : 2 Id : isomorphism_1
-Value : 2 Id : linear_1
-Value : 1 Id : tla_1
-Value : 17 Id : of_1
-Value : 1 Id : heterogeneous_1
-Value : 1 Id : virtual_1
-Value : 26 Id : object_1
-Value : 1 Id : future_1
-Value : 1 Id : omg_1
-Value : 1 Id : features_1
-Value : 1 Id : developing_1
-Value : 1 Id : support_1
-Value : 1 Id : legacy_1
-Value : 22 Id : the_1
-Value : 4 Id : distributed_1
-Value : 2 Id : r³_1
-Value : 1 Id : manager_1
-Value : 2 Id : per_1
-Value : 5 Id : programming_1
-Value : 2 Id : overview_1
-Value : 1 Id : n³_1
-Value : 3 Id : m_1
-Value : 1 Id : n_4
-Value : 1 Id : landscape_1
-Value : 1 Id : machine_1
-Value : 10 Id : o_1
-Value : 1 Id : standard_1
-Value : 1 Id : manifolds_1
-Value : 3 Id : multimedia_1
-Value : 1 Id : oz_1
-Value : 6 Id : algorithm_1
-Value : 1 Id : probabilistic_1
-Value : 1 Id : tex_1
-Value : 1 Id : applications_1
-Value : 2 Id : user_1
-Value : 19 Id : for_1
-Value : 1 Id : specifying_1
-Value : 2 Id : compressed_1
-Value : 1 Id : e_1
-Value : 1 Id : iris_1
-Value : 1 Id : representation_1
-Value : 1 Id : nc_1
-Value : 2 Id : polytopes_1
-Value : 1 Id : running_1
-Value : 1 Id : transactional_1
-Value : 1 Id : where_1
-Value : 3 Id : languages_1
-Value : 1 Id : benchmark_1
-Value : 1 Id : shared_1
-Value : 1 Id : s_1
-Value : 1 Id : nonmonotonic_1
-Value : 12 Id : an_1
-Value : 1 Id : rules_1
-Value : 1 Id : beyond_1
-Value : 2 Id : tracking_1
-Value : 14 Id : a_1
-Value : 1 Id : critical_1
-Value : 1 Id : extended_1
-Value : 2 Id : control_1
-Value : 9 Id : system_1
-Value : 2 Id : specification_1
-Value : 1 Id : semantics_1
-Value : 19 Id : database_1
-Value : 2 Id : trivalent_1
-Value : 1 Id : integrated_1
-Value : 2 Id : cost_1
-Value : 4 Id : log_2
-Value : 20 Id : in_1
-Value : 2 Id : graphs_1
-Value : 1 Id : software_1
-Value : 1 Id : comparison_1
-Value : 1 Id : computer_1
-Value : 4 Id : relational_1
-Value : 1 Id : making_1
-Value : 1 Id : should_1
-Value : 2 Id : theory_1
-Value : 1 Id : schema_1
-Value : 1 Id : message_1
-Value : 2 Id : 1_1
-Value : 1 Id : reference_1
-Value : 6 Id : management_1
-Value : 1 Id : awk_1
-Value : 1 Id : cooperative_1
-Value : 1 Id : concurrent_1
-Value : 1 Id : posc_1
-Value : 2 Id : based_1
-Value : 1 Id : resolving_1
-Value : 1 Id : concepts_1
-Value : 1 Id : genome_1
-Value : 2 Id : related_1
-Value : 4 Id : model_1
-Value : 1 Id : early_1
-Value : 1 Id : possibilities_1
-Value : 6 Id : section_1
-Value : 1 Id : practice_1
-Value : 1 Id : catalyst_1
-Value : 1 Id : majorization_1
-Value : 3 Id : c_1
-Value : 1 Id : graphics_1
-Value : 2 Id : video_1
-Value : 1 Id : solution_1
-Value : 1 Id : transactions_1
-Value : 6 Id : time_1
-Value : 8 Id : n_2
-Value : 2 Id : randomized_1
-Value : 2 Id : pairs_1
-Value : 1 Id : formal_1
-Value : 2 Id : architecture_1
-Value : 1 Id : schematic_1
-Value : 1 Id : princiles_1
-Value : 1 Id : interoperating_1
-Value : 1 Id : parallel_1
-Value : 1 Id : inference_1
-Value : 1 Id : changing_1
-Value : 2 Id : part_1
-Value : 1 Id : authorization_1
-Value : 1 Id : orlando_1
-Value : 1 Id : experiences_1
-Value : 1 Id : orion_1
-Value : 1 Id : story_1
-Value : 1 Id : common_1
-Value : 1 Id : dbmss_1
-Value : 2 Id : cover_1
-Value : 1 Id : frame_1
-Value : 1 Id : 5_1
-Value : 1 Id : n³log_1
-Value : 2 Id : consensus_1
-Value : 1 Id : physical_1
-Value : 2 Id : tools_1
-Value : 1 Id : studies_1
-Value : 5 Id : on_1
-Value : 2 Id : techniques_1
-Value : 4 Id : processing_1
-Value : 1 Id : next_1
-Value : 1 Id : do_1
-Value : 1 Id : storage_1
-Value : 1 Id : pogo_1
-Value : 2 Id : hitting_1
-Value : 10 Id : to_1
-Value : 1 Id : supporting_1
-Value : 1 Id : concurrency_1
-Value : 2 Id : all_1
-Value : 1 Id : research_1
-Value : 2 Id : view_1
-Value : 1 Id : modern_1
-Value : 2 Id : smalltalk_1
-Value : 1 Id : inequalities_1
-Value : 1 Id : vegs_1
-Value : 1 Id : treaty_1
-Value : 2 Id : sets_1
-Value : 4 Id : 3_1
-Value : 2 Id : geometric_1
-Value : 4 Id : path_1
-Value : 25 Id : and_1
 
 --------------------  --------------------
 
@@ -1675,11 +348,467 @@ Value : 22 Id : the_1
 Value : 25 Id : and_1
 Value : 26 Id : object_1
 
+-------------------- Read records from HDFS --------------------
+
+
 -------------------- Start Stage 2 : RIDPairsPPJoin --------------------
 
 
 -------------------- Self-join : Map --------------------
 
+Group : 273 | Length : 12  ||  RID : 1 TokensRanked : [116, 206, 234, 267, 273, 286, 287, 288, 290, 294, 295, 296]
+Group : 116 | Length : 12  ||  RID : 1 TokensRanked : [116, 206, 234, 267, 273, 286, 287, 288, 290, 294, 295, 296]
+Group : 234 | Length : 12  ||  RID : 1 TokensRanked : [116, 206, 234, 267, 273, 286, 287, 288, 290, 294, 295, 296]
+Group : 267 | Length : 12  ||  RID : 1 TokensRanked : [116, 206, 234, 267, 273, 286, 287, 288, 290, 294, 295, 296]
+Group : 206 | Length : 12  ||  RID : 1 TokensRanked : [116, 206, 234, 267, 273, 286, 287, 288, 290, 294, 295, 296]
+Group : 286 | Length : 12  ||  RID : 1 TokensRanked : [116, 206, 234, 267, 273, 286, 287, 288, 290, 294, 295, 296]
+Group : 287 | Length : 12  ||  RID : 1 TokensRanked : [116, 206, 234, 267, 273, 286, 287, 288, 290, 294, 295, 296]
+Group : 19 | Length : 10  ||  RID : 2 TokensRanked : [19, 22, 57, 121, 248, 262, 270, 285, 287, 296]
+Group : 22 | Length : 10  ||  RID : 2 TokensRanked : [19, 22, 57, 121, 248, 262, 270, 285, 287, 296]
+Group : 262 | Length : 10  ||  RID : 2 TokensRanked : [19, 22, 57, 121, 248, 262, 270, 285, 287, 296]
+Group : 248 | Length : 10  ||  RID : 2 TokensRanked : [19, 22, 57, 121, 248, 262, 270, 285, 287, 296]
+Group : 57 | Length : 10  ||  RID : 2 TokensRanked : [19, 22, 57, 121, 248, 262, 270, 285, 287, 296]
+Group : 121 | Length : 10  ||  RID : 2 TokensRanked : [19, 22, 57, 121, 248, 262, 270, 285, 287, 296]
+Group : 242 | Length : 5  ||  RID : 3 TokensRanked : [242, 258, 275, 292, 293]
+Group : 258 | Length : 5  ||  RID : 3 TokensRanked : [242, 258, 275, 292, 293]
+Group : 275 | Length : 5  ||  RID : 3 TokensRanked : [242, 258, 275, 292, 293]
+Group : 85 | Length : 6  ||  RID : 4 TokensRanked : [11, 85, 207, 251, 292, 295]
+Group : 11 | Length : 6  ||  RID : 4 TokensRanked : [11, 85, 207, 251, 292, 295]
+Group : 251 | Length : 6  ||  RID : 4 TokensRanked : [11, 85, 207, 251, 292, 295]
+Group : 207 | Length : 6  ||  RID : 4 TokensRanked : [11, 85, 207, 251, 292, 295]
+Group : 289 | Length : 4  ||  RID : 5 TokensRanked : [188, 282, 289, 292]
+Group : 282 | Length : 4  ||  RID : 5 TokensRanked : [188, 282, 289, 292]
+Group : 188 | Length : 4  ||  RID : 5 TokensRanked : [188, 282, 289, 292]
+Group : 16 | Length : 14  ||  RID : 6 TokensRanked : [16, 38, 39, 43, 46, 55, 157, 184, 193, 223, 268, 287, 291, 296]
+Group : 38 | Length : 14  ||  RID : 6 TokensRanked : [16, 38, 39, 43, 46, 55, 157, 184, 193, 223, 268, 287, 291, 296]
+Group : 39 | Length : 14  ||  RID : 6 TokensRanked : [16, 38, 39, 43, 46, 55, 157, 184, 193, 223, 268, 287, 291, 296]
+Group : 55 | Length : 14  ||  RID : 6 TokensRanked : [16, 38, 39, 43, 46, 55, 157, 184, 193, 223, 268, 287, 291, 296]
+Group : 184 | Length : 14  ||  RID : 6 TokensRanked : [16, 38, 39, 43, 46, 55, 157, 184, 193, 223, 268, 287, 291, 296]
+Group : 43 | Length : 14  ||  RID : 6 TokensRanked : [16, 38, 39, 43, 46, 55, 157, 184, 193, 223, 268, 287, 291, 296]
+Group : 157 | Length : 14  ||  RID : 6 TokensRanked : [16, 38, 39, 43, 46, 55, 157, 184, 193, 223, 268, 287, 291, 296]
+Group : 46 | Length : 14  ||  RID : 6 TokensRanked : [16, 38, 39, 43, 46, 55, 157, 184, 193, 223, 268, 287, 291, 296]
+Group : 286 | Length : 2  ||  RID : 7 TokensRanked : [255, 286]
+Group : 255 | Length : 2  ||  RID : 7 TokensRanked : [255, 286]
+Group : 68 | Length : 13  ||  RID : 8 TokensRanked : [41, 68, 102, 164, 183, 199, 248, 285, 287, 289, 291, 293, 296]
+Group : 164 | Length : 13  ||  RID : 8 TokensRanked : [41, 68, 102, 164, 183, 199, 248, 285, 287, 289, 291, 293, 296]
+Group : 102 | Length : 13  ||  RID : 8 TokensRanked : [41, 68, 102, 164, 183, 199, 248, 285, 287, 289, 291, 293, 296]
+Group : 183 | Length : 13  ||  RID : 8 TokensRanked : [41, 68, 102, 164, 183, 199, 248, 285, 287, 289, 291, 293, 296]
+Group : 199 | Length : 13  ||  RID : 8 TokensRanked : [41, 68, 102, 164, 183, 199, 248, 285, 287, 289, 291, 293, 296]
+Group : 248 | Length : 13  ||  RID : 8 TokensRanked : [41, 68, 102, 164, 183, 199, 248, 285, 287, 289, 291, 293, 296]
+Group : 41 | Length : 13  ||  RID : 8 TokensRanked : [41, 68, 102, 164, 183, 199, 248, 285, 287, 289, 291, 293, 296]
+Group : 51 | Length : 6  ||  RID : 9 TokensRanked : [36, 44, 51, 107, 174, 290]
+Group : 36 | Length : 6  ||  RID : 9 TokensRanked : [36, 44, 51, 107, 174, 290]
+Group : 107 | Length : 6  ||  RID : 9 TokensRanked : [36, 44, 51, 107, 174, 290]
+Group : 44 | Length : 6  ||  RID : 9 TokensRanked : [36, 44, 51, 107, 174, 290]
+Group : 192 | Length : 9  ||  RID : 10 TokensRanked : [151, 177, 192, 248, 250, 258, 281, 288, 294]
+Group : 177 | Length : 9  ||  RID : 10 TokensRanked : [151, 177, 192, 248, 250, 258, 281, 288, 294]
+Group : 151 | Length : 9  ||  RID : 10 TokensRanked : [151, 177, 192, 248, 250, 258, 281, 288, 294]
+Group : 248 | Length : 9  ||  RID : 10 TokensRanked : [151, 177, 192, 248, 250, 258, 281, 288, 294]
+Group : 250 | Length : 9  ||  RID : 10 TokensRanked : [151, 177, 192, 248, 250, 258, 281, 288, 294]
+Group : 129 | Length : 3  ||  RID : 11 TokensRanked : [129, 275, 296]
+Group : 275 | Length : 3  ||  RID : 11 TokensRanked : [129, 275, 296]
+Group : 112 | Length : 8  ||  RID : 12 TokensRanked : [67, 112, 187, 217, 237, 278, 284, 289]
+Group : 67 | Length : 8  ||  RID : 12 TokensRanked : [67, 112, 187, 217, 237, 278, 284, 289]
+Group : 217 | Length : 8  ||  RID : 12 TokensRanked : [67, 112, 187, 217, 237, 278, 284, 289]
+Group : 187 | Length : 8  ||  RID : 12 TokensRanked : [67, 112, 187, 217, 237, 278, 284, 289]
+Group : 237 | Length : 8  ||  RID : 12 TokensRanked : [67, 112, 187, 217, 237, 278, 284, 289]
+Group : 65 | Length : 8  ||  RID : 13 TokensRanked : [65, 138, 141, 289, 291, 292, 295, 296]
+Group : 289 | Length : 8  ||  RID : 13 TokensRanked : [65, 138, 141, 289, 291, 292, 295, 296]
+Group : 291 | Length : 8  ||  RID : 13 TokensRanked : [65, 138, 141, 289, 291, 292, 295, 296]
+Group : 138 | Length : 8  ||  RID : 13 TokensRanked : [65, 138, 141, 289, 291, 292, 295, 296]
+Group : 141 | Length : 8  ||  RID : 13 TokensRanked : [65, 138, 141, 289, 291, 292, 295, 296]
+Group : 82 | Length : 9  ||  RID : 14 TokensRanked : [82, 92, 217, 237, 271, 278, 284, 286, 290]
+Group : 217 | Length : 9  ||  RID : 14 TokensRanked : [82, 92, 217, 237, 271, 278, 284, 286, 290]
+Group : 92 | Length : 9  ||  RID : 14 TokensRanked : [82, 92, 217, 237, 271, 278, 284, 286, 290]
+Group : 237 | Length : 9  ||  RID : 14 TokensRanked : [82, 92, 217, 237, 271, 278, 284, 286, 290]
+Group : 271 | Length : 9  ||  RID : 14 TokensRanked : [82, 92, 217, 237, 271, 278, 284, 286, 290]
+Group : 258 | Length : 7  ||  RID : 15 TokensRanked : [73, 147, 152, 258, 268, 292, 293]
+Group : 147 | Length : 7  ||  RID : 15 TokensRanked : [73, 147, 152, 258, 268, 292, 293]
+Group : 152 | Length : 7  ||  RID : 15 TokensRanked : [73, 147, 152, 258, 268, 292, 293]
+Group : 73 | Length : 7  ||  RID : 15 TokensRanked : [73, 147, 152, 258, 268, 292, 293]
+Group : 145 | Length : 10  ||  RID : 16 TokensRanked : [15, 60, 145, 219, 287, 289, 290, 291, 292, 296]
+Group : 289 | Length : 10  ||  RID : 16 TokensRanked : [15, 60, 145, 219, 287, 289, 290, 291, 292, 296]
+Group : 219 | Length : 10  ||  RID : 16 TokensRanked : [15, 60, 145, 219, 287, 289, 290, 291, 292, 296]
+Group : 60 | Length : 10  ||  RID : 16 TokensRanked : [15, 60, 145, 219, 287, 289, 290, 291, 292, 296]
+Group : 15 | Length : 10  ||  RID : 16 TokensRanked : [15, 60, 145, 219, 287, 289, 290, 291, 292, 296]
+Group : 287 | Length : 10  ||  RID : 16 TokensRanked : [15, 60, 145, 219, 287, 289, 290, 291, 292, 296]
+Group : 291 | Length : 8  ||  RID : 17 TokensRanked : [166, 246, 268, 286, 291, 292, 293, 296]
+Group : 166 | Length : 8  ||  RID : 17 TokensRanked : [166, 246, 268, 286, 291, 292, 293, 296]
+Group : 246 | Length : 8  ||  RID : 17 TokensRanked : [166, 246, 268, 286, 291, 292, 293, 296]
+Group : 268 | Length : 8  ||  RID : 17 TokensRanked : [166, 246, 268, 286, 291, 292, 293, 296]
+Group : 286 | Length : 8  ||  RID : 17 TokensRanked : [166, 246, 268, 286, 291, 292, 293, 296]
+Group : 99 | Length : 8  ||  RID : 18 TokensRanked : [44, 99, 126, 131, 159, 266, 284, 294]
+Group : 131 | Length : 8  ||  RID : 18 TokensRanked : [44, 99, 126, 131, 159, 266, 284, 294]
+Group : 44 | Length : 8  ||  RID : 18 TokensRanked : [44, 99, 126, 131, 159, 266, 284, 294]
+Group : 126 | Length : 8  ||  RID : 18 TokensRanked : [44, 99, 126, 131, 159, 266, 284, 294]
+Group : 159 | Length : 8  ||  RID : 18 TokensRanked : [44, 99, 126, 131, 159, 266, 284, 294]
+Group : 18 | Length : 6  ||  RID : 19 TokensRanked : [18, 248, 284, 285, 289, 296]
+Group : 248 | Length : 6  ||  RID : 19 TokensRanked : [18, 248, 284, 285, 289, 296]
+Group : 284 | Length : 6  ||  RID : 19 TokensRanked : [18, 248, 284, 285, 289, 296]
+Group : 285 | Length : 6  ||  RID : 19 TokensRanked : [18, 248, 284, 285, 289, 296]
+Group : 291 | Length : 5  ||  RID : 20 TokensRanked : [13, 286, 291, 293, 296]
+Group : 13 | Length : 5  ||  RID : 20 TokensRanked : [13, 286, 291, 293, 296]
+Group : 286 | Length : 5  ||  RID : 20 TokensRanked : [13, 286, 291, 293, 296]
+Group : 258 | Length : 5  ||  RID : 21 TokensRanked : [258, 261, 262, 292, 293]
+Group : 261 | Length : 5  ||  RID : 21 TokensRanked : [258, 261, 262, 292, 293]
+Group : 262 | Length : 5  ||  RID : 21 TokensRanked : [258, 261, 262, 292, 293]
+Group : 176 | Length : 6  ||  RID : 22 TokensRanked : [176, 275, 288, 289, 292, 293]
+Group : 288 | Length : 6  ||  RID : 22 TokensRanked : [176, 275, 288, 289, 292, 293]
+Group : 289 | Length : 6  ||  RID : 22 TokensRanked : [176, 275, 288, 289, 292, 293]
+Group : 275 | Length : 6  ||  RID : 22 TokensRanked : [176, 275, 288, 289, 292, 293]
+Group : 289 | Length : 4  ||  RID : 23 TokensRanked : [127, 263, 289, 292]
+Group : 263 | Length : 4  ||  RID : 23 TokensRanked : [127, 263, 289, 292]
+Group : 127 | Length : 4  ||  RID : 23 TokensRanked : [127, 263, 289, 292]
+Group : 289 | Length : 9  ||  RID : 24 TokensRanked : [250, 261, 262, 287, 289, 291, 292, 293, 296]
+Group : 261 | Length : 9  ||  RID : 24 TokensRanked : [250, 261, 262, 287, 289, 291, 292, 293, 296]
+Group : 262 | Length : 9  ||  RID : 24 TokensRanked : [250, 261, 262, 287, 289, 291, 292, 293, 296]
+Group : 250 | Length : 9  ||  RID : 24 TokensRanked : [250, 261, 262, 287, 289, 291, 292, 293, 296]
+Group : 287 | Length : 9  ||  RID : 24 TokensRanked : [250, 261, 262, 287, 289, 291, 292, 293, 296]
+Group : 53 | Length : 7  ||  RID : 25 TokensRanked : [53, 126, 173, 185, 233, 288, 295]
+Group : 185 | Length : 7  ||  RID : 25 TokensRanked : [53, 126, 173, 185, 233, 288, 295]
+Group : 173 | Length : 7  ||  RID : 25 TokensRanked : [53, 126, 173, 185, 233, 288, 295]
+Group : 126 | Length : 7  ||  RID : 25 TokensRanked : [53, 126, 173, 185, 233, 288, 295]
+Group : 232 | Length : 3  ||  RID : 26 TokensRanked : [232, 235, 266]
+Group : 235 | Length : 3  ||  RID : 26 TokensRanked : [232, 235, 266]
+Group : 261 | Length : 6  ||  RID : 27 TokensRanked : [105, 232, 261, 262, 266, 295]
+Group : 262 | Length : 6  ||  RID : 27 TokensRanked : [105, 232, 261, 262, 266, 295]
+Group : 232 | Length : 6  ||  RID : 27 TokensRanked : [105, 232, 261, 262, 266, 295]
+Group : 105 | Length : 6  ||  RID : 27 TokensRanked : [105, 232, 261, 262, 266, 295]
+Group : 128 | Length : 6  ||  RID : 28 TokensRanked : [74, 128, 207, 275, 281, 287]
+Group : 275 | Length : 6  ||  RID : 28 TokensRanked : [74, 128, 207, 275, 281, 287]
+Group : 74 | Length : 6  ||  RID : 28 TokensRanked : [74, 128, 207, 275, 281, 287]
+Group : 207 | Length : 6  ||  RID : 28 TokensRanked : [74, 128, 207, 275, 281, 287]
+Group : 37 | Length : 7  ||  RID : 29 TokensRanked : [29, 37, 169, 286, 287, 291, 296]
+Group : 169 | Length : 7  ||  RID : 29 TokensRanked : [29, 37, 169, 286, 287, 291, 296]
+Group : 29 | Length : 7  ||  RID : 29 TokensRanked : [29, 37, 169, 286, 287, 291, 296]
+Group : 286 | Length : 7  ||  RID : 29 TokensRanked : [29, 37, 169, 286, 287, 291, 296]
+Group : 257 | Length : 4  ||  RID : 30 TokensRanked : [119, 257, 294, 296]
+Group : 294 | Length : 4  ||  RID : 30 TokensRanked : [119, 257, 294, 296]
+Group : 119 | Length : 4  ||  RID : 30 TokensRanked : [119, 257, 294, 296]
+Group : 234 | Length : 2  ||  RID : 31 TokensRanked : [47, 234]
+Group : 47 | Length : 2  ||  RID : 31 TokensRanked : [47, 234]
+Group : 162 | Length : 5  ||  RID : 32 TokensRanked : [25, 89, 162, 289, 294]
+Group : 25 | Length : 5  ||  RID : 32 TokensRanked : [25, 89, 162, 289, 294]
+Group : 89 | Length : 5  ||  RID : 32 TokensRanked : [25, 89, 162, 289, 294]
+Group : 6 | Length : 6  ||  RID : 33 TokensRanked : [6, 215, 248, 281, 288, 294]
+Group : 215 | Length : 6  ||  RID : 33 TokensRanked : [6, 215, 248, 281, 288, 294]
+Group : 248 | Length : 6  ||  RID : 33 TokensRanked : [6, 215, 248, 281, 288, 294]
+Group : 281 | Length : 6  ||  RID : 33 TokensRanked : [6, 215, 248, 281, 288, 294]
+Group : 17 | Length : 9  ||  RID : 34 TokensRanked : [17, 81, 106, 257, 289, 292, 294, 295, 296]
+Group : 81 | Length : 9  ||  RID : 34 TokensRanked : [17, 81, 106, 257, 289, 292, 294, 295, 296]
+Group : 257 | Length : 9  ||  RID : 34 TokensRanked : [17, 81, 106, 257, 289, 292, 294, 295, 296]
+Group : 289 | Length : 9  ||  RID : 34 TokensRanked : [17, 81, 106, 257, 289, 292, 294, 295, 296]
+Group : 106 | Length : 9  ||  RID : 34 TokensRanked : [17, 81, 106, 257, 289, 292, 294, 295, 296]
+Group : 96 | Length : 7  ||  RID : 35 TokensRanked : [77, 86, 96, 191, 239, 288, 295]
+Group : 86 | Length : 7  ||  RID : 35 TokensRanked : [77, 86, 96, 191, 239, 288, 295]
+Group : 77 | Length : 7  ||  RID : 35 TokensRanked : [77, 86, 96, 191, 239, 288, 295]
+Group : 191 | Length : 7  ||  RID : 35 TokensRanked : [77, 86, 96, 191, 239, 288, 295]
+Group : 192 | Length : 7  ||  RID : 36 TokensRanked : [179, 192, 196, 285, 291, 293, 296]
+Group : 179 | Length : 7  ||  RID : 36 TokensRanked : [179, 192, 196, 285, 291, 293, 296]
+Group : 196 | Length : 7  ||  RID : 36 TokensRanked : [179, 192, 196, 285, 291, 293, 296]
+Group : 285 | Length : 7  ||  RID : 36 TokensRanked : [179, 192, 196, 285, 291, 293, 296]
+Group : 66 | Length : 6  ||  RID : 37 TokensRanked : [44, 66, 266, 275, 281, 294]
+Group : 275 | Length : 6  ||  RID : 37 TokensRanked : [44, 66, 266, 275, 281, 294]
+Group : 266 | Length : 6  ||  RID : 37 TokensRanked : [44, 66, 266, 275, 281, 294]
+Group : 44 | Length : 6  ||  RID : 37 TokensRanked : [44, 66, 266, 275, 281, 294]
+Group : 163 | Length : 5  ||  RID : 38 TokensRanked : [44, 54, 163, 275, 293]
+Group : 54 | Length : 5  ||  RID : 38 TokensRanked : [44, 54, 163, 275, 293]
+Group : 44 | Length : 5  ||  RID : 38 TokensRanked : [44, 54, 163, 275, 293]
+Group : 98 | Length : 9  ||  RID : 39 TokensRanked : [4, 98, 230, 255, 281, 287, 290, 294, 296]
+Group : 4 | Length : 9  ||  RID : 39 TokensRanked : [4, 98, 230, 255, 281, 287, 290, 294, 296]
+Group : 230 | Length : 9  ||  RID : 39 TokensRanked : [4, 98, 230, 255, 281, 287, 290, 294, 296]
+Group : 281 | Length : 9  ||  RID : 39 TokensRanked : [4, 98, 230, 255, 281, 287, 290, 294, 296]
+Group : 255 | Length : 9  ||  RID : 39 TokensRanked : [4, 98, 230, 255, 281, 287, 290, 294, 296]
+Group : 273 | Length : 7  ||  RID : 40 TokensRanked : [104, 148, 253, 273, 289, 293, 295]
+Group : 148 | Length : 7  ||  RID : 40 TokensRanked : [104, 148, 253, 273, 289, 293, 295]
+Group : 104 | Length : 7  ||  RID : 40 TokensRanked : [104, 148, 253, 273, 289, 293, 295]
+Group : 253 | Length : 7  ||  RID : 40 TokensRanked : [104, 148, 253, 273, 289, 293, 295]
+Group : 132 | Length : 6  ||  RID : 41 TokensRanked : [45, 132, 188, 253, 287, 295]
+Group : 188 | Length : 6  ||  RID : 41 TokensRanked : [45, 132, 188, 253, 287, 295]
+Group : 45 | Length : 6  ||  RID : 41 TokensRanked : [45, 132, 188, 253, 287, 295]
+Group : 253 | Length : 6  ||  RID : 41 TokensRanked : [45, 132, 188, 253, 287, 295]
+Group : 19 | Length : 9  ||  RID : 42 TokensRanked : [19, 44, 83, 150, 199, 215, 248, 288, 294]
+Group : 83 | Length : 9  ||  RID : 42 TokensRanked : [19, 44, 83, 150, 199, 215, 248, 288, 294]
+Group : 150 | Length : 9  ||  RID : 42 TokensRanked : [19, 44, 83, 150, 199, 215, 248, 288, 294]
+Group : 199 | Length : 9  ||  RID : 42 TokensRanked : [19, 44, 83, 150, 199, 215, 248, 288, 294]
+Group : 44 | Length : 9  ||  RID : 42 TokensRanked : [19, 44, 83, 150, 199, 215, 248, 288, 294]
+Group : 288 | Length : 8  ||  RID : 43 TokensRanked : [59, 123, 281, 288, 289, 291, 294, 296]
+Group : 289 | Length : 8  ||  RID : 43 TokensRanked : [59, 123, 281, 288, 289, 291, 294, 296]
+Group : 281 | Length : 8  ||  RID : 43 TokensRanked : [59, 123, 281, 288, 289, 291, 294, 296]
+Group : 59 | Length : 8  ||  RID : 43 TokensRanked : [59, 123, 281, 288, 289, 291, 294, 296]
+Group : 123 | Length : 8  ||  RID : 43 TokensRanked : [59, 123, 281, 288, 289, 291, 294, 296]
+Group : 290 | Length : 6  ||  RID : 44 TokensRanked : [75, 236, 286, 290, 291, 296]
+Group : 75 | Length : 6  ||  RID : 44 TokensRanked : [75, 236, 286, 290, 291, 296]
+Group : 236 | Length : 6  ||  RID : 44 TokensRanked : [75, 236, 286, 290, 291, 296]
+Group : 286 | Length : 6  ||  RID : 44 TokensRanked : [75, 236, 286, 290, 291, 296]
+Group : 84 | Length : 5  ||  RID : 45 TokensRanked : [23, 84, 108, 291, 296]
+Group : 23 | Length : 5  ||  RID : 45 TokensRanked : [23, 84, 108, 291, 296]
+Group : 108 | Length : 5  ||  RID : 45 TokensRanked : [23, 84, 108, 291, 296]
+Group : 97 | Length : 8  ||  RID : 46 TokensRanked : [9, 20, 50, 58, 97, 289, 290, 292]
+Group : 50 | Length : 8  ||  RID : 46 TokensRanked : [9, 20, 50, 58, 97, 289, 290, 292]
+Group : 20 | Length : 8  ||  RID : 46 TokensRanked : [9, 20, 50, 58, 97, 289, 290, 292]
+Group : 9 | Length : 8  ||  RID : 46 TokensRanked : [9, 20, 50, 58, 97, 289, 290, 292]
+Group : 58 | Length : 8  ||  RID : 46 TokensRanked : [9, 20, 50, 58, 97, 289, 290, 292]
+Group : 103 | Length : 4  ||  RID : 47 TokensRanked : [103, 120, 219, 230]
+Group : 120 | Length : 4  ||  RID : 47 TokensRanked : [103, 120, 219, 230]
+Group : 219 | Length : 4  ||  RID : 47 TokensRanked : [103, 120, 219, 230]
+Group : 161 | Length : 9  ||  RID : 48 TokensRanked : [28, 93, 161, 267, 269, 287, 291, 294, 296]
+Group : 267 | Length : 9  ||  RID : 48 TokensRanked : [28, 93, 161, 267, 269, 287, 291, 294, 296]
+Group : 28 | Length : 9  ||  RID : 48 TokensRanked : [28, 93, 161, 267, 269, 287, 291, 294, 296]
+Group : 93 | Length : 9  ||  RID : 48 TokensRanked : [28, 93, 161, 267, 269, 287, 291, 294, 296]
+Group : 269 | Length : 9  ||  RID : 48 TokensRanked : [28, 93, 161, 267, 269, 287, 291, 294, 296]
+Group : 24 | Length : 8  ||  RID : 49 TokensRanked : [12, 24, 76, 122, 267, 289, 290, 296]
+Group : 122 | Length : 8  ||  RID : 49 TokensRanked : [12, 24, 76, 122, 267, 289, 290, 296]
+Group : 267 | Length : 8  ||  RID : 49 TokensRanked : [12, 24, 76, 122, 267, 289, 290, 296]
+Group : 12 | Length : 8  ||  RID : 49 TokensRanked : [12, 24, 76, 122, 267, 289, 290, 296]
+Group : 76 | Length : 8  ||  RID : 49 TokensRanked : [12, 24, 76, 122, 267, 289, 290, 296]
+Group : 32 | Length : 6  ||  RID : 50 TokensRanked : [32, 168, 287, 288, 291, 296]
+Group : 288 | Length : 6  ||  RID : 50 TokensRanked : [32, 168, 287, 288, 291, 296]
+Group : 168 | Length : 6  ||  RID : 50 TokensRanked : [32, 168, 287, 288, 291, 296]
+Group : 287 | Length : 6  ||  RID : 50 TokensRanked : [32, 168, 287, 288, 291, 296]
+Group : 118 | Length : 3  ||  RID : 51 TokensRanked : [79, 118, 292]
+Group : 79 | Length : 3  ||  RID : 51 TokensRanked : [79, 118, 292]
+Group : 64 | Length : 8  ||  RID : 52 TokensRanked : [64, 78, 113, 140, 193, 250, 281, 287]
+Group : 113 | Length : 8  ||  RID : 52 TokensRanked : [64, 78, 113, 140, 193, 250, 281, 287]
+Group : 193 | Length : 8  ||  RID : 52 TokensRanked : [64, 78, 113, 140, 193, 250, 281, 287]
+Group : 140 | Length : 8  ||  RID : 52 TokensRanked : [64, 78, 113, 140, 193, 250, 281, 287]
+Group : 78 | Length : 8  ||  RID : 52 TokensRanked : [64, 78, 113, 140, 193, 250, 281, 287]
+Group : 33 | Length : 6  ||  RID : 53 TokensRanked : [33, 196, 286, 291, 295, 296]
+Group : 291 | Length : 6  ||  RID : 53 TokensRanked : [33, 196, 286, 291, 295, 296]
+Group : 196 | Length : 6  ||  RID : 53 TokensRanked : [33, 196, 286, 291, 295, 296]
+Group : 286 | Length : 6  ||  RID : 53 TokensRanked : [33, 196, 286, 291, 295, 296]
+Group : 117 | Length : 9  ||  RID : 54 TokensRanked : [117, 124, 155, 156, 175, 246, 287, 288, 294]
+Group : 155 | Length : 9  ||  RID : 54 TokensRanked : [117, 124, 155, 156, 175, 246, 287, 288, 294]
+Group : 124 | Length : 9  ||  RID : 54 TokensRanked : [117, 124, 155, 156, 175, 246, 287, 288, 294]
+Group : 156 | Length : 9  ||  RID : 54 TokensRanked : [117, 124, 155, 156, 175, 246, 287, 288, 294]
+Group : 175 | Length : 9  ||  RID : 54 TokensRanked : [117, 124, 155, 156, 175, 246, 287, 288, 294]
+Group : 130 | Length : 9  ||  RID : 55 TokensRanked : [5, 40, 70, 126, 130, 144, 281, 287, 290]
+Group : 5 | Length : 9  ||  RID : 55 TokensRanked : [5, 40, 70, 126, 130, 144, 281, 287, 290]
+Group : 70 | Length : 9  ||  RID : 55 TokensRanked : [5, 40, 70, 126, 130, 144, 281, 287, 290]
+Group : 40 | Length : 9  ||  RID : 55 TokensRanked : [5, 40, 70, 126, 130, 144, 281, 287, 290]
+Group : 126 | Length : 9  ||  RID : 55 TokensRanked : [5, 40, 70, 126, 130, 144, 281, 287, 290]
+Group : 34 | Length : 5  ||  RID : 56 TokensRanked : [34, 249, 269, 291, 296]
+Group : 249 | Length : 5  ||  RID : 56 TokensRanked : [34, 249, 269, 291, 296]
+Group : 269 | Length : 5  ||  RID : 56 TokensRanked : [34, 249, 269, 291, 296]
+Group : 146 | Length : 5  ||  RID : 57 TokensRanked : [42, 146, 291, 293, 296]
+Group : 291 | Length : 5  ||  RID : 57 TokensRanked : [42, 146, 291, 293, 296]
+Group : 42 | Length : 5  ||  RID : 57 TokensRanked : [42, 146, 291, 293, 296]
+Group : 257 | Length : 8  ||  RID : 58 TokensRanked : [5, 62, 139, 253, 257, 287, 288, 290]
+Group : 5 | Length : 8  ||  RID : 58 TokensRanked : [5, 62, 139, 253, 257, 287, 288, 290]
+Group : 139 | Length : 8  ||  RID : 58 TokensRanked : [5, 62, 139, 253, 257, 287, 288, 290]
+Group : 253 | Length : 8  ||  RID : 58 TokensRanked : [5, 62, 139, 253, 257, 287, 288, 290]
+Group : 62 | Length : 8  ||  RID : 58 TokensRanked : [5, 62, 139, 253, 257, 287, 288, 290]
+Group : 281 | Length : 7  ||  RID : 59 TokensRanked : [125, 126, 281, 285, 289, 291, 296]
+Group : 125 | Length : 7  ||  RID : 59 TokensRanked : [125, 126, 281, 285, 289, 291, 296]
+Group : 285 | Length : 7  ||  RID : 59 TokensRanked : [125, 126, 281, 285, 289, 291, 296]
+Group : 126 | Length : 7  ||  RID : 59 TokensRanked : [125, 126, 281, 285, 289, 291, 296]
+Group : 208 | Length : 5  ||  RID : 60 TokensRanked : [27, 52, 208, 287, 294]
+Group : 52 | Length : 5  ||  RID : 60 TokensRanked : [27, 52, 208, 287, 294]
+Group : 27 | Length : 5  ||  RID : 60 TokensRanked : [27, 52, 208, 287, 294]
+Group : 273 | Length : 8  ||  RID : 61 TokensRanked : [187, 263, 273, 276, 278, 284, 288, 292]
+Group : 276 | Length : 8  ||  RID : 61 TokensRanked : [187, 263, 273, 276, 278, 284, 288, 292]
+Group : 278 | Length : 8  ||  RID : 61 TokensRanked : [187, 263, 273, 276, 278, 284, 288, 292]
+Group : 263 | Length : 8  ||  RID : 61 TokensRanked : [187, 263, 273, 276, 278, 284, 288, 292]
+Group : 187 | Length : 8  ||  RID : 61 TokensRanked : [187, 263, 273, 276, 278, 284, 288, 292]
+Group : 165 | Length : 9  ||  RID : 62 TokensRanked : [165, 167, 263, 268, 271, 276, 278, 284, 292]
+Group : 167 | Length : 9  ||  RID : 62 TokensRanked : [165, 167, 263, 268, 271, 276, 278, 284, 292]
+Group : 263 | Length : 9  ||  RID : 62 TokensRanked : [165, 167, 263, 268, 271, 276, 278, 284, 292]
+Group : 268 | Length : 9  ||  RID : 62 TokensRanked : [165, 167, 263, 268, 271, 276, 278, 284, 292]
+Group : 271 | Length : 9  ||  RID : 62 TokensRanked : [165, 167, 263, 268, 271, 276, 278, 284, 292]
+Group : 276 | Length : 7  ||  RID : 63 TokensRanked : [254, 255, 276, 278, 284, 289, 292]
+Group : 278 | Length : 7  ||  RID : 63 TokensRanked : [254, 255, 276, 278, 284, 289, 292]
+Group : 254 | Length : 7  ||  RID : 63 TokensRanked : [254, 255, 276, 278, 284, 289, 292]
+Group : 255 | Length : 7  ||  RID : 63 TokensRanked : [254, 255, 276, 278, 284, 289, 292]
+Group : 208 | Length : 7  ||  RID : 64 TokensRanked : [206, 208, 255, 273, 288, 294, 295]
+Group : 273 | Length : 7  ||  RID : 64 TokensRanked : [206, 208, 255, 273, 288, 294, 295]
+Group : 206 | Length : 7  ||  RID : 64 TokensRanked : [206, 208, 255, 273, 288, 294, 295]
+Group : 255 | Length : 7  ||  RID : 64 TokensRanked : [206, 208, 255, 273, 288, 294, 295]
+Group : 80 | Length : 9  ||  RID : 65 TokensRanked : [1, 80, 244, 276, 278, 284, 289, 290, 292]
+Group : 1 | Length : 9  ||  RID : 65 TokensRanked : [1, 80, 244, 276, 278, 284, 289, 290, 292]
+Group : 244 | Length : 9  ||  RID : 65 TokensRanked : [1, 80, 244, 276, 278, 284, 289, 290, 292]
+Group : 276 | Length : 9  ||  RID : 65 TokensRanked : [1, 80, 244, 276, 278, 284, 289, 290, 292]
+Group : 278 | Length : 9  ||  RID : 65 TokensRanked : [1, 80, 244, 276, 278, 284, 289, 290, 292]
+Group : 257 | Length : 10  ||  RID : 66 TokensRanked : [2, 56, 154, 257, 263, 276, 278, 284, 290, 294]
+Group : 2 | Length : 10  ||  RID : 66 TokensRanked : [2, 56, 154, 257, 263, 276, 278, 284, 290, 294]
+Group : 276 | Length : 10  ||  RID : 66 TokensRanked : [2, 56, 154, 257, 263, 276, 278, 284, 290, 294]
+Group : 263 | Length : 10  ||  RID : 66 TokensRanked : [2, 56, 154, 257, 263, 276, 278, 284, 290, 294]
+Group : 56 | Length : 10  ||  RID : 66 TokensRanked : [2, 56, 154, 257, 263, 276, 278, 284, 290, 294]
+Group : 154 | Length : 10  ||  RID : 66 TokensRanked : [2, 56, 154, 257, 263, 276, 278, 284, 290, 294]
+Group : 273 | Length : 6  ||  RID : 67 TokensRanked : [3, 273, 276, 278, 284, 289]
+Group : 3 | Length : 6  ||  RID : 67 TokensRanked : [3, 273, 276, 278, 284, 289]
+Group : 276 | Length : 6  ||  RID : 67 TokensRanked : [3, 273, 276, 278, 284, 289]
+Group : 278 | Length : 6  ||  RID : 67 TokensRanked : [3, 273, 276, 278, 284, 289]
+Group : 35 | Length : 3  ||  RID : 68 TokensRanked : [35, 134, 171]
+Group : 134 | Length : 3  ||  RID : 68 TokensRanked : [35, 134, 171]
+Group : 143 | Length : 1  ||  RID : 69 TokensRanked : [143]
+Group : 137 | Length : 4  ||  RID : 70 TokensRanked : [44, 137, 170, 294]
+Group : 170 | Length : 4  ||  RID : 70 TokensRanked : [44, 137, 170, 294]
+Group : 44 | Length : 4  ||  RID : 70 TokensRanked : [44, 137, 170, 294]
+Group : 286 | Length : 3  ||  RID : 71 TokensRanked : [63, 286, 288]
+Group : 63 | Length : 3  ||  RID : 71 TokensRanked : [63, 286, 288]
+Group : 101 | Length : 6  ||  RID : 72 TokensRanked : [71, 91, 101, 142, 150, 244]
+Group : 71 | Length : 6  ||  RID : 72 TokensRanked : [71, 91, 101, 142, 150, 244]
+Group : 91 | Length : 6  ||  RID : 72 TokensRanked : [71, 91, 101, 142, 150, 244]
+Group : 142 | Length : 6  ||  RID : 72 TokensRanked : [71, 91, 101, 142, 150, 244]
+Group : 273 | Length : 8  ||  RID : 73 TokensRanked : [7, 31, 44, 265, 273, 288, 294, 295]
+Group : 7 | Length : 8  ||  RID : 73 TokensRanked : [7, 31, 44, 265, 273, 288, 294, 295]
+Group : 265 | Length : 8  ||  RID : 73 TokensRanked : [7, 31, 44, 265, 273, 288, 294, 295]
+Group : 44 | Length : 8  ||  RID : 73 TokensRanked : [7, 31, 44, 265, 273, 288, 294, 295]
+Group : 31 | Length : 8  ||  RID : 73 TokensRanked : [7, 31, 44, 265, 273, 288, 294, 295]
+Group : 160 | Length : 12  ||  RID : 74 TokensRanked : [8, 49, 72, 158, 160, 172, 240, 267, 290, 292, 294, 295]
+Group : 240 | Length : 12  ||  RID : 74 TokensRanked : [8, 49, 72, 158, 160, 172, 240, 267, 290, 292, 294, 295]
+Group : 49 | Length : 12  ||  RID : 74 TokensRanked : [8, 49, 72, 158, 160, 172, 240, 267, 290, 292, 294, 295]
+Group : 8 | Length : 12  ||  RID : 74 TokensRanked : [8, 49, 72, 158, 160, 172, 240, 267, 290, 292, 294, 295]
+Group : 72 | Length : 12  ||  RID : 74 TokensRanked : [8, 49, 72, 158, 160, 172, 240, 267, 290, 292, 294, 295]
+Group : 172 | Length : 12  ||  RID : 74 TokensRanked : [8, 49, 72, 158, 160, 172, 240, 267, 290, 292, 294, 295]
+Group : 158 | Length : 12  ||  RID : 74 TokensRanked : [8, 49, 72, 158, 160, 172, 240, 267, 290, 292, 294, 295]
+Group : 265 | Length : 5  ||  RID : 75 TokensRanked : [44, 235, 265, 266, 295]
+Group : 235 | Length : 5  ||  RID : 75 TokensRanked : [44, 235, 265, 266, 295]
+Group : 44 | Length : 5  ||  RID : 75 TokensRanked : [44, 235, 265, 266, 295]
+Group : 242 | Length : 9  ||  RID : 76 TokensRanked : [10, 191, 242, 250, 261, 285, 286, 291, 295]
+Group : 261 | Length : 9  ||  RID : 76 TokensRanked : [10, 191, 242, 250, 261, 285, 286, 291, 295]
+Group : 10 | Length : 9  ||  RID : 76 TokensRanked : [10, 191, 242, 250, 261, 285, 286, 291, 295]
+Group : 250 | Length : 9  ||  RID : 76 TokensRanked : [10, 191, 242, 250, 261, 285, 286, 291, 295]
+Group : 191 | Length : 9  ||  RID : 76 TokensRanked : [10, 191, 242, 250, 261, 285, 286, 291, 295]
+Group : 267 | Length : 4  ||  RID : 77 TokensRanked : [14, 267, 269, 294]
+Group : 269 | Length : 4  ||  RID : 77 TokensRanked : [14, 267, 269, 294]
+Group : 14 | Length : 4  ||  RID : 77 TokensRanked : [14, 267, 269, 294]
+Group : 180 | Length : 5  ||  RID : 78 TokensRanked : [87, 95, 180, 233, 294]
+Group : 87 | Length : 5  ||  RID : 78 TokensRanked : [87, 95, 180, 233, 294]
+Group : 95 | Length : 5  ||  RID : 78 TokensRanked : [87, 95, 180, 233, 294]
+Group : 135 | Length : 5  ||  RID : 79 TokensRanked : [30, 135, 236, 240, 295]
+Group : 236 | Length : 5  ||  RID : 79 TokensRanked : [30, 135, 236, 240, 295]
+Group : 30 | Length : 5  ||  RID : 79 TokensRanked : [30, 135, 236, 240, 295]
+Group : 265 | Length : 1  ||  RID : 80 TokensRanked : [265]
+Group : 224 | Length : 11  ||  RID : 81 TokensRanked : [94, 195, 214, 218, 222, 224, 274, 280, 282, 283, 293]
+Group : 195 | Length : 11  ||  RID : 81 TokensRanked : [94, 195, 214, 218, 222, 224, 274, 280, 282, 283, 293]
+Group : 214 | Length : 11  ||  RID : 81 TokensRanked : [94, 195, 214, 218, 222, 224, 274, 280, 282, 283, 293]
+Group : 218 | Length : 11  ||  RID : 81 TokensRanked : [94, 195, 214, 218, 222, 224, 274, 280, 282, 283, 293]
+Group : 94 | Length : 11  ||  RID : 81 TokensRanked : [94, 195, 214, 218, 222, 224, 274, 280, 282, 283, 293]
+Group : 222 | Length : 11  ||  RID : 81 TokensRanked : [94, 195, 214, 218, 222, 224, 274, 280, 282, 283, 293]
+Group : 224 | Length : 12  ||  RID : 82 TokensRanked : [195, 214, 218, 222, 224, 271, 274, 279, 280, 282, 283, 293]
+Group : 274 | Length : 12  ||  RID : 82 TokensRanked : [195, 214, 218, 222, 224, 271, 274, 279, 280, 282, 283, 293]
+Group : 195 | Length : 12  ||  RID : 82 TokensRanked : [195, 214, 218, 222, 224, 271, 274, 279, 280, 282, 283, 293]
+Group : 214 | Length : 12  ||  RID : 82 TokensRanked : [195, 214, 218, 222, 224, 271, 274, 279, 280, 282, 283, 293]
+Group : 218 | Length : 12  ||  RID : 82 TokensRanked : [195, 214, 218, 222, 224, 271, 274, 279, 280, 282, 283, 293]
+Group : 222 | Length : 12  ||  RID : 82 TokensRanked : [195, 214, 218, 222, 224, 271, 274, 279, 280, 282, 283, 293]
+Group : 271 | Length : 12  ||  RID : 82 TokensRanked : [195, 214, 218, 222, 224, 271, 274, 279, 280, 282, 283, 293]
+Group : 256 | Length : 14  ||  RID : 83 TokensRanked : [5, 252, 256, 260, 264, 270, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 272 | Length : 14  ||  RID : 83 TokensRanked : [5, 252, 256, 260, 264, 270, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 274 | Length : 14  ||  RID : 83 TokensRanked : [5, 252, 256, 260, 264, 270, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 260 | Length : 14  ||  RID : 83 TokensRanked : [5, 252, 256, 260, 264, 270, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 5 | Length : 14  ||  RID : 83 TokensRanked : [5, 252, 256, 260, 264, 270, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 264 | Length : 14  ||  RID : 83 TokensRanked : [5, 252, 256, 260, 264, 270, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 252 | Length : 14  ||  RID : 83 TokensRanked : [5, 252, 256, 260, 264, 270, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 270 | Length : 14  ||  RID : 83 TokensRanked : [5, 252, 256, 260, 264, 270, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 256 | Length : 15  ||  RID : 84 TokensRanked : [5, 256, 259, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 272 | Length : 15  ||  RID : 84 TokensRanked : [5, 256, 259, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 259 | Length : 15  ||  RID : 84 TokensRanked : [5, 256, 259, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 260 | Length : 15  ||  RID : 84 TokensRanked : [5, 256, 259, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 5 | Length : 15  ||  RID : 84 TokensRanked : [5, 256, 259, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 264 | Length : 15  ||  RID : 84 TokensRanked : [5, 256, 259, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 270 | Length : 15  ||  RID : 84 TokensRanked : [5, 256, 259, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 271 | Length : 15  ||  RID : 84 TokensRanked : [5, 256, 259, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 287]
+Group : 225 | Length : 11  ||  RID : 85 TokensRanked : [210, 211, 221, 225, 227, 265, 269, 277, 290, 293, 295]
+Group : 210 | Length : 11  ||  RID : 85 TokensRanked : [210, 211, 221, 225, 227, 265, 269, 277, 290, 293, 295]
+Group : 211 | Length : 11  ||  RID : 85 TokensRanked : [210, 211, 221, 225, 227, 265, 269, 277, 290, 293, 295]
+Group : 227 | Length : 11  ||  RID : 85 TokensRanked : [210, 211, 221, 225, 227, 265, 269, 277, 290, 293, 295]
+Group : 265 | Length : 11  ||  RID : 85 TokensRanked : [210, 211, 221, 225, 227, 265, 269, 277, 290, 293, 295]
+Group : 221 | Length : 11  ||  RID : 85 TokensRanked : [210, 211, 221, 225, 227, 265, 269, 277, 290, 293, 295]
+Group : 225 | Length : 12  ||  RID : 86 TokensRanked : [210, 211, 221, 223, 225, 254, 265, 269, 277, 290, 293, 295]
+Group : 210 | Length : 12  ||  RID : 86 TokensRanked : [210, 211, 221, 223, 225, 254, 265, 269, 277, 290, 293, 295]
+Group : 211 | Length : 12  ||  RID : 86 TokensRanked : [210, 211, 221, 223, 225, 254, 265, 269, 277, 290, 293, 295]
+Group : 265 | Length : 12  ||  RID : 86 TokensRanked : [210, 211, 221, 223, 225, 254, 265, 269, 277, 290, 293, 295]
+Group : 221 | Length : 12  ||  RID : 86 TokensRanked : [210, 211, 221, 223, 225, 254, 265, 269, 277, 290, 293, 295]
+Group : 254 | Length : 12  ||  RID : 86 TokensRanked : [210, 211, 221, 223, 225, 254, 265, 269, 277, 290, 293, 295]
+Group : 223 | Length : 12  ||  RID : 86 TokensRanked : [210, 211, 221, 223, 225, 254, 265, 269, 277, 290, 293, 295]
+Group : 272 | Length : 13  ||  RID : 87 TokensRanked : [189, 216, 252, 260, 264, 270, 272, 274, 277, 279, 282, 283, 285]
+Group : 260 | Length : 13  ||  RID : 87 TokensRanked : [189, 216, 252, 260, 264, 270, 272, 274, 277, 279, 282, 283, 285]
+Group : 216 | Length : 13  ||  RID : 87 TokensRanked : [189, 216, 252, 260, 264, 270, 272, 274, 277, 279, 282, 283, 285]
+Group : 264 | Length : 13  ||  RID : 87 TokensRanked : [189, 216, 252, 260, 264, 270, 272, 274, 277, 279, 282, 283, 285]
+Group : 252 | Length : 13  ||  RID : 87 TokensRanked : [189, 216, 252, 260, 264, 270, 272, 274, 277, 279, 282, 283, 285]
+Group : 189 | Length : 13  ||  RID : 87 TokensRanked : [189, 216, 252, 260, 264, 270, 272, 274, 277, 279, 282, 283, 285]
+Group : 270 | Length : 13  ||  RID : 87 TokensRanked : [189, 216, 252, 260, 264, 270, 272, 274, 277, 279, 282, 283, 285]
+Group : 272 | Length : 15  ||  RID : 88 TokensRanked : [149, 189, 216, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 285]
+Group : 260 | Length : 15  ||  RID : 88 TokensRanked : [149, 189, 216, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 285]
+Group : 149 | Length : 15  ||  RID : 88 TokensRanked : [149, 189, 216, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 285]
+Group : 216 | Length : 15  ||  RID : 88 TokensRanked : [149, 189, 216, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 285]
+Group : 264 | Length : 15  ||  RID : 88 TokensRanked : [149, 189, 216, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 285]
+Group : 189 | Length : 15  ||  RID : 88 TokensRanked : [149, 189, 216, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 285]
+Group : 270 | Length : 15  ||  RID : 88 TokensRanked : [149, 189, 216, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 285]
+Group : 271 | Length : 15  ||  RID : 88 TokensRanked : [149, 189, 216, 260, 264, 270, 271, 272, 274, 277, 279, 280, 282, 283, 285]
+Group : 241 | Length : 9  ||  RID : 89 TokensRanked : [194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 194 | Length : 9  ||  RID : 89 TokensRanked : [194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 226 | Length : 9  ||  RID : 89 TokensRanked : [194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 245 | Length : 9  ||  RID : 89 TokensRanked : [194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 202 | Length : 9  ||  RID : 89 TokensRanked : [194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 48 | Length : 13  ||  RID : 90 TokensRanked : [48, 153, 181, 186, 194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 194 | Length : 13  ||  RID : 90 TokensRanked : [48, 153, 181, 186, 194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 226 | Length : 13  ||  RID : 90 TokensRanked : [48, 153, 181, 186, 194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 181 | Length : 13  ||  RID : 90 TokensRanked : [48, 153, 181, 186, 194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 153 | Length : 13  ||  RID : 90 TokensRanked : [48, 153, 181, 186, 194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 186 | Length : 13  ||  RID : 90 TokensRanked : [48, 153, 181, 186, 194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 202 | Length : 13  ||  RID : 90 TokensRanked : [48, 153, 181, 186, 194, 202, 226, 241, 245, 247, 251, 286, 295]
+Group : 228 | Length : 11  ||  RID : 91 TokensRanked : [198, 203, 205, 220, 223, 228, 229, 254, 290, 293, 295]
+Group : 198 | Length : 11  ||  RID : 91 TokensRanked : [198, 203, 205, 220, 223, 228, 229, 254, 290, 293, 295]
+Group : 203 | Length : 11  ||  RID : 91 TokensRanked : [198, 203, 205, 220, 223, 228, 229, 254, 290, 293, 295]
+Group : 220 | Length : 11  ||  RID : 91 TokensRanked : [198, 203, 205, 220, 223, 228, 229, 254, 290, 293, 295]
+Group : 205 | Length : 11  ||  RID : 91 TokensRanked : [198, 203, 205, 220, 223, 228, 229, 254, 290, 293, 295]
+Group : 223 | Length : 11  ||  RID : 91 TokensRanked : [198, 203, 205, 220, 223, 228, 229, 254, 290, 293, 295]
+Group : 227 | Length : 10  ||  RID : 92 TokensRanked : [198, 203, 205, 220, 227, 228, 229, 290, 293, 295]
+Group : 228 | Length : 10  ||  RID : 92 TokensRanked : [198, 203, 205, 220, 227, 228, 229, 290, 293, 295]
+Group : 198 | Length : 10  ||  RID : 92 TokensRanked : [198, 203, 205, 220, 227, 228, 229, 290, 293, 295]
+Group : 203 | Length : 10  ||  RID : 92 TokensRanked : [198, 203, 205, 220, 227, 228, 229, 290, 293, 295]
+Group : 220 | Length : 10  ||  RID : 92 TokensRanked : [198, 203, 205, 220, 227, 228, 229, 290, 293, 295]
+Group : 205 | Length : 10  ||  RID : 92 TokensRanked : [198, 203, 205, 220, 227, 228, 229, 290, 293, 295]
+Group : 231 | Length : 6  ||  RID : 93 TokensRanked : [26, 111, 231, 249, 288, 293]
+Group : 249 | Length : 6  ||  RID : 93 TokensRanked : [26, 111, 231, 249, 288, 293]
+Group : 26 | Length : 6  ||  RID : 93 TokensRanked : [26, 111, 231, 249, 288, 293]
+Group : 111 | Length : 6  ||  RID : 93 TokensRanked : [26, 111, 231, 249, 288, 293]
+Group : 231 | Length : 5  ||  RID : 94 TokensRanked : [110, 231, 249, 268, 293]
+Group : 249 | Length : 5  ||  RID : 94 TokensRanked : [110, 231, 249, 268, 293]
+Group : 110 | Length : 5  ||  RID : 94 TokensRanked : [110, 231, 249, 268, 293]
+Group : 209 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 114 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 178 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 115 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 213 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 200 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 90 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 204 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 190 | Length : 17  ||  RID : 95 TokensRanked : [90, 114, 115, 178, 190, 200, 204, 209, 213, 238, 243, 250, 282, 283, 285, 290, 295]
+Group : 0 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 209 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 243 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 213 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 136 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 200 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 250 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 204 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 190 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 238 | Length : 19  ||  RID : 96 TokensRanked : [0, 136, 190, 200, 204, 209, 213, 238, 243, 250, 254, 259, 279, 280, 282, 283, 285, 290, 295]
+Group : 256 | Length : 13  ||  RID : 97 TokensRanked : [197, 201, 212, 250, 252, 256, 259, 272, 279, 280, 282, 283, 285]
+Group : 259 | Length : 13  ||  RID : 97 TokensRanked : [197, 201, 212, 250, 252, 256, 259, 272, 279, 280, 282, 283, 285]
+Group : 212 | Length : 13  ||  RID : 97 TokensRanked : [197, 201, 212, 250, 252, 256, 259, 272, 279, 280, 282, 283, 285]
+Group : 197 | Length : 13  ||  RID : 97 TokensRanked : [197, 201, 212, 250, 252, 256, 259, 272, 279, 280, 282, 283, 285]
+Group : 201 | Length : 13  ||  RID : 97 TokensRanked : [197, 201, 212, 250, 252, 256, 259, 272, 279, 280, 282, 283, 285]
+Group : 250 | Length : 13  ||  RID : 97 TokensRanked : [197, 201, 212, 250, 252, 256, 259, 272, 279, 280, 282, 283, 285]
+Group : 252 | Length : 13  ||  RID : 97 TokensRanked : [197, 201, 212, 250, 252, 256, 259, 272, 279, 280, 282, 283, 285]
+Group : 256 | Length : 14  ||  RID : 98 TokensRanked : [109, 197, 201, 212, 250, 256, 259, 271, 272, 279, 280, 282, 283, 285]
+Group : 259 | Length : 14  ||  RID : 98 TokensRanked : [109, 197, 201, 212, 250, 256, 259, 271, 272, 279, 280, 282, 283, 285]
+Group : 212 | Length : 14  ||  RID : 98 TokensRanked : [109, 197, 201, 212, 250, 256, 259, 271, 272, 279, 280, 282, 283, 285]
+Group : 197 | Length : 14  ||  RID : 98 TokensRanked : [109, 197, 201, 212, 250, 256, 259, 271, 272, 279, 280, 282, 283, 285]
+Group : 201 | Length : 14  ||  RID : 98 TokensRanked : [109, 197, 201, 212, 250, 256, 259, 271, 272, 279, 280, 282, 283, 285]
+Group : 250 | Length : 14  ||  RID : 98 TokensRanked : [109, 197, 201, 212, 250, 256, 259, 271, 272, 279, 280, 282, 283, 285]
+Group : 109 | Length : 14  ||  RID : 98 TokensRanked : [109, 197, 201, 212, 250, 256, 259, 271, 272, 279, 280, 282, 283, 285]
+Group : 271 | Length : 14  ||  RID : 98 TokensRanked : [109, 197, 201, 212, 250, 256, 259, 271, 272, 279, 280, 282, 283, 285]
+Group : 21 | Length : 6  ||  RID : 99 TokensRanked : [21, 61, 88, 133, 239, 295]
+Group : 133 | Length : 6  ||  RID : 99 TokensRanked : [21, 61, 88, 133, 239, 295]
+Group : 88 | Length : 6  ||  RID : 99 TokensRanked : [21, 61, 88, 133, 239, 295]
+Group : 61 | Length : 6  ||  RID : 99 TokensRanked : [21, 61, 88, 133, 239, 295]
+Group : 100 | Length : 5  ||  RID : 100 TokensRanked : [69, 100, 182, 288, 294]
+Group : 69 | Length : 5  ||  RID : 100 TokensRanked : [69, 100, 182, 288, 294]
+Group : 182 | Length : 5  ||  RID : 100 TokensRanked : [69, 100, 182, 288, 294]
 
 -------------------- Self-join : Reduce --------------------
 

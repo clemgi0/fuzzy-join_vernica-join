@@ -8,3 +8,8 @@
 output.log
 tree.txt
 tree.spark.txt
+
+# Rejet des dossiers target
+/fuzzyjoin-0.0.2/fuzzyjoin-core/target/
+/fuzzyjoin-0.0.2/fuzzyjoin-hadoop/target/
+/fuzzyjoin-0.0.2/fuzzyjoin-spark/target/

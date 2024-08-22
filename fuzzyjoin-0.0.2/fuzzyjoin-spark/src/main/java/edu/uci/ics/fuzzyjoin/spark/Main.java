@@ -3,15 +3,13 @@ package edu.uci.ics.fuzzyjoin.spark;
 import java.io.IOException;
 
 import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.logging.RedirectOutput;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.RIDPairsPPJoin;
-import edu.uci.ics.fuzzyjoin.spark.ridrecordpairs.IntTriple;
-import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
+import edu.uci.ics.fuzzyjoin.spark.starters.StartFuzzyJoin;
+import edu.uci.ics.fuzzyjoin.spark.starters.StartRidPairsPPJoin;
+import edu.uci.ics.fuzzyjoin.spark.starters.StartTokensBasic;
 
 public class Main {
     public static final String NAMESPACE = "fuzzyjoin";
@@ -44,12 +42,12 @@ public class Main {
     public static final char SEPARATOR = ',';
     public static final String SEPARATOR_REGEX = ",";
 
-    // conf variables
-    public static SparkConfig configuration;
-    public static SparkConf sparkConf;
-    public static JavaSparkContext sc;
-
     public static void main(String[] args) throws IOException {
+        // conf variables
+        SparkConfig configuration;
+        SparkConf sparkConf;
+        JavaSparkContext sc;
+
         //
         // Handling the args
         //
@@ -68,7 +66,7 @@ public class Main {
 
         // Set config file
         configuration = new SparkConfig();
-        sparkConf = configuration.getSparkContext();
+        sparkConf = configuration.getSparkContext(args[1]);
 
         if (args.length > 0) {
             configuration.readConfig("fuzzyjoin/", args[0]);
@@ -79,7 +77,7 @@ public class Main {
 
         // Redirect log output to file if specified
         if (args.length > 2 && args[2].equals("true")) {
-            RedirectOutput.setFile("output.log");
+            RedirectOutput.setFile("output.txt");
         } else {
             LogUtil.logStage("Log output to console");
         }
@@ -92,10 +90,10 @@ public class Main {
         // Create Java Spark Context
         //
 
-        LogUtil.logStage("Starting of the app");
-
         LogUtil.logStage("Creating Java Spark Context");
         sc = new JavaSparkContext(sparkConf);
+
+        LogUtil.logStage("Starting of the app");
 
         //
         // Select stages to run
@@ -103,19 +101,19 @@ public class Main {
 
         switch (args[1].toLowerCase()) {
             case "tokensbasic":
-                StartTokensBasic.startTokensBasic(true);
+                StartTokensBasic.start(sc, true);
                 break;
 
             case "ridpairsppjoin":
-                StartRidPairsPPJoin.startRidPairsPPJoin(true, null);
+                StartRidPairsPPJoin.start(sc, true, null);
                 break;
 
             case "fuzzyjoin":
-                StartFuzzyJoin.startFuzzyJoin();
+                StartFuzzyJoin.start(sc);
                 break;
 
             default:
-                StartFuzzyJoin.startFuzzyJoin();
+                LogUtil.logStage("Please select a correct stage");
                 break;
         }
 

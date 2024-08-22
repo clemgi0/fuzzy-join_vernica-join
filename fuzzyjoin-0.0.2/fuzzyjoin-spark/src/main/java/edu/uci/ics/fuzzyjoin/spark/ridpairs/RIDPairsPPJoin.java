@@ -15,7 +15,7 @@ import edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin.ValueSelfJoin;
 import scala.Tuple2;
 
 public class RIDPairsPPJoin {
-    public static void main(String[] tokenStrings,
+    public static JavaPairRDD<IntPair, ValueSelfJoin> main(String[] tokenStrings,
             JavaRDD<String> records, JavaSparkContext sc)
             throws IOException {
 
@@ -44,8 +44,13 @@ public class RIDPairsPPJoin {
 
             LogUtil.logStage("R-S join : Reduce");
             // job.setReducerClass(ReduceJoin
+
+            selfJoinMappedData = records
+                    .flatMapToPair(new SelfJoinMap(sc, tokenStrings)); // TO DELETE CUZ IT S JUST TO AVOID A NULL RETURN
+                                                                       // IN THE NEXT LINE
         }
 
+        return selfJoinMappedData;
     }
 
     public static void showPairRDD(JavaPairRDD<IntPair, ValueSelfJoin> rdd) {

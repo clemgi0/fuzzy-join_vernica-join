@@ -22,17 +22,17 @@ public class SparkConfig {
     private String configDir = "src/main/resources/";
     private SparkConf conf;
 
-    public SparkConf getSparkContext() throws IOException {
+    public SparkConf getSparkContext(String stageName) throws IOException {
         // Initialize SparkConf with default properties
-        conf = new SparkConf().setAppName("FuzzyJoinSpark")
+        conf = new SparkConf().setAppName(stageName)
                 .set(Main.TOKENS_PACKAGE_PROPERTY, Main.TOKENS_PACKAGE_VALUE)
                 .set(Main.TOKENS_LENGTHSTATS_PROPERTY, String.valueOf(Main.TOKENS_LENGTHSTATS_VALUE))
                 .set(Main.RIDPAIRS_GROUP_CLASS_PROPERTY, Main.RIDPAIRS_GROUP_CLASS_VALUE)
                 .set(Main.RIDPAIRS_GROUP_FACTOR_PROPERTY, String.valueOf(Main.RIDPAIRS_GROUP_FACTOR_VALUE))
                 .set(Main.DATA_DIR_PROPERTY, "default-directory") // Default value
                 .set(Main.DATA_RAW_PROPERTY, Main.DATA_RAW_VALUE)
-                .set(Main.DATA_SUFFIX_INPUT_PROPERTY, "") // jsp si j'ai bien de les rajouter
-                .set(Main.DATA_LENGTHSTATS_PROPERTY, ""); // ces deux là
+                .set(Main.DATA_SUFFIX_INPUT_PROPERTY, "") // jsp si j'ai bien fait de
+                .set(Main.DATA_LENGTHSTATS_PROPERTY, ""); // les rajouter ces deux là
 
         return conf;
     }
@@ -75,11 +75,11 @@ public class SparkConfig {
         // Log and print the properties
         LogUtil.logStage("Print all properties");
 
-        String ret = "All " + conf.logName() + "\n"
-                + " Properties: {";
+        String ret = "Stage name: \"" + conf.get("spark.app.name", "DefaultAppName") + "\"\n"
+                + "Properties: {\n";
 
         for (Tuple2<String, String> prop : conf.getAll()) {
-            ret += prop._1 + "=" + prop._2 + "\n";
+            ret += "\t" + prop._1 + " = " + prop._2 + "\n";
         }
 
         ret += "}";

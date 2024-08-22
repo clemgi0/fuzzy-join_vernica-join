@@ -5,9 +5,9 @@
 *.class
 
 # Rejet fichiers debug
-output.log
-tree.txt
-tree.spark.txt
+**/output.log
+**/tree.txt
+**/tree.spark.txt
 
 # Rejet des dossiers target
 /fuzzyjoin-0.0.2/fuzzyjoin-core/target/

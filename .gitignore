@@ -5,7 +5,7 @@
 *.class
 
 # Rejet fichiers debug
-**/output.log
+**/output.txt
 **/tree.txt
 **/tree.spark.txt
 

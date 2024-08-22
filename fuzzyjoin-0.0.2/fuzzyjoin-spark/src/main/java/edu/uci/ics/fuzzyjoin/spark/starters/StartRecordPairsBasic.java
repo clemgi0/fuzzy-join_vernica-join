@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark;
+package edu.uci.ics.fuzzyjoin.spark.starters;
 
 public class StartRecordPairsBasic {
     // public static void startRecordPairsBasic(boolean saveResult, IntTriple

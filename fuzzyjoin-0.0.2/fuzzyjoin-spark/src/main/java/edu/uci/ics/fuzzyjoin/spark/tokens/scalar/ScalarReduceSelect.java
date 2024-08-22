@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.tokens.Scalar;
+package edu.uci.ics.fuzzyjoin.spark.tokens.scalar;
 
 import java.io.Serializable;
 import java.util.Comparator;

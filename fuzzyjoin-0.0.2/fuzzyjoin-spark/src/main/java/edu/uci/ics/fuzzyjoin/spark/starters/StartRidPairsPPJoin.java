@@ -11,7 +11,7 @@ import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.logging.SaveResult;
 import edu.uci.ics.fuzzyjoin.spark.ridpairs.IntPair;
 import edu.uci.ics.fuzzyjoin.spark.ridpairs.RIDPairsPPJoin;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin.ValueSelfJoin;
+import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.ValueSelfJoin;
 
 public class StartRidPairsPPJoin {
     public static void start(JavaSparkContext sc, boolean saveResult, String[] tokensRank)

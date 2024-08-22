@@ -10,8 +10,8 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.Main;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin.SelfJoinMap;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin.ValueSelfJoin;
+import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.SelfJoinMap;
+import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.ValueSelfJoin;
 import scala.Tuple2;
 
 public class RIDPairsPPJoin {

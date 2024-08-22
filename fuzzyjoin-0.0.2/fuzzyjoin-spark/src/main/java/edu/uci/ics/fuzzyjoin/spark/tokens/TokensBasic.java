@@ -9,9 +9,9 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.Main;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.tokens.Scalar.ScalarMap;
-import edu.uci.ics.fuzzyjoin.spark.tokens.Scalar.ScalarReduceAggregate;
-import edu.uci.ics.fuzzyjoin.spark.tokens.Scalar.ScalarReduceSelect;
+import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarMap;
+import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarReduceAggregate;
+import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarReduceSelect;
 import scala.Tuple2;
 
 public class TokensBasic {

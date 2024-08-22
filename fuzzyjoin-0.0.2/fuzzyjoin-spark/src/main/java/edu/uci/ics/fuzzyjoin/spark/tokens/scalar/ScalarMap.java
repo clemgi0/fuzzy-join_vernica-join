@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.tokens.Array;
+package edu.uci.ics.fuzzyjoin.spark.tokens.scalar;
 
 import java.util.Iterator;
 import java.util.List;
@@ -19,14 +19,10 @@ import scala.Tuple2;
  **          then tokenizes the data using te TOKEN_SEPARATOR
  **          and then maps each token with a 1
  **
- ** @return JavaPairRDD<String, Integer[]> containing the tokens and a 1 for
- *         each
- **         token
+ ** @return JavaPairRDD<String, Integer> containing the tokens and a 1 for each
+ *         token
  */
-
-// pas tester, abandonner pour le moment
-// normalement, la valeur de retour est un Tuple2<String, Integer[]>
-public class ArrayMap implements PairFlatMapFunction<String, String, Integer> {
+public class ScalarMap implements PairFlatMapFunction<String, String, Integer> {
     private static final long serialVersionUID = 1L;
 
     @Override

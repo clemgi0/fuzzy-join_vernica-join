@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin;
+package edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin;
 
 import java.io.Serializable;
 import java.util.Arrays;

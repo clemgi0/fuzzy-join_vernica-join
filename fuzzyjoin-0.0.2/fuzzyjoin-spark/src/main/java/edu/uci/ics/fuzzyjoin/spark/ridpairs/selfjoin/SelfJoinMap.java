@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.ridpairs.SelfJoin;
+package edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin;
 
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.PairFlatMapFunction;

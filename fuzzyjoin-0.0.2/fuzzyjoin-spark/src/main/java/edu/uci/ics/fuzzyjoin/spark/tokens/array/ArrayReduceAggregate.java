@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.tokens.Array;
+package edu.uci.ics.fuzzyjoin.spark.tokens.array;
 
 import java.util.HashMap;
 import java.util.Map;

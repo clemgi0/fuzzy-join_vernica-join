@@ -15,7 +15,6 @@ import edu.uci.ics.fuzzyjoin.recordgroup.RecordGroupFactory;
 import edu.uci.ics.fuzzyjoin.similarity.SimilarityFilters;
 import edu.uci.ics.fuzzyjoin.similarity.SimilarityFiltersFactory;
 import edu.uci.ics.fuzzyjoin.spark.Main;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.IntPair;
 import edu.uci.ics.fuzzyjoin.tokenizer.Tokenizer;
 import edu.uci.ics.fuzzyjoin.tokenizer.TokenizerFactory;
 import edu.uci.ics.fuzzyjoin.tokenorder.TokenRank;
@@ -32,7 +31,7 @@ import edu.uci.ics.fuzzyjoin.tokenorder.TokenRankFrequency;
  * 
  *         VALUE2: RID, Tokens
  */
-public class SelfJoinMap implements PairFlatMapFunction<String, IntPair, ValueSelfJoin> {
+public class SelfJoinMap implements PairFlatMapFunction<String, Integer, ValueSelfJoin> {
 
     private int[] dataColumns;
     private RecordGroup recordGroup;
@@ -107,9 +106,8 @@ public class SelfJoinMap implements PairFlatMapFunction<String, IntPair, ValueSe
 
     // The call method to implement the flatMapToPair transformation
     @Override
-    public Iterator<Tuple2<IntPair, ValueSelfJoin>> call(String inputValue)
-            throws Exception {
-        List<Tuple2<IntPair, ValueSelfJoin>> result = new ArrayList<Tuple2<IntPair, ValueSelfJoin>>();
+    public Iterator<Tuple2<Integer, ValueSelfJoin>> call(String inputValue) throws Exception {
+        List<Tuple2<Integer, ValueSelfJoin>> result = new ArrayList<Tuple2<Integer, ValueSelfJoin>>();
 
         //
         // set TokenGroup
@@ -171,7 +169,7 @@ public class SelfJoinMap implements PairFlatMapFunction<String, IntPair, ValueSe
             // Key
             //
 
-            IntPair outputKey = new IntPair(group, length);
+            Integer outputKey = group;
 
             //
             // collect

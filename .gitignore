@@ -8,6 +8,7 @@
 **/output.txt
 **/tree.txt
 **/tree.spark.txt
+**/temp*.txt
 
 # Rejet des dossiers target
 /fuzzyjoin-0.0.2/fuzzyjoin-core/target/

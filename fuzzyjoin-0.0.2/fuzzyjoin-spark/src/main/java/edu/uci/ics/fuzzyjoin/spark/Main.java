@@ -113,7 +113,11 @@ public class Main {
                 break;
 
             default:
-                LogUtil.logStage("Please select a correct stage");
+                LogUtil.logStage("Please select a correct stage between:\n" +
+                        "-TokensBasic\n" +
+                        "-RidPairsPPJoin\n" +
+                        "-RecordPairsBasic (work in progress)\n" +
+                        "-FuzzyJoin");
                 break;
         }
 

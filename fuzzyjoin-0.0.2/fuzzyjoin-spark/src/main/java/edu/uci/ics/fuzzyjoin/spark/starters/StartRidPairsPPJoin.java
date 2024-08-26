@@ -9,7 +9,6 @@ import org.apache.spark.api.java.JavaSparkContext;
 import edu.uci.ics.fuzzyjoin.spark.SparkConfig;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.logging.SaveResult;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.IntPair;
 import edu.uci.ics.fuzzyjoin.spark.ridpairs.RIDPairsPPJoin;
 import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.ValueSelfJoin;
 
@@ -34,7 +33,7 @@ public class StartRidPairsPPJoin {
         //
 
         LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
-        JavaPairRDD<IntPair, ValueSelfJoin> ridPairs = RIDPairsPPJoin.main(tokensRank, records, sc);
+        JavaPairRDD<Integer, ValueSelfJoin> ridPairs = RIDPairsPPJoin.main(tokensRank, records, sc);
 
         if (saveResult) {
             SaveResult saver = new SaveResult(sc, "ridpairs");

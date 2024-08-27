@@ -11,11 +11,10 @@ import edu.uci.ics.fuzzyjoin.spark.Main;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarMap;
 import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarReduceAggregate;
-import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarReduceSelect;
 import scala.Tuple2;
 
 public class TokensBasic {
-    public static JavaPairRDD<Integer, String> main(JavaRDD<String> records, JavaSparkContext sc) throws IOException {
+    public static JavaRDD<String> main(JavaRDD<String> records, JavaSparkContext sc) throws IOException {
         //
         // -------------------- PHASE 1 --------------------
         //
@@ -41,7 +40,7 @@ public class TokensBasic {
 
         } else {
             LogUtil.logStage("Phase 1 : Map : Scalar");
-            tokensOne = records.flatMapToPair(new ScalarMap());
+            tokensOne = records.flatMapToPair(new ScalarMap(sc));
 
             LogUtil.logStage("Phase 1 : Reduce : Scalar");
             tokensCount = tokensOne.reduceByKey(new ScalarReduceAggregate());
@@ -52,7 +51,7 @@ public class TokensBasic {
         //
 
         JavaPairRDD<Integer, String> tokensCountInverted;
-        JavaPairRDD<Tuple2<Integer, String>, Tuple2<Integer, String>> tokensCountInvertedSorted;
+        JavaRDD<String> tokensCountInvertedSorted;
 
         if (sc.getConf().get(Main.TOKENS_PACKAGE_PROPERTY).equals("Array")) {
             LogUtil.logStage("Phase 2 : Map : Array");
@@ -67,26 +66,47 @@ public class TokensBasic {
             LogUtil.logStage("Phase 2 : Reduce : Array");
             System.out.println("PAS COMPLETEMENT IMPLEMENTE, A FINIR PEUT ETRE"); // TODO
 
-            tokensCountInvertedSorted = tokensCountInverted.mapToPair(t -> new Tuple2<>(t, t));
+            tokensCountInvertedSorted = tokensCountInverted.map(t -> t._2);
 
         } else {
             LogUtil.logStage("Phase 2 : Map : Scalar");
             tokensCountInverted = tokensCount.mapToPair(new MapSelect());
 
-            LogUtil.logStage("Phase 2 : Reduce : Scalar");
-            tokensCountInvertedSorted = tokensCountInverted.mapToPair(t -> new Tuple2<>(t, t))
-                    .sortByKey(new ScalarReduceSelect());
+            // showPairRDDInverted(tokensCountInverted);
+
+            // LogUtil.logStage("Phase 2 : Reduce : Scalar");
+
+            // Step 1: Sort by key (ascending)
+            JavaPairRDD<Integer, String> sortedByKey = tokensCountInverted.sortByKey();
+
+            // Step 2: Sort by value (ascending)
+            JavaPairRDD<String, Integer> sortedByKeyThenValue = sortedByKey
+                    .mapToPair(Tuple2::swap) // Swap to have String as key for sorting
+                    .sortByKey(); // Sort by value, which is now the key
+
+            // Step 3: Extract the values (JavaRDD<String>)
+            tokensCountInvertedSorted = sortedByKeyThenValue.map(Tuple2::_1);
+
         }
 
-        LogUtil.logStage("");
-        showPairRDDInverted(tokensCountInvertedSorted.mapToPair(t -> t._1));
+        showRDDInverted(tokensCountInvertedSorted);
 
         // return the list of tokens ranked
-        return tokensCountInvertedSorted.mapToPair(t -> t._1);
+        return tokensCountInvertedSorted;
+    }
+
+    private static void showPairRDD(JavaPairRDD<String, Integer> rdd) {
+        List<Tuple2<String, Integer>> results = rdd.collect();
+        results.forEach(r -> System.out.println("Value : " + r._1() + " Id : " + r._2()));
     }
 
     private static void showPairRDDInverted(JavaPairRDD<Integer, String> rdd) {
         List<Tuple2<Integer, String>> results = rdd.collect();
         results.forEach(r -> System.out.println("Value : " + r._1() + " Id : " + r._2()));
+    }
+
+    private static void showRDDInverted(JavaRDD<String> rdd) {
+        List<String> results = rdd.collect();
+        results.forEach(r -> System.out.println("" + r));
     }
 }

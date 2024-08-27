@@ -20,7 +20,7 @@ public class StartRidPairsPPJoin {
         //
         SparkConfig configuration = new SparkConfig();
 
-        LogUtil.logStage("Read records from HDFS");
+        LogUtil.logStage("Read \'records\' from HDFS");
         JavaRDD<String> records = configuration.readData(sc, "records");
 
         if (saveResult) {

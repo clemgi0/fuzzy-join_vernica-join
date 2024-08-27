@@ -22,6 +22,9 @@ package edu.uci.ics.fuzzyjoin.hadoop.tokens.scalar;
 import java.io.IOException;
 import java.util.Collection;
 
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.JobConf;
@@ -50,44 +53,64 @@ import edu.uci.ics.fuzzyjoin.tokenizer.TokenizerFactory;
  * 
  */
 public class Map extends MapReduceBase implements
-        Mapper<Object, Text, Text, IntWritable> {
+                Mapper<Object, Text, Text, IntWritable> {
 
-    private int[] dataColumns;
-    private final IntWritable one = new IntWritable(1);
-    protected final Text token = new Text();
-    private Tokenizer tokenizer;
+        private int[] dataColumns;
+        private final IntWritable one = new IntWritable(1);
+        protected final Text token = new Text();
+        private Tokenizer tokenizer;
 
-    @Override
-    public void configure(JobConf job) {
-        tokenizer = TokenizerFactory.getTokenizer(job.get(
-                FuzzyJoinConfig.TOKENIZER_PROPERTY,
-                FuzzyJoinConfig.TOKENIZER_VALUE),
-                FuzzyJoinConfig.WORD_SEPARATOR_REGEX,
-                FuzzyJoinConfig.TOKEN_SEPARATOR);
-        //
-        // set dataColumn
-        //
-        dataColumns = FuzzyJoinUtil.getDataColumns(job.get(
-                FuzzyJoinConfig.RECORD_DATA_PROPERTY,
-                FuzzyJoinConfig.RECORD_DATA_VALUE));
-    }
+        private FSDataOutputStream out;
 
-    protected Collection<String> getTokens(Text record) {
-        return tokenizer.tokenize(FuzzyJoinUtil
-                .getData(
-                        record.toString().split(
-                                FuzzyJoinConfig.RECORD_SEPARATOR_REGEX),
-                        dataColumns, FuzzyJoinConfig.TOKEN_SEPARATOR));
-    }
+        @Override
+        public void configure(JobConf job) {
+                tokenizer = TokenizerFactory.getTokenizer(job.get(
+                                FuzzyJoinConfig.TOKENIZER_PROPERTY,
+                                FuzzyJoinConfig.TOKENIZER_VALUE),
+                                FuzzyJoinConfig.WORD_SEPARATOR_REGEX,
+                                FuzzyJoinConfig.TOKEN_SEPARATOR);
+                //
+                // set dataColumn
+                //
+                dataColumns = FuzzyJoinUtil.getDataColumns(job.get(
+                                FuzzyJoinConfig.RECORD_DATA_PROPERTY,
+                                FuzzyJoinConfig.RECORD_DATA_VALUE));
 
-    public void map(Object unused, Text record,
-            OutputCollector<Text, IntWritable> output, Reporter reporter)
-            throws IOException {
-        Collection<String> tokens = getTokens(record);
-
-        for (String tokenString : tokens) {
-            token.set(tokenString);
-            output.collect(token, one);
+                try {
+                        FileSystem fs = FileSystem.get(job);
+                        Path path = new Path("dblp-small/debug-map-tokensbasic-phase1.txt");
+                        out = fs.create(path, true);
+                } catch (IOException e) {
+                        e.printStackTrace();
+                }
         }
-    }
+
+        protected Collection<String> getTokens(Text record) {
+                return tokenizer.tokenize(FuzzyJoinUtil
+                                .getData(record.toString().split(
+                                                FuzzyJoinConfig.RECORD_SEPARATOR_REGEX),
+                                                dataColumns,
+                                                FuzzyJoinConfig.TOKEN_SEPARATOR));
+        }
+
+        public void map(Object unused, Text record,
+                        OutputCollector<Text, IntWritable> output, Reporter reporter)
+                        throws IOException {
+                Collection<String> tokens = getTokens(record);
+
+                for (String tokenString : tokens) {
+                        token.set(tokenString);
+                        output.collect(token, one);
+
+                        // Write the output to HDFS for debugging
+                        out.writeBytes("Key: " + token + " Value: " + one + "\n");
+                }
+        }
+
+        @Override
+        public void close() throws IOException {
+                if (out != null) {
+                        out.close();
+                }
+        }
 }

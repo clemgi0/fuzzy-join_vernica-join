@@ -19,21 +19,21 @@ public class StartTokensBasic {
         SparkConfig configuration = new SparkConfig();
 
         LogUtil.logStage("Read raw data from HDFS");
-        JavaRDD<String> raw = configuration.readData(sc, "raw");
+        JavaRDD<String> raw = configuration.readData(sc, "records");
 
         //
         // Launch Stage 1 : Tokenization
         //
 
         LogUtil.logStage("Start Stage 1 : TokensBasic");
-        JavaPairRDD<Integer, String> tokensRank = TokensBasic.main(raw, sc);
+        JavaRDD<String> tokensRank = TokensBasic.main(raw, sc);
 
         if (saveResult) {
             // Save the result in HDFS
             SaveResult saver = new SaveResult(sc, "tokens");
-            saver.saveJavaRDD(tokensRank.map(t -> t._2()));
+            saver.saveJavaStringRDD(tokensRank);
         }
 
-        return tokensRank.values().collect().toArray(new String[0]);
+        return tokensRank.collect().toArray(new String[0]);
     }
 }

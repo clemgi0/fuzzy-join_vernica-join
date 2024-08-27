@@ -31,7 +31,7 @@ public class RIDPairsPPJoin {
             LogUtil.logStage("Self-join : Map");
             selfJoinMappedData = records.flatMapToPair(new SelfJoinMap(sc, tokenStrings));
 
-            showPairRDD(selfJoinMappedData);
+            // showPairRDD(selfJoinMappedData);
 
             LogUtil.logStage("Self-join : Reduce");
             JavaPairRDD<Integer, Iterable<ValueSelfJoin>> selfJoinGroupedData = selfJoinMappedData.groupByKey();
@@ -39,11 +39,9 @@ public class RIDPairsPPJoin {
             // Sort the RDD by keys (IntPair)
             JavaPairRDD<Integer, Iterable<ValueSelfJoin>> sortedSelfJoinGroupedData = selfJoinGroupedData.sortByKey();
 
-            showPairRDD2(sortedSelfJoinGroupedData);
+            // showPairRDD2(sortedSelfJoinGroupedData);
 
-            LogUtil.logStage("Before flatMapValues");
             ridPairs = sortedSelfJoinGroupedData.flatMapValues(new SelfJoinReduce(sc));
-            LogUtil.logStage("After flatMapValues");
 
             showPairRDD3(ridPairs);
         } else {
@@ -86,8 +84,6 @@ public class RIDPairsPPJoin {
     public static void showPairRDD3(JavaPairRDD<Integer, String> rdd) {
         List<Tuple2<Integer, String>> results = rdd.collect();
         results.forEach(r -> System.out
-                .println("Group : " + r._1() +
-                        "  ||  RID Pairs and similarity : "
-                        + r._2()));
+                .println("" + r._2()));
     }
 }

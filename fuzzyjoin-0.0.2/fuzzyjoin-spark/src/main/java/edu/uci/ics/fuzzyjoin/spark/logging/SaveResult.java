@@ -41,6 +41,13 @@ public class SaveResult {
         rdd.coalesce(1).saveAsTextFile(outputPath.toString());
     }
 
+    public void saveJavaStringRDD(JavaRDD<String> rdd) {
+        LogUtil.logStage("Save Java RDD at " + outputPath.toString());
+
+        deleteFile(outputPath);
+        rdd.coalesce(1).saveAsTextFile(outputPath.toString());
+    }
+
     public void saveJavaRIDPairRDD(JavaPairRDD<Integer, ValueSelfJoin> rdd) {
         LogUtil.logStage("Save Java RID Pair RDD at " + outputPath.toString());
 

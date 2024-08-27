@@ -22,8 +22,12 @@ package edu.uci.ics.fuzzyjoin.hadoop.tokens.scalar;
 import java.io.IOException;
 import java.util.Iterator;
 
+import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.MapReduceBase;
 import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reducer;
@@ -42,6 +46,19 @@ public class ReduceAggregate extends MapReduceBase implements
 
     private final IntWritable countWritable = new IntWritable();
 
+    private FSDataOutputStream out;
+
+    public void configure(JobConf job) {
+        // Setup code...
+        try {
+            FileSystem fs = FileSystem.get(job);
+            Path path = new Path("dblp-small/debug-reduce-tokensbasic-phase1.txt");
+            out = fs.create(path, true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void reduce(Text key, Iterator<IntWritable> values,
             OutputCollector<Text, IntWritable> output, Reporter reporter)
             throws IOException {
@@ -53,5 +70,15 @@ public class ReduceAggregate extends MapReduceBase implements
 
         countWritable.set(count);
         output.collect(key, countWritable);
+
+        // Write the output to HDFS for debugging
+        out.writeBytes("Key: " + key + " Value: " + countWritable + "\n");
+    }
+
+    @Override
+    public void close() throws IOException {
+        if (out != null) {
+            out.close();
+        }
     }
 }

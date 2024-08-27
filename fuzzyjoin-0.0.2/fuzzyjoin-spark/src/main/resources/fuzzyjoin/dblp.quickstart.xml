@@ -2,7 +2,7 @@
 <configuration>
   <property>
     <name>fuzzyjoin.data.dir</name>
-    <value>dblp-small</value>
+    <value>spark/dblp-small</value>
   </property>
   <property>
     <name>fuzzyjoin.similarity.threshold</name>

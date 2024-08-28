@@ -14,7 +14,7 @@ public class RedirectOutput {
             System.setOut(fileOut);
 
             // Exemple de sortie redirigée vers le fichier
-            LogUtil.logStage("Début du logging");
+            LogUtil.logStage("Log output to " + fileName);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

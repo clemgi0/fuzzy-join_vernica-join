@@ -2,7 +2,6 @@ package edu.uci.ics.fuzzyjoin.spark.starters;
 
 import java.io.IOException;
 
-import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
@@ -12,27 +11,34 @@ import edu.uci.ics.fuzzyjoin.spark.logging.SaveResult;
 import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
 
 public class StartTokensBasic {
-    public static String[] start(JavaSparkContext sc, boolean saveResult) throws IOException {
+    public static void start(JavaSparkContext sc) throws IOException {
         //
         // Read files from HDFS
         //
         SparkConfig configuration = new SparkConfig();
 
-        LogUtil.logStage("Read raw data from HDFS");
-        JavaRDD<String> raw = configuration.readData(sc, "records");
+        LogUtil.logStage("Read records data from HDFS");
+        JavaRDD<String> records = configuration.readData(sc, "records");
 
         //
         // Launch Stage 1 : Tokenization
         //
 
         LogUtil.logStage("Start Stage 1 : TokensBasic");
-        JavaRDD<String> tokensRank = TokensBasic.main(raw, sc);
+        JavaRDD<String> tokensRank = TokensBasic.main(records, sc);
 
-        if (saveResult) {
-            // Save the result in HDFS
-            SaveResult saver = new SaveResult(sc, "tokens");
-            saver.saveJavaStringRDD(tokensRank);
-        }
+        // Save the result in HDFS
+        SaveResult saver = new SaveResult(sc, "tokens");
+        saver.saveJavaStringRDD(tokensRank);
+    }
+
+    public static String[] start(JavaSparkContext sc, JavaRDD<String> records) throws IOException {
+        //
+        // Launch Stage 1 : Tokenization
+        //
+
+        LogUtil.logStage("Start Stage 1 : TokensBasic");
+        JavaRDD<String> tokensRank = TokensBasic.main(records, sc);
 
         return tokensRank.collect().toArray(new String[0]);
     }

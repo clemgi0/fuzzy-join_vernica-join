@@ -16,11 +16,11 @@ import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.ValueSelfJoin;
 import scala.Tuple2;
 
 public class RIDPairsPPJoin {
-    public static JavaPairRDD<Integer, ValueSelfJoin> main(String[] tokenStrings,
+    public static JavaRDD<String> main(String[] tokenStrings,
             JavaRDD<String> records, JavaSparkContext sc)
             throws IOException {
 
-        JavaPairRDD<Integer, String> ridPairs;
+        JavaRDD<String> ridPairs = new JavaRDD<>(null, null);
         JavaPairRDD<Integer, ValueSelfJoin> selfJoinMappedData;
 
         if (sc.getConf().get(Main.DATA_SUFFIX_INPUT_PROPERTY).isEmpty()) {
@@ -41,8 +41,10 @@ public class RIDPairsPPJoin {
 
             // showPairRDD2(sortedSelfJoinGroupedData);
 
-            ridPairs = sortedSelfJoinGroupedData.flatMapValues(new SelfJoinReduce(sc));
+            JavaPairRDD<Integer, String> ridPairsMapped = sortedSelfJoinGroupedData
+                    .flatMapValues(new SelfJoinReduce(sc));
 
+            ridPairs = ridPairsMapped.values();
             showPairRDD3(ridPairs);
         } else {
             //
@@ -61,7 +63,7 @@ public class RIDPairsPPJoin {
                                                                        // IN THE NEXT LINE
         }
 
-        return selfJoinMappedData;
+        return ridPairs;
     }
 
     public static void showPairRDD(JavaPairRDD<Integer, ValueSelfJoin> rdd) {
@@ -81,9 +83,8 @@ public class RIDPairsPPJoin {
         }
     }
 
-    public static void showPairRDD3(JavaPairRDD<Integer, String> rdd) {
-        List<Tuple2<Integer, String>> results = rdd.collect();
-        results.forEach(r -> System.out
-                .println("" + r._2()));
+    public static void showPairRDD3(JavaRDD<String> rdd) {
+        List<String> results = rdd.collect();
+        results.forEach(r -> System.out.println("" + r));
     }
 }

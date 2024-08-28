@@ -8,6 +8,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.logging.RedirectOutput;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartFuzzyJoin;
+import edu.uci.ics.fuzzyjoin.spark.starters.StartRecordPairsBasic;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartRidPairsPPJoin;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartTokensBasic;
 
@@ -101,11 +102,15 @@ public class Main {
 
         switch (args[1].toLowerCase()) {
             case "tokensbasic":
-                StartTokensBasic.start(sc, true);
+                StartTokensBasic.start(sc);
                 break;
 
             case "ridpairsppjoin":
-                StartRidPairsPPJoin.start(sc, true, null);
+                StartRidPairsPPJoin.start(sc);
+                break;
+
+            case "recordpairsbasic":
+                StartRecordPairsBasic.start(sc);
                 break;
 
             case "fuzzyjoin":

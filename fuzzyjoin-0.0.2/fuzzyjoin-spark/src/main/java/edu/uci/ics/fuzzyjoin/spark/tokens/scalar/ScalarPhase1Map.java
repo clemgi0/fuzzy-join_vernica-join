@@ -25,11 +25,11 @@ import scala.Tuple2;
  ** @return JavaPairRDD<String, Integer> containing the tokens and a 1 for each
  *         token
  */
-public class ScalarMap implements PairFlatMapFunction<String, String, Integer> {
+public class ScalarPhase1Map implements PairFlatMapFunction<String, String, Integer> {
     private static final long serialVersionUID = 1L;
     private int[] dataColumns;
 
-    public ScalarMap(JavaSparkContext sc) {
+    public ScalarPhase1Map(JavaSparkContext sc) {
         dataColumns = FuzzyJoinUtil.getDataColumns(
                 sc.getConf().get(FuzzyJoinConfig.RECORD_DATA_PROPERTY, FuzzyJoinConfig.RECORD_DATA_VALUE));
 

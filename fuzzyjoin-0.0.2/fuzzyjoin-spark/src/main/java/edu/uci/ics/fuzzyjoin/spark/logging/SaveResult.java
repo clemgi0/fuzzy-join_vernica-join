@@ -9,7 +9,7 @@ import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import edu.uci.ics.fuzzyjoin.spark.Main;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.IntPair;
+import edu.uci.ics.fuzzyjoin.spark.objects.IntPair;
 import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.ValueSelfJoin;
 
 public class SaveResult {
@@ -48,7 +48,7 @@ public class SaveResult {
         rdd.coalesce(1).saveAsTextFile(outputPath.toString());
     }
 
-    public void saveJavaRIDPairRDD(JavaPairRDD<Integer, ValueSelfJoin> rdd) {
+    public void saveJavaRIDPairRDD(JavaRDD<String> rdd) {
         LogUtil.logStage("Save Java RID Pair RDD at " + outputPath.toString());
 
         deleteFile(outputPath);

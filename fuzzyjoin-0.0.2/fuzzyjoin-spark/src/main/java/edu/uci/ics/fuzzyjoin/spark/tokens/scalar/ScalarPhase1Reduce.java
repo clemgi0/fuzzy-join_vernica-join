@@ -11,7 +11,7 @@ import org.apache.spark.api.java.function.Function2;
  * @return JavaPairRDD<String, Integer> containing the tokens and the sum for
  *         each token
  */
-public class ScalarReduceAggregate implements Function2<Integer, Integer, Integer> {
+public class ScalarPhase1Reduce implements Function2<Integer, Integer, Integer> {
     private static final long serialVersionUID = 1L;
 
     @Override

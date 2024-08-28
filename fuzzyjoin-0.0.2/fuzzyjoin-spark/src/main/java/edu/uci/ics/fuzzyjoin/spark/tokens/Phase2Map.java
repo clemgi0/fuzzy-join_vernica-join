@@ -4,7 +4,7 @@ import org.apache.spark.api.java.function.PairFunction;
 
 import scala.Tuple2;
 
-public class MapSelect implements PairFunction<Tuple2<String, Integer>, Integer, String> {
+public class Phase2Map implements PairFunction<Tuple2<String, Integer>, Integer, String> {
 
     @Override
     public Tuple2<Integer, String> call(Tuple2<String, Integer> t) throws Exception {

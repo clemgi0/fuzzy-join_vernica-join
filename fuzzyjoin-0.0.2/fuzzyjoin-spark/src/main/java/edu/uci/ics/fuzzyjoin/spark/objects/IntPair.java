@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.ridpairs;
+package edu.uci.ics.fuzzyjoin.spark.objects;
 
 import java.io.Serializable;
 

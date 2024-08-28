@@ -9,8 +9,8 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.Main;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarMap;
-import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarReduceAggregate;
+import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarPhase1Map;
+import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarPhase1Reduce;
 import scala.Tuple2;
 
 public class TokensBasic {
@@ -40,10 +40,10 @@ public class TokensBasic {
 
         } else {
             LogUtil.logStage("Phase 1 : Map : Scalar");
-            tokensOne = records.flatMapToPair(new ScalarMap(sc));
+            tokensOne = records.flatMapToPair(new ScalarPhase1Map(sc));
 
             LogUtil.logStage("Phase 1 : Reduce : Scalar");
-            tokensCount = tokensOne.reduceByKey(new ScalarReduceAggregate());
+            tokensCount = tokensOne.reduceByKey(new ScalarPhase1Reduce());
         }
 
         //
@@ -61,7 +61,7 @@ public class TokensBasic {
             // new Integer[] { 0, Integer.MAX_VALUE, Integer.MIN_VALUE },
             // new ArrayReduceAggregate(),
             // new ArrayReduceAggregate());
-            tokensCountInverted = tokensCount.mapToPair(new MapSelect());
+            tokensCountInverted = tokensCount.mapToPair(new Phase2Map());
 
             LogUtil.logStage("Phase 2 : Reduce : Array");
             System.out.println("PAS COMPLETEMENT IMPLEMENTE, A FINIR PEUT ETRE"); // TODO
@@ -70,7 +70,7 @@ public class TokensBasic {
 
         } else {
             LogUtil.logStage("Phase 2 : Map : Scalar");
-            tokensCountInverted = tokensCount.mapToPair(new MapSelect());
+            tokensCountInverted = tokensCount.mapToPair(new Phase2Map());
 
             // showPairRDDInverted(tokensCountInverted);
 

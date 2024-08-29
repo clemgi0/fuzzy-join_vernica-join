@@ -2,17 +2,20 @@ package edu.uci.ics.fuzzyjoin.spark;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 
-import edu.uci.ics.fuzzyjoin.spark.stages.tokens.TokensBasic;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartFuzzyJoin;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartRecordPairsBasic;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartRidPairsPPJoin;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartTokensBasic;
+import edu.uci.ics.fuzzyjoin.spark.util.ArgsHandler;
 import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.util.RedirectOutput;
+import edu.uci.ics.fuzzyjoin.spark.util.Stage;
 
 public class Main {
     public static final String NAMESPACE = "fuzzyjoin";
@@ -44,51 +47,59 @@ public class Main {
     public static final String DATA_LENGTH_STATS_FILE = "lengthstats";
     public static final char SEPARATOR = ',';
     public static final String SEPARATOR_REGEX = ",";
+    // available stages
+    public static final Map<String, Stage> STAGES = new HashMap<>();
+
+    static {
+        STAGES.put("tokensbasic", (sc) -> {
+            StartTokensBasic.start(sc);
+        });
+        STAGES.put("ridpairsppjoin", (sc) -> {
+            StartRidPairsPPJoin.start(sc);
+        });
+        STAGES.put("recordpairsbasic", (sc) -> {
+            StartRecordPairsBasic.start(sc);
+        });
+        STAGES.put("fuzzyjoin", (sc) -> {
+            StartFuzzyJoin.start(sc);
+        });
+    }
 
     public static void main(String[] args) throws IOException {
-        // conf variables
+        //
+        // Handle command-line arguments
+        //
+        ArgsHandler.handleArg(args);
+        String configFile = ArgsHandler.getConfigFile(args);
+        String stageName = ArgsHandler.getStage(args);
+        boolean logToFile = ArgsHandler.shouldLogToFile(args);
+
+        //
+        // Create configuration variables
+        //
         SparkConfig configuration;
         SparkConf sparkConf;
         JavaSparkContext sc;
 
         //
-        // Handling the args
-        //
-        if (args.length < 1) {
-            System.err.println("Usage: spark-submit \\\n" +
-                    "--class PATH_TO_MAIN \\\n" +
-                    "--master YARN \\\n" +
-                    "PATH_TO_JAR \\\n" +
-                    "NAME_OF_CONFIG_FILE \\\n" +
-                    "STAGES_TO_RUN \\\n" +
-                    "[OPTIONS] : \\\n" +
-                    "LOG_TO_FILE: true/false");
-            System.exit(1);
-        }
-
-        //
-        // Set config file
+        // Set configuration file
         //
         configuration = new SparkConfig();
-        sparkConf = configuration.getSparkContext(args[1]);
-
-        if (args.length > 0) {
-            configuration.readConfig("fuzzyjoin/", args[0]);
-        } else {
-            LogUtil.logStage("Configuration file not specified, using default dblp.quickstart.xml");
-            configuration.readConfig("fuzzyjoin/", "dblp.quickstart.xml");
-        }
+        sparkConf = configuration.getSparkContext(stageName);
+        configuration.readConfig("fuzzyjoin/", configFile);
 
         //
         // Redirect log output to file if specified
         //
-        if (args.length > 2 && args[2].equals("true")) {
+        if (logToFile) {
             RedirectOutput.setFile("output.txt");
         } else {
             LogUtil.logStage("Log output to console");
         }
 
+        //
         // Print properties
+        //
         // configuration.printMainProperties();
         configuration.printAllProperties();
 
@@ -97,49 +108,25 @@ public class Main {
         //
         LogUtil.logStage("Creating Java Spark Context");
         Date startTime = new Date();
-
         sc = new JavaSparkContext(sparkConf);
-
         Date endTime = new Date();
         LogUtil.logTime(startTime, endTime, "Create JavaSparkContext");
 
+        //
+        // Run stage(s)
+        //
         LogUtil.logStage("Starting of the app");
-
-        //
-        // Select stages to run
-        //
-        switch (args[1].toLowerCase()) {
-            case "tokensbasic":
-                StartTokensBasic.start(sc);
-                break;
-
-            case "ridpairsppjoin":
-                StartRidPairsPPJoin.start(sc);
-                break;
-
-            case "recordpairsbasic":
-                StartRecordPairsBasic.start(sc);
-                break;
-
-            case "fuzzyjoin":
-                StartFuzzyJoin.start(sc);
-                break;
-
-            default:
-                LogUtil.logStage("Please select a correct stage between:\n" +
-                        "-TokensBasic\n" +
-                        "-RidPairsPPJoin\n" +
-                        "-RecordPairsBasic (work in progress)\n" +
-                        "-FuzzyJoin");
-                break;
-        }
+        Stage stage = STAGES.get(stageName);
+        startTime = new Date();
+        stage.run(sc);
+        endTime = new Date();
+        LogUtil.logTime(startTime, endTime, "App");
 
         //
         // Ending of the app
         //
         LogUtil.logStage("Close Java Spark Context and Spark Session");
         sc.close();
-
         LogUtil.logStage("Ending of the app");
         RedirectOutput.setConsole();
     }

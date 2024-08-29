@@ -14,7 +14,7 @@ import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import scala.Tuple2;
 
 public class TokensBasic {
-    public static JavaRDD<String> main(JavaSparkContext sc, JavaRDD<String> records) throws IOException {
+    public static JavaRDD<String> main(JavaSparkContext sc, JavaRDD<String> records) {
         //
         // -------------------- PHASE 1 --------------------
         //

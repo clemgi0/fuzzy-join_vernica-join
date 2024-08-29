@@ -7,9 +7,6 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.SparkConfig;
-import edu.uci.ics.fuzzyjoin.spark.stages.recordpairs.RecordPairsBasic;
-import edu.uci.ics.fuzzyjoin.spark.stages.ridpairs.RIDPairsPPJoin;
-import edu.uci.ics.fuzzyjoin.spark.stages.tokens.TokensBasic;
 import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 
 public class StartFuzzyJoin {

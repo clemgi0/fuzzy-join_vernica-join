@@ -25,7 +25,7 @@ public class SelfJoinPhase1Reduce {
         Iterator<String> inputIte = inputTuple._2.iterator();
         while (inputIte.hasNext()) {
             String s = inputIte.next();
-            System.out.println("\tString from input : " + s);
+            // System.out.println("\tString from input : " + s);
             if (!uniqueStrings.contains(s)) {
                 uniqueStrings.add(s);
                 if (s.contains(":") && record == null) {

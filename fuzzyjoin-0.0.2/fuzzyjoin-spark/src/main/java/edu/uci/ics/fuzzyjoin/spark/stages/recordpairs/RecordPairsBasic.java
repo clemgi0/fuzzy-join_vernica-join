@@ -16,8 +16,7 @@ import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import scala.Tuple2;
 
 public class RecordPairsBasic {
-    public static JavaRDD<String> main(JavaSparkContext sc, JavaRDD<String> records, JavaRDD<String> ridPairs)
-            throws IOException {
+    public static JavaRDD<String> main(JavaSparkContext sc, JavaRDD<String> records, JavaRDD<String> ridPairs) {
         //
         // -------------------- PHASE 1 --------------------
         //

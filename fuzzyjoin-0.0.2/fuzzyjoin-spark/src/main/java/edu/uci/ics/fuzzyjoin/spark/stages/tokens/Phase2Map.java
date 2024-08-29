@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.tokens;
+package edu.uci.ics.fuzzyjoin.spark.stages.tokens;
 
 import org.apache.spark.api.java.function.PairFunction;
 

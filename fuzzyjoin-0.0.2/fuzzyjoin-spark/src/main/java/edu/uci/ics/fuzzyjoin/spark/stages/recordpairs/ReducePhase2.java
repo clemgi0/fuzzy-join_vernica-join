@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.recordpairs;
+package edu.uci.ics.fuzzyjoin.spark.stages.recordpairs;
 
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function2;

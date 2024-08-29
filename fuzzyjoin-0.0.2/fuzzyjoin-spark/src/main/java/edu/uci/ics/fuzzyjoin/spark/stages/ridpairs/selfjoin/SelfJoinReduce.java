@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin;
+package edu.uci.ics.fuzzyjoin.spark.stages.ridpairs.selfjoin;
 
 import java.util.ArrayList;
 import java.util.HashMap;

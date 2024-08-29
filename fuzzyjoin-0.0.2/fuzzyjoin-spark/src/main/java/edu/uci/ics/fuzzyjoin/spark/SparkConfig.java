@@ -14,7 +14,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
+import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import scala.Tuple2;
 
 public class SparkConfig {

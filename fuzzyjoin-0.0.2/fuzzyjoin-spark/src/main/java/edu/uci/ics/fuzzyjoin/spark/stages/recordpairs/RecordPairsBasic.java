@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.recordpairs;
+package edu.uci.ics.fuzzyjoin.spark.stages.recordpairs;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,10 +9,10 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.Main;
-import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.objects.IntPair;
-import edu.uci.ics.fuzzyjoin.spark.recordpairs.selfjoin.SelfJoinPhase1Map;
-import edu.uci.ics.fuzzyjoin.spark.recordpairs.selfjoin.SelfJoinPhase1Reduce;
+import edu.uci.ics.fuzzyjoin.spark.stages.recordpairs.selfjoin.SelfJoinPhase1Map;
+import edu.uci.ics.fuzzyjoin.spark.stages.recordpairs.selfjoin.SelfJoinPhase1Reduce;
+import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import scala.Tuple2;
 
 public class RecordPairsBasic {
@@ -31,14 +31,10 @@ public class RecordPairsBasic {
 
             JavaRDD<String> union = records.union(ridPairs);
 
-            // showRDD1(ridPairs);
-
             LogUtil.logStage("Phase 1 : Self-join : Map");
 
             JavaPairRDD<String, Integer> mappedData = union.flatMapToPair(new SelfJoinPhase1Map());
             JavaPairRDD<Integer, String> mappedDataInverted = mappedData.mapToPair(Tuple2::swap);
-
-            // showPairRDD1(mappedDataInverted);
 
             LogUtil.logStage("Phase 1 : Self-join : Reduce");
 
@@ -47,7 +43,6 @@ public class RecordPairsBasic {
 
             ArrayList<Tuple2<IntPair, String>> halfRecordsList = new ArrayList<>();
             for (Tuple2<Integer, Iterable<String>> tuple : mappedDataIterable) {
-                // LogUtil.logStage("");
                 // System.out.println(tuple._1() + " " + tuple._2());
                 halfRecordsList.addAll(new SelfJoinPhase1Reduce().call(tuple));
             }
@@ -106,5 +101,11 @@ public class RecordPairsBasic {
         List<Tuple2<IntPair, String>> results = rdd.collect();
         results.forEach(r -> System.out
                 .println(r._1().getFirst() + " " + r._1().getSecond() + " " + r._2()));
+    }
+
+    public static void showPairRDD3(JavaPairRDD<String, Integer> rdd) {
+        List<Tuple2<String, Integer>> results = rdd.collect();
+        results.forEach(r -> System.out
+                .println(r._1() + " " + r._2()));
     }
 }

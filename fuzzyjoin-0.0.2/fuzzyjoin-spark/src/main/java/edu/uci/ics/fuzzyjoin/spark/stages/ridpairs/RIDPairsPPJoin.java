@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.ridpairs;
+package edu.uci.ics.fuzzyjoin.spark.stages.ridpairs;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -9,10 +9,10 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.Main;
-import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.SelfJoinMap;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.SelfJoinReduce;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.ValueSelfJoin;
+import edu.uci.ics.fuzzyjoin.spark.stages.ridpairs.selfjoin.SelfJoinMap;
+import edu.uci.ics.fuzzyjoin.spark.stages.ridpairs.selfjoin.SelfJoinReduce;
+import edu.uci.ics.fuzzyjoin.spark.stages.ridpairs.selfjoin.ValueSelfJoin;
+import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import scala.Tuple2;
 
 public class RIDPairsPPJoin {
@@ -45,7 +45,7 @@ public class RIDPairsPPJoin {
                     .flatMapValues(new SelfJoinReduce(sc));
 
             ridPairs = ridPairsMapped.values();
-            showPairRDD3(ridPairs);
+            // showPairRDD3(ridPairs);
         } else {
             //
             // R-S join

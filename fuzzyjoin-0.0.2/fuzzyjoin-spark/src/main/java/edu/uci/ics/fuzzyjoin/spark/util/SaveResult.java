@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.logging;
+package edu.uci.ics.fuzzyjoin.spark.util;
 
 import java.io.IOException;
 import java.util.Arrays;

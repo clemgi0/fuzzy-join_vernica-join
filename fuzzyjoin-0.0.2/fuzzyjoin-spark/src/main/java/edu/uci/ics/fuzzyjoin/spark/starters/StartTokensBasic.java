@@ -7,7 +7,7 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.SparkConfig;
-import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
+import edu.uci.ics.fuzzyjoin.spark.stages.tokens.TokensBasic;
 import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.util.SaveResult;
 

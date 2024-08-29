@@ -6,11 +6,11 @@ import java.util.Date;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 
+import edu.uci.ics.fuzzyjoin.spark.stages.tokens.TokensBasic;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartFuzzyJoin;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartRecordPairsBasic;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartRidPairsPPJoin;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartTokensBasic;
-import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
 import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import edu.uci.ics.fuzzyjoin.spark.util.RedirectOutput;
 

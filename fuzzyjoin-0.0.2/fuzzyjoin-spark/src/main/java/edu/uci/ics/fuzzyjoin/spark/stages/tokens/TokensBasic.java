@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.tokens;
+package edu.uci.ics.fuzzyjoin.spark.stages.tokens;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,13 +8,13 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.Main;
-import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarPhase1Map;
-import edu.uci.ics.fuzzyjoin.spark.tokens.scalar.ScalarPhase1Reduce;
+import edu.uci.ics.fuzzyjoin.spark.stages.tokens.scalar.ScalarPhase1Map;
+import edu.uci.ics.fuzzyjoin.spark.stages.tokens.scalar.ScalarPhase1Reduce;
+import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
 import scala.Tuple2;
 
 public class TokensBasic {
-    public static JavaRDD<String> main(JavaRDD<String> records, JavaSparkContext sc) throws IOException {
+    public static JavaRDD<String> main(JavaSparkContext sc, JavaRDD<String> records) throws IOException {
         //
         // -------------------- PHASE 1 --------------------
         //
@@ -89,7 +89,7 @@ public class TokensBasic {
 
         }
 
-        showRDDInverted(tokensCountInvertedSorted);
+        // showRDDInverted(tokensCountInvertedSorted);
 
         // return the list of tokens ranked
         return tokensCountInvertedSorted;

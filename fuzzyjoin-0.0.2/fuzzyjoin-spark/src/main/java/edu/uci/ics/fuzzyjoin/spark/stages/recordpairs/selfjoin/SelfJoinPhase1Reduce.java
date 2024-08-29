@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.recordpairs.selfjoin;
+package edu.uci.ics.fuzzyjoin.spark.stages.recordpairs.selfjoin;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,6 +25,7 @@ public class SelfJoinPhase1Reduce {
         Iterator<String> inputIte = inputTuple._2.iterator();
         while (inputIte.hasNext()) {
             String s = inputIte.next();
+            System.out.println("\tString from input : " + s);
             if (!uniqueStrings.contains(s)) {
                 uniqueStrings.add(s);
                 if (s.contains(":") && record == null) {

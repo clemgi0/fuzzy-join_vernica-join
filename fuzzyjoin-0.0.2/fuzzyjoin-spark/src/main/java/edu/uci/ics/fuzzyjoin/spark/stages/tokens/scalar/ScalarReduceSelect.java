@@ -1,4 +1,4 @@
-package edu.uci.ics.fuzzyjoin.spark.tokens.scalar;
+package edu.uci.ics.fuzzyjoin.spark.stages.tokens.scalar;
 
 import org.apache.spark.api.java.function.Function2;
 

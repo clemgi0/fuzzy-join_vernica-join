@@ -15,13 +15,10 @@ import scala.Tuple2;
 public class SelfJoinPhase1Reduce {
 
     public Collection<Tuple2<IntPair, String>> call(Tuple2<Integer, Iterable<String>> inputTuple) {
-        IntPair outputKey = new IntPair();
-        String outputValue;
-        Integer rid = inputTuple._1;
+        Integer rid1 = inputTuple._1;
         List<String> ridsSims = new ArrayList<>();
         String record = null;
         Set<String> uniqueStrings = new HashSet<>();
-        HashSet<Integer> rids = new HashSet<Integer>();
         Collection<Tuple2<IntPair, String>> output = new ArrayList<Tuple2<IntPair, String>>();
 
         // Find the record and make unique each ridsSims
@@ -38,30 +35,35 @@ public class SelfJoinPhase1Reduce {
             }
         }
 
+        // System.out.println("ridsSims : " + ridsSims);
         // If only record, return empty
-        if (ridsSims.size() == 1) {
+        if (ridsSims.size() == 0) {
+            // System.out.println("Only record : " + record);
             return Collections.emptyList();
         }
 
         // Create the outputs like KEY: [RID1, RID2] and VALUE: "Sim;Record1"
         for (String value : ridsSims) {
+            IntPair outputKey = new IntPair();
+
             String valueSplit[] = value.split(FuzzyJoinConfig.RIDPAIRS_SEPARATOR_REGEX);
             Integer rid2 = Integer.parseInt(valueSplit[0]);
-            if (!rids.contains(rid2)) {
-                rids.add(rid2);
 
-                if (rid < rid2) {
-                    outputKey.setFirst(rid);
-                    outputKey.setSecond(rid2);
-                } else {
-                    outputKey.setFirst(rid2);
-                    outputKey.setSecond(rid);
-                }
-                outputValue = valueSplit[1] + FuzzyJoinConfig.RECORD_EXTRA_SEPARATOR + record;
-                output.add(new Tuple2<IntPair, String>(outputKey, outputValue));
+            if (rid1 < rid2) {
+                outputKey.setFirst(rid1);
+                outputKey.setSecond(rid2);
+            } else {
+                outputKey.setFirst(rid2);
+                outputKey.setSecond(rid1);
             }
+
+            String outputValue = valueSplit[1] + FuzzyJoinConfig.RECORD_EXTRA_SEPARATOR + record;
+            output.add(new Tuple2<IntPair, String>(outputKey, outputValue));
         }
-        rids.clear();
+
+        // System.out.println("Not only record : " + record);
+        // output.forEach(r -> System.out.println("\t" + r._1().getFirst() + " " +
+        // r._1().getSecond() + " " + r._2()));
 
         return output;
     }

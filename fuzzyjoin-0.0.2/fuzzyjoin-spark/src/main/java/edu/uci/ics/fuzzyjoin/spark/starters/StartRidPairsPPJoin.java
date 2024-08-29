@@ -1,14 +1,15 @@
 package edu.uci.ics.fuzzyjoin.spark.starters;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.SparkConfig;
-import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.logging.SaveResult;
 import edu.uci.ics.fuzzyjoin.spark.ridpairs.RIDPairsPPJoin;
+import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
+import edu.uci.ics.fuzzyjoin.spark.util.SaveResult;
 
 public class StartRidPairsPPJoin {
     public static void start(JavaSparkContext sc) throws IOException {
@@ -30,9 +31,13 @@ public class StartRidPairsPPJoin {
         //
         // Launch Stage 2 : FuzzyJoin
         //
-
         LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
+        Date startTime = new Date();
+
         JavaRDD<String> ridPairs = RIDPairsPPJoin.main(tokensRank, records, sc);
+
+        Date endTime = new Date();
+        LogUtil.logTime(startTime, endTime, "RIDPairsPPJoin");
 
         SaveResult saver = new SaveResult(sc, "ridpairs");
         saver.saveJavaStringRDD(ridPairs);
@@ -43,7 +48,6 @@ public class StartRidPairsPPJoin {
         //
         // Launch Stage 2 : FuzzyJoin
         //
-
         LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
         JavaRDD<String> ridPairs = RIDPairsPPJoin.main(tokensRank, records, sc);
 

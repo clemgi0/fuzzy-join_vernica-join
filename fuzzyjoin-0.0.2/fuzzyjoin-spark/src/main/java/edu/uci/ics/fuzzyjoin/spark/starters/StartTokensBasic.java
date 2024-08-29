@@ -1,14 +1,15 @@
 package edu.uci.ics.fuzzyjoin.spark.starters;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.SparkConfig;
-import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.logging.SaveResult;
 import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
+import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
+import edu.uci.ics.fuzzyjoin.spark.util.SaveResult;
 
 public class StartTokensBasic {
     public static void start(JavaSparkContext sc) throws IOException {
@@ -23,11 +24,17 @@ public class StartTokensBasic {
         //
         // Launch Stage 1 : Tokenization
         //
-
         LogUtil.logStage("Start Stage 1 : TokensBasic");
-        JavaRDD<String> tokensRank = TokensBasic.main(records, sc);
+        Date startTime = new Date();
 
+        JavaRDD<String> tokensRank = TokensBasic.main(sc, records);
+
+        Date endTime = new Date();
+        LogUtil.logTime(startTime, endTime, "TokensBasic");
+
+        //
         // Save the result in HDFS
+        //
         SaveResult saver = new SaveResult(sc, "tokens");
         saver.saveJavaStringRDD(tokensRank);
     }
@@ -36,9 +43,8 @@ public class StartTokensBasic {
         //
         // Launch Stage 1 : Tokenization
         //
-
         LogUtil.logStage("Start Stage 1 : TokensBasic");
-        JavaRDD<String> tokensRank = TokensBasic.main(records, sc);
+        JavaRDD<String> tokensRank = TokensBasic.main(sc, records);
 
         return tokensRank.collect().toArray(new String[0]);
     }

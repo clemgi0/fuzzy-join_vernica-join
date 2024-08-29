@@ -1,14 +1,15 @@
 package edu.uci.ics.fuzzyjoin.spark.starters;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.SparkConfig;
-import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.logging.SaveResult;
 import edu.uci.ics.fuzzyjoin.spark.recordpairs.RecordPairsBasic;
+import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
+import edu.uci.ics.fuzzyjoin.spark.util.SaveResult;
 
 public class StartRecordPairsBasic {
     public static void start(JavaSparkContext sc)
@@ -24,28 +25,38 @@ public class StartRecordPairsBasic {
         //
         // Read records from HDFS
         //
-
         LogUtil.logStage("Read ridpairs data from HDFS");
         JavaRDD<String> ridPairs = configuration.readData(sc, "ridpairs");
 
+        //
         // Launch Stage 3 : Similar records join
-
+        //
         LogUtil.logStage("Start Stage 3 : RecordsPairsBasic");
+        Date startTime = new Date();
+
         JavaRDD<String> pairedRecords = RecordPairsBasic.main(sc, records, ridPairs);
 
+        Date endTime = new Date();
+        LogUtil.logTime(startTime, endTime, "RecordPairsBasic");
+
+        //
         // Save the result in HDFS
+        //
         SaveResult saver = new SaveResult(sc, "recordpairs");
         saver.saveJavaStringRDD(pairedRecords);
     }
 
     public static void start(JavaSparkContext sc, JavaRDD<String> records, JavaRDD<String> ridPairs)
             throws IOException {
+        //
         // Launch Stage 3 : Similar records join
-
+        //
         LogUtil.logStage("Start Stage 3 : RecordsPairsBasic");
         JavaRDD<String> pairedRecords = RecordPairsBasic.main(sc, records, ridPairs);
 
+        //
         // Save the result in HDFS
+        //
         SaveResult saver = new SaveResult(sc, "recordpairs");
         saver.saveJavaStringRDD(pairedRecords);
     }

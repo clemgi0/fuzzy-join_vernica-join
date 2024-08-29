@@ -1,16 +1,18 @@
 package edu.uci.ics.fuzzyjoin.spark;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaSparkContext;
 
-import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
-import edu.uci.ics.fuzzyjoin.spark.logging.RedirectOutput;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartFuzzyJoin;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartRecordPairsBasic;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartRidPairsPPJoin;
 import edu.uci.ics.fuzzyjoin.spark.starters.StartTokensBasic;
+import edu.uci.ics.fuzzyjoin.spark.tokens.TokensBasic;
+import edu.uci.ics.fuzzyjoin.spark.util.LogUtil;
+import edu.uci.ics.fuzzyjoin.spark.util.RedirectOutput;
 
 public class Main {
     public static final String NAMESPACE = "fuzzyjoin";
@@ -52,7 +54,6 @@ public class Main {
         //
         // Handling the args
         //
-
         if (args.length < 1) {
             System.err.println("Usage: spark-submit \\\n" +
                     "--class PATH_TO_MAIN \\\n" +
@@ -65,7 +66,9 @@ public class Main {
             System.exit(1);
         }
 
+        //
         // Set config file
+        //
         configuration = new SparkConfig();
         sparkConf = configuration.getSparkContext(args[1]);
 
@@ -76,7 +79,9 @@ public class Main {
             configuration.readConfig("fuzzyjoin/", "dblp.quickstart.xml");
         }
 
+        //
         // Redirect log output to file if specified
+        //
         if (args.length > 2 && args[2].equals("true")) {
             RedirectOutput.setFile("output.txt");
         } else {
@@ -90,16 +95,19 @@ public class Main {
         //
         // Create Java Spark Context
         //
-
         LogUtil.logStage("Creating Java Spark Context");
+        Date startTime = new Date();
+
         sc = new JavaSparkContext(sparkConf);
+
+        Date endTime = new Date();
+        LogUtil.logTime(startTime, endTime, "Create JavaSparkContext");
 
         LogUtil.logStage("Starting of the app");
 
         //
         // Select stages to run
         //
-
         switch (args[1].toLowerCase()) {
             case "tokensbasic":
                 StartTokensBasic.start(sc);
@@ -129,7 +137,6 @@ public class Main {
         //
         // Ending of the app
         //
-
         LogUtil.logStage("Close Java Spark Context and Spark Session");
         sc.close();
 

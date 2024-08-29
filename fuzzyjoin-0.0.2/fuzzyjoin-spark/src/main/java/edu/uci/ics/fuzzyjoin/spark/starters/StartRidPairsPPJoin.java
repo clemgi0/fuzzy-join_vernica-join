@@ -35,7 +35,7 @@ public class StartRidPairsPPJoin {
         JavaRDD<String> ridPairs = RIDPairsPPJoin.main(tokensRank, records, sc);
 
         SaveResult saver = new SaveResult(sc, "ridpairs");
-        saver.saveJavaRIDPairRDD(ridPairs);
+        saver.saveJavaStringRDD(ridPairs);
     }
 
     public static JavaRDD<String> start(JavaSparkContext sc, JavaRDD<String> records, String[] tokensRank)

@@ -1,16 +1,14 @@
 package edu.uci.ics.fuzzyjoin.spark.logging;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import edu.uci.ics.fuzzyjoin.spark.Main;
-import edu.uci.ics.fuzzyjoin.spark.objects.IntPair;
-import edu.uci.ics.fuzzyjoin.spark.ridpairs.selfjoin.ValueSelfJoin;
 
 public class SaveResult {
     private String dataDir;
@@ -43,13 +41,6 @@ public class SaveResult {
 
     public void saveJavaStringRDD(JavaRDD<String> rdd) {
         LogUtil.logStage("Save Java RDD at " + outputPath.toString());
-
-        deleteFile(outputPath);
-        rdd.coalesce(1).saveAsTextFile(outputPath.toString());
-    }
-
-    public void saveJavaRIDPairRDD(JavaRDD<String> rdd) {
-        LogUtil.logStage("Save Java RID Pair RDD at " + outputPath.toString());
 
         deleteFile(outputPath);
         rdd.coalesce(1).saveAsTextFile(outputPath.toString());

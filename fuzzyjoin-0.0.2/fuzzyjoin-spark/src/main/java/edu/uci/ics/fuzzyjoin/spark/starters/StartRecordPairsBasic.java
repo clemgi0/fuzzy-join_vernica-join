@@ -7,6 +7,7 @@ import org.apache.spark.api.java.JavaSparkContext;
 
 import edu.uci.ics.fuzzyjoin.spark.SparkConfig;
 import edu.uci.ics.fuzzyjoin.spark.logging.LogUtil;
+import edu.uci.ics.fuzzyjoin.spark.logging.SaveResult;
 import edu.uci.ics.fuzzyjoin.spark.recordpairs.RecordPairsBasic;
 
 public class StartRecordPairsBasic {
@@ -30,11 +31,11 @@ public class StartRecordPairsBasic {
         // Launch Stage 3 : Similar records join
 
         LogUtil.logStage("Start Stage 3 : RecordsPairsBasic");
-        RecordPairsBasic.main(sc, records, ridPairs);
+        JavaRDD<String> pairedRecords = RecordPairsBasic.main(sc, records, ridPairs);
 
-        // // Save the result in HDFS
-        // SaveResult saver = new SaveResult(sc, "tokens");
-        // saver.saveJavaStringRDD(recordsPairs);
+        // Save the result in HDFS
+        SaveResult saver = new SaveResult(sc, "recordpairs");
+        saver.saveJavaStringRDD(pairedRecords);
     }
 
     public static void start(JavaSparkContext sc, JavaRDD<String> records, JavaRDD<String> ridPairs)
@@ -42,6 +43,10 @@ public class StartRecordPairsBasic {
         // Launch Stage 3 : Similar records join
 
         LogUtil.logStage("Start Stage 3 : RecordsPairsBasic");
-        RecordPairsBasic.main(sc, records, ridPairs);
+        JavaRDD<String> pairedRecords = RecordPairsBasic.main(sc, records, ridPairs);
+
+        // Save the result in HDFS
+        SaveResult saver = new SaveResult(sc, "recordpairs");
+        saver.saveJavaStringRDD(pairedRecords);
     }
 }

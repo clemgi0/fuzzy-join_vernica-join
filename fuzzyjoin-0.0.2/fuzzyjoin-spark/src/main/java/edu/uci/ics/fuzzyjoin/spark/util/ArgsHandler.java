@@ -1,20 +1,26 @@
 package edu.uci.ics.fuzzyjoin.spark.util;
 
 import java.io.File;
+import java.util.Map;
+import java.util.HashMap;
 
 import edu.uci.ics.fuzzyjoin.spark.Main;
 
 public class ArgsHandler {
+    private static final Map<String, String> options = new HashMap<>();
+
     public static void printUsage() {
         System.err.println("\nUsage: spark-submit \\\n" +
                 "--class PATH_TO_MAIN \\\n" +
                 "--master YARN \\\n" +
                 "PATH_TO_JAR \\\n" +
-                "CONFIG_FILE STAGE [LOG_FILE] \n" +
+                "CONFIG_FILE STAGE \\\n" +
                 "OPTIONS: \n" +
                 "CONFIG_FILE: Path to the configuration XML file \n" +
                 "STAGE: Stage to run (e.g., tokensbasic, ridpairsppjoin, recordpairsbasic, fuzzyjoin) \n" +
-                "LOG_FILE: Optionally specify 'false' to log output to console, default is file output.txt.\n");
+                "-Dfuzzyjoin.output.file=true/false: Optionally specify 'false' to log output to console, default is file output.txt.\n"
+                +
+                "-Dfuzzyjoin.savetime=true/false: Optionally specify 'true' to save times to the file times.txt.\n");
         System.exit(1);
     }
 
@@ -23,6 +29,7 @@ public class ArgsHandler {
             printUsage();
         }
 
+        // Parse arguments
         String configFile = args[0];
         if (!isValidConfigFile(configFile)) {
             System.err.println("\nInvalid configuration file specified: " + configFile);
@@ -42,10 +49,6 @@ public class ArgsHandler {
 
     public static String getStage(String[] args) {
         return args[1].toLowerCase();
-    }
-
-    public static boolean shouldLogToFile(String[] args) {
-        return !(args.length > 2 && args[2].equalsIgnoreCase("false"));
     }
 
     private static boolean isValidConfigFile(String configFile) {

@@ -30,7 +30,7 @@ public class StartTokensBasic {
         JavaRDD<String> tokensRank = TokensBasic.main(sc, records);
 
         Date endTime = new Date();
-        LogUtil.logTime(startTime, endTime, "TokensBasic");
+        LogUtil.logTime(startTime, endTime, "tokens");
 
         //
         // Save the result in HDFS
@@ -44,7 +44,12 @@ public class StartTokensBasic {
         // Launch Stage 1 : Tokenization
         //
         LogUtil.logStage("Start Stage 1 : TokensBasic");
+        Date startTime = new Date();
+
         JavaRDD<String> tokensRank = TokensBasic.main(sc, records);
+
+        Date endTime = new Date();
+        LogUtil.logTime(startTime, endTime, "tokens");
 
         return tokensRank.collect().toArray(new String[0]);
     }

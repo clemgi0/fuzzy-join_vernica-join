@@ -37,7 +37,7 @@ public class StartRidPairsPPJoin {
         JavaRDD<String> ridPairs = RIDPairsPPJoin.main(tokensRank, records, sc);
 
         Date endTime = new Date();
-        LogUtil.logTime(startTime, endTime, "RIDPairsPPJoin");
+        LogUtil.logTime(startTime, endTime, "ridpairs");
 
         SaveResult saver = new SaveResult(sc, "ridpairs");
         saver.saveJavaStringRDD(ridPairs);
@@ -49,7 +49,12 @@ public class StartRidPairsPPJoin {
         // Launch Stage 2 : FuzzyJoin
         //
         LogUtil.logStage("Start Stage 2 : RIDPairsPPJoin");
+        Date startTime = new Date();
+
         JavaRDD<String> ridPairs = RIDPairsPPJoin.main(tokensRank, records, sc);
+
+        Date endTime = new Date();
+        LogUtil.logTime(startTime, endTime, "ridpairs");
 
         return ridPairs;
     }

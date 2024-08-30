@@ -37,7 +37,7 @@ public class StartRecordPairsBasic {
         JavaRDD<String> pairedRecords = RecordPairsBasic.main(sc, records, ridPairs);
 
         Date endTime = new Date();
-        LogUtil.logTime(startTime, endTime, "RecordPairsBasic");
+        LogUtil.logTime(startTime, endTime, "recordpairs");
 
         //
         // Save the result in HDFS
@@ -52,7 +52,12 @@ public class StartRecordPairsBasic {
         // Launch Stage 3 : Similar records join
         //
         LogUtil.logStage("Start Stage 3 : RecordsPairsBasic");
+        Date startTime = new Date();
+
         JavaRDD<String> pairedRecords = RecordPairsBasic.main(sc, records, ridPairs);
+
+        Date endTime = new Date();
+        LogUtil.logTime(startTime, endTime, "recordpairs");
 
         //
         // Save the result in HDFS

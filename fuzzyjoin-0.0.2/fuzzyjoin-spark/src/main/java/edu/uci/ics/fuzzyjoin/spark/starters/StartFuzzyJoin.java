@@ -22,27 +22,16 @@ public class StartFuzzyJoin {
         //
         // Stage 1 : Tokenization
         //
-        Date startTime = new Date();
         String[] tokensRank = StartTokensBasic.start(sc, records);
-        Date endTime = new Date();
-        LogUtil.logTime(startTime, endTime, "TokensBasic");
 
         //
         // Stage 2 : Finding RID pairs
         //
-        startTime = new Date();
         JavaRDD<String> ridPairs = StartRidPairsPPJoin.start(sc, records, tokensRank);
-        endTime = new Date();
-        LogUtil.logTime(startTime, endTime, "RIDPairsPPJoin");
 
         //
         // Stage 3 : Record pairing
         //
-        startTime = new Date();
         StartRecordPairsBasic.start(sc, records, ridPairs);
-        endTime = new Date();
-        LogUtil.logTime(startTime, endTime, "RecordPairsBasic");
-
-        // saveResult();
     }
 }

@@ -1,7 +1,13 @@
 package edu.uci.ics.fuzzyjoin.spark.util;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.io.File;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
@@ -30,6 +36,24 @@ public class SaveResult {
         suffix = sc.getConf().get(Main.DATA_SUFFIX_INPUT_PROPERTY, "");
 
         outputPath = new Path(dataDir + "/" + stage + dataCopyFormatted);
+    }
+
+    public static void saveTime(float durationTime, String stage) {
+        String timesCsvPath = "times.txt";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(timesCsvPath, true))) {
+            // Write the times
+            writer.write(Float.toString(durationTime));
+
+            if (stage.equals("fuzzyjoin")) {
+                writer.newLine();
+
+                return;
+            }
+            writer.write(",");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void saveJavaRDD(JavaRDD<Object> rdd) {

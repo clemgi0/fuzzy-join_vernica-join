@@ -47,6 +47,15 @@ public class Main {
     public static final String DATA_LENGTH_STATS_FILE = "lengthstats";
     public static final char SEPARATOR = ',';
     public static final String SEPARATOR_REGEX = ",";
+    // options constants
+    public static final String LOG_TO_FILE_PROPERTY = NAMESPACE + ".output.file";
+    public static final boolean LOG_TO_FILE_VALUE = true;
+    public static final boolean LOG_TO_FILE = Boolean
+            .parseBoolean(System.getProperty(LOG_TO_FILE_PROPERTY, Boolean.toString(LOG_TO_FILE_VALUE)));
+    public static final String SAVE_TIME_PROPERTY = NAMESPACE + ".savetime";
+    public static final boolean SAVE_TIME_VALUE = false;
+    public static final boolean SAVE_TIME = Boolean
+            .parseBoolean(System.getProperty(SAVE_TIME_PROPERTY, Boolean.toString(SAVE_TIME_VALUE)));
     // available stages
     public static final Map<String, Stage> STAGES = new HashMap<>();
 
@@ -72,7 +81,6 @@ public class Main {
         ArgsHandler.handleArg(args);
         String configFile = ArgsHandler.getConfigFile(args);
         String stageName = ArgsHandler.getStage(args);
-        boolean logToFile = ArgsHandler.shouldLogToFile(args);
 
         //
         // Create configuration variables
@@ -91,7 +99,7 @@ public class Main {
         //
         // Redirect log output to file if specified
         //
-        if (logToFile) {
+        if (Main.LOG_TO_FILE) {
             RedirectOutput.setFile("output.txt");
         } else {
             LogUtil.logStage("Log output to console");
@@ -116,11 +124,13 @@ public class Main {
         // Run stage(s)
         //
         LogUtil.logStage("Starting of the app");
-        Stage stage = STAGES.get(stageName);
         startTime = new Date();
+
+        Stage stage = STAGES.get(stageName);
         stage.run(sc);
+
         endTime = new Date();
-        LogUtil.logTime(startTime, endTime, "App");
+        LogUtil.logTime(startTime, endTime, "fuzzyjoin");
 
         //
         // Ending of the app
